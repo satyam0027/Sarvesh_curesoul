@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Media Gallery — Sarvesh Mishra</title>
+    <meta name="description" content="Media archive and press kit: videos, podcasts, interviews, photos, documentary clips." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="index.html">
+            <span class="name">Sarvesh Mishra</span>
+            <span class="tag">Life Decoder | Inner Alchemy</span>
+          </a>
+
+          <div class="nav-links" role="navigation" aria-label="Main links">
+            <a data-nav href="index.html">Home</a>
+            <a data-nav href="about.html">About</a>
+            <a data-nav href="philosophy.html">Philosophy</a>
+            <a data-nav href="work.html">Work</a>
+            <a data-nav href="writings.html">Writings</a>
+            <a data-nav href="books.html">Books</a>
+            <a data-nav href="media.html">Media</a>
+            <a data-nav href="speaking.html">Speaking</a>
+            <a data-nav href="contact.html">Contact</a>
+          </div>
+
+          <div class="nav-cta">
+            <a class="btn primary" href="contact.html">Media inquiry</a>
+            <button id="mobileToggle" class="icon-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+              <span class="hamburger" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </span>
+            </button>
+          </div>
+        </nav>
+
+        <div id="mobileDrawer" class="mobile-drawer" aria-label="Mobile navigation">
+          <div class="drawer-inner">
+            <a data-nav href="index.html">Home</a>
+            <a data-nav href="about.html">About</a>
+            <a data-nav href="philosophy.html">Life Decoder Philosophy</a>
+            <a data-nav href="work.html">Work & Initiatives</a>
+            <a data-nav href="writings.html">Blog & Writings</a>
+            <a data-nav href="books.html">Books & Recommendations</a>
+            <a data-nav href="media.html">Media Gallery</a>
+            <a data-nav href="speaking.html">Speaking & Dialogues</a>
+            <a data-nav href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="content" class="page">
+      <div class="container">
+        <header class="hero" style="padding-bottom:10px">
+          <p class="kicker">Media gallery</p>
+          <h1>Press-ready archive<br /><span class="muted">Lightweight, filterable, minimal</span></h1>
+          <p class="subtitle">Videos, podcast appearances, interviews, photos, documentary clips — built as an authority archive.</p>
+        </header>
+
+        <section id="youtube" aria-labelledby="ytTitle">
+          <div class="section-title">
+            <h2 id="ytTitle">YouTube channel</h2>
+            <p>@Sarveshmishrashow — featured videos + overall viewership.</p>
+          </div>
+
+          <div class="yt-wrap">
+            <div class="card tile yt-top">
+              <div>
+                <span class="pill"><strong>YouTube</strong> Sarvesh Mishra Show</span>
+                <p class="subtitle" style="margin:10px 0 0">
+                  Watch the long-form work and conversations on the official channel.
+                </p>
+              </div>
+              <div class="hero-actions" style="justify-content:flex-end">
+                <a class="btn primary" href="https://www.youtube.com/@Sarveshmishrashow" target="_blank" rel="noopener noreferrer">Open channel</a>
+              </div>
+            </div>
+
+            <div class="yt-stats" aria-label="YouTube channel stats">
+              <div class="card tile stat">
+                <div class="stat-label">Total views</div>
+                <div class="stat-value" data-countup data-value="1250000" data-suffix="+">1,250,000+</div>
+              </div>
+              <div class="card tile stat">
+                <div class="stat-label">Subscribers</div>
+                <div class="stat-value" data-countup data-value="52000" data-suffix="+">52,000+</div>
+              </div>
+              <div class="card tile stat">
+                <div class="stat-label">Videos</div>
+                <div class="stat-value" data-countup data-value="180" data-suffix="+">180+</div>
+              </div>
+            </div>
+
+            <div class="yt-videos" aria-label="Featured videos">
+              <article class="card tile yt-video">
+                <div class="yt-frame" data-video="9nYnZEuM3VY" aria-label="Featured video 1"></div>
+                <h3>Featured video</h3>
+                <p>Set the strongest channel introduction here.</p>
+              </article>
+              <article class="card tile yt-video">
+                <div class="yt-frame" data-video="wzh8mUmcEsc" aria-label="Featured video 2"></div>
+                <h3>Dialogue / interview</h3>
+                <p>A long-form conversation worth referencing.</p>
+              </article>
+              <article class="card tile yt-video">
+                <div class="yt-frame" data-video="5DjTrl8YoAc" aria-label="Featured video 3"></div>
+                <h3>Philosophy overview</h3>
+                <p>Life Decoder in a clear, minimal explainer.</p>
+              </article>
+            </div>
+
+            <p class="note" style="margin:12px 0 0">Click any thumbnail to play.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="filtersTitle">
+          <div class="section-title">
+            <h2 id="filtersTitle">Filters</h2>
+            <p>Browse by media type.</p>
+          </div>
+
+          <div id="galleryFilters" class="filters" role="group" aria-label="Media types">
+            <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-btn" type="button" data-filter="video" aria-pressed="false">Videos</button>
+            <button class="filter-btn" type="button" data-filter="podcast" aria-pressed="false">Podcast</button>
+            <button class="filter-btn" type="button" data-filter="interview" aria-pressed="false">Interviews</button>
+            <button class="filter-btn" type="button" data-filter="photo" aria-pressed="false">Photos</button>
+            <button class="filter-btn" type="button" data-filter="documentary" aria-pressed="false">Documentary</button>
+          </div>
+
+          <div class="gallery" aria-label="Media items">
+            <div class="g-item" data-media data-type="video">
+              <button type="button" data-open-modal data-title="Video: Inner Alchemy (short talk)" data-desc="Placeholder. Replace with a YouTube/Vimeo embed or link. Keep it press-ready and minimal.">
+                <div class="g-thumb" aria-hidden="true"></div>
+                <div class="g-body">
+                  <div class="type">Video</div>
+                  <div class="title">Inner Alchemy — clarity under pressure</div>
+                  <p class="sub">A short talk on decoding stress and identity.</p>
+                </div>
+              </button>
+            </div>
+
+            <div class="g-item" data-media data-type="podcast">
+              <button type="button" data-open-modal data-title="Podcast appearance" data-desc="Placeholder. Add show name, episode title, and 1–2 lines of context.">
+                <div class="g-thumb" aria-hidden="true"></div>
+                <div class="g-body">
+                  <div class="type">Podcast</div>
+                  <div class="title">Conscious leadership and meaning</div>
+                  <p class="sub">Dialogues on pressure, purpose, and responsibility.</p>
+                </div>
+              </button>
+            </div>
+
+            <div class="g-item" data-media data-type="interview">
+              <button type="button" data-open-modal data-title="Interview" data-desc="Placeholder. Add platform, date, and key topics covered.">
+                <div class="g-thumb" aria-hidden="true"></div>
+                <div class="g-body">
+                  <div class="type">Interview</div>
+                  <div class="title">Modern spirituality without escape</div>
+                  <p class="sub">Serious conversation, no branding tone.</p>
+                </div>
+              </button>
+            </div>
+
+            <div class="g-item" data-media data-type="photo">
+              <button type="button" data-open-modal data-title="Photo gallery" data-desc="Placeholder. Add a simple image grid later. Use real photos only.">
+                <div class="g-thumb" aria-hidden="true"></div>
+                <div class="g-body">
+                  <div class="type">Photo</div>
+                  <div class="title">Portraits & event moments</div>
+                  <p class="sub">Minimal. Real. Grounded.</p>
+                </div>
+              </button>
+            </div>
+
+            <div class="g-item" data-media data-type="documentary">
+              <button type="button" data-open-modal data-title="Documentary clip" data-desc="Placeholder. Add clip links and context. Keep load fast and embeds lightweight.">
+                <div class="g-thumb" aria-hidden="true"></div>
+                <div class="g-body">
+                  <div class="type">Documentary</div>
+                  <div class="title">Clips & archive</div>
+                  <p class="sub">Curated moments from long-form work.</p>
+                </div>
+              </button>
+            </div>
+
+            <div class="g-item" data-media data-type="video">
+              <button type="button" data-open-modal data-title="Video: Life Decoder (overview)" data-desc="Placeholder. Add the main explainer video link for the Life Decoder philosophy.">
+                <div class="g-thumb" aria-hidden="true"></div>
+                <div class="g-body">
+                  <div class="type">Video</div>
+                  <div class="title">Life Decoder — overview</div>
+                  <p class="sub">A clear, simple map of the work.</p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="press">
+          <div class="card tile" style="padding:18px">
+            <div class="section-title" style="margin-bottom:10px">
+              <h2 id="press">Press & media note</h2>
+              <p class="muted">This section is designed as a lightweight press kit + archive.</p>
+            </div>
+            <div class="hero-actions">
+              <a class="btn primary" href="contact.html">Media inquiry</a>
+              <a class="btn" href="speaking.html">Speaking themes</a>
+              <a class="btn" href="writings.html">Writings</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Media details">
+      <div id="modalBackdrop" class="backdrop" aria-hidden="true"></div>
+      <div class="panel" role="document">
+        <div class="panel-head">
+          <h3 id="modalTitle">Media</h3>
+          <button id="modalClose" class="close" type="button">Close</button>
+        </div>
+        <div id="modalBody" class="panel-body">Details</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="fine">Founder of <a href="work.html#curesoullife"><strong>CureSoulLife</strong></a></div>
+            <div class="fine" style="margin-top:8px">© <span class="nowrap" id="year"></span> Sarvesh Mishra.</div>
+          </div>
+          <div class="footer-links" aria-label="Footer links">
+            <a href="philosophy.html">Philosophy</a>
+            <a href="writings.html">Writings</a>
+            <a href="speaking.html">Speaking</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+      <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
+
