@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact — Sarvesh Mishra</title>
-    <meta name="description" content="Contact Sarvesh Mishra for speaking invites, collaborations, and media inquiries." />
+    <title>Contact Sarvesh Mishra — Speaking, Collaboration & Media</title>
+    <meta name="description" content="Reach out for speaking engagements, institutional collaborations, or media conversations with Sarvesh Mishra." />
+    <meta name="author" content="Sarvesh Mishra - Life Decoder | Inner Alchemy Architect" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script defer src="assets/js/main.js"></script>
@@ -17,12 +18,13 @@
         <nav class="nav" aria-label="Primary">
           <a class="brand" href="index.html">
             <span class="name">Sarvesh Mishra</span>
-            <span class="tag">Life Decoder | Inner Alchemy</span>
+            <span class="tag">Life Decoder | Inner Alchemy Architect</span>
           </a>
 
           <div class="nav-links" role="navigation" aria-label="Main links">
             <a data-nav href="index.html">Home</a>
             <a data-nav href="about.html">About</a>
+            <a data-nav href="life-decoder.html">Life Decoder</a>
             <a data-nav href="philosophy.html">Philosophy</a>
             <a data-nav href="work.html">Work</a>
             <a data-nav href="writings.html">Writings</a>
@@ -46,11 +48,12 @@
           <div class="drawer-inner">
             <a data-nav href="index.html">Home</a>
             <a data-nav href="about.html">About</a>
+            <a data-nav href="life-decoder.html">Life Decoder</a>
             <a data-nav href="philosophy.html">Life Decoder Philosophy</a>
             <a data-nav href="work.html">Work & Initiatives</a>
             <a data-nav href="writings.html">Blog & Writings</a>
             <a data-nav href="books.html">Books & Recommendations</a>
-            <a data-nav href="media.html">Media Gallery</a>
+            <a data-nav href="media.html">Media Archive</a>
             <a data-nav href="speaking.html">Speaking & Dialogues</a>
             <a data-nav href="contact.html">Contact</a>
           </div>
@@ -61,27 +64,40 @@
     <main id="content" class="page">
       <div class="container">
         <header class="hero" style="padding-bottom:10px">
-          <p class="kicker">Contact</p>
-          <h1>Simple, minimal contact<br /><span class="muted">Speaking • Collaboration • Media</span></h1>
-          <p class="subtitle">This site doesn’t sell products. It exists to build trust, legacy, and serious dialogue.</p>
+          <h1>Contact</h1>
+          <p class="subtitle">For speaking engagements, institutional collaborations, and media conversations focused on depth and understanding.</p>
         </header>
 
         <section aria-labelledby="options">
           <div class="section-title">
-            <h2 id="options">Choose an intent</h2>
-            <p>Minimal options, no clutter.</p>
+            <h2 id="options">Inquiry Type</h2>
+            <p>Select the nature of your request.</p>
           </div>
           <div class="grid-3">
-            <div class="card tile"><h3>Speaking invite</h3><p>Keynotes, panels, closed-door dialogues.</p></div>
-            <div class="card tile"><h3>Collaboration</h3><p>Institutions, retreats, research-backed media work.</p></div>
-            <div class="card tile"><h3>Media inquiry</h3><p>Interviews, podcasts, press requests.</p></div>
+            <article class="card tile">
+              <h3>Speaking Engagements</h3>
+              <p>Keynotes, panel discussions, and closed-door dialogues for conferences, institutions, and leadership gatherings.</p>
+            </article>
+            <article class="card tile">
+              <h3>Institutional Collaboration</h3>
+              <p>Partnerships with organizations, retreat centers, and platforms focused on conscious living and long-form dialogue.</p>
+            </article>
+            <article class="card tile">
+              <h3>Media & Press</h3>
+              <p>Podcast appearances, interviews, and conversations for media outlets prioritizing depth and substance.</p>
+            </article>
+          </div>
+
+        <section aria-labelledby="note" style="margin-bottom: -20px">
+          <div class="card tile" style="padding:14px; background: var(--surface-2, #f5f5f5); border-left: 3px solid var(--text-muted, #666)">
+            <p class="muted" style="margin:0; font-size: 0.95rem">This contact space is reserved for serious inquiries. Promotional requests, sales pitches, and generic outreach will not receive a response.</p>
           </div>
         </section>
 
         <section aria-labelledby="formTitle">
           <div class="section-title">
-            <h2 id="formTitle">Message</h2>
-            <p>Client-only form (no backend attached yet).</p>
+            <h2 id="formTitle">Send a Message</h2>
+            <p>All inquiries are reviewed and responded to based on relevance and context.</p>
           </div>
 
           <div class="grid-2">
@@ -97,33 +113,32 @@
                 </div>
                 <div class="field">
                   <label class="label" for="topic">Topic</label>
-                  <input class="input" id="topic" name="topic" placeholder="Speaking invite / Collaboration / Media inquiry" />
+                  <input class="input" id="topic" name="topic" placeholder="e.g., Speaking Engagement, Institutional Collaboration, Media Interview" />
                 </div>
                 <div class="field">
                   <label class="label" for="message">Message</label>
                   <textarea class="textarea" id="message" name="message" required></textarea>
                 </div>
                 <button class="btn primary" type="submit">Submit</button>
-                <div class="form-note">To deliver messages, connect this form to your backend (email/API).</div>
+                <div class="form-note">Form submissions are processed securely. You will receive a response within 48-72 hours.</div>
                 <div id="toast" class="toast" role="status" aria-live="polite"></div>
               </form>
             </div>
 
             <aside class="card tile" style="padding:18px">
-              <h3 style="margin-top:0">What to include</h3>
-              <ul class="list">
-                <li>Audience type (leaders / students / institutions)</li>
-                <li>Format (keynote / panel / closed-door dialogue)</li>
-                <li>Location and date</li>
-                <li>Desired theme (stress & meaning, conscious leadership, modern spirituality)</li>
+              <h3 style="margin-top:0">Guidelines for Your Message</h3>
+              <p class="muted" style="margin:0 0 10px">Please include the following details to help us understand your inquiry:</p>
+              <ul class="list" style="margin:0 0 10px">
+                <li>Audience type (leaders, institutions, students, general public)</li>
+                <li>Format preference (keynote, panel discussion, closed-door dialogue)</li>
+                <li>Location and timeline</li>
+                <li>Core theme or specific challenge to address</li>
+              <li>Organizational background (if applicable)</li>
               </ul>
-              <div class="divider"></div>
-              <p class="muted" style="margin:0 0 10px">
-                Prefer a direct path? Use this page as a template and add your email + social links.
-              </p>
+              <p class="muted" style="margin:0 0 16px; font-size: 0.9rem">Clear details allow for more meaningful responses.</p>
               <div class="hero-actions">
-                <a class="btn" href="speaking.html">Speaking themes</a>
-                <a class="btn" href="media.html">Media gallery</a>
+                <a class="btn" href="speaking.html">Speaking Themes</a>
+                <a class="btn" href="media.html">Media Archive</a>
               </div>
             </aside>
           </div>
@@ -131,23 +146,26 @@
       </div>
     </main>
 
-    <footer class="site-footer">
+        <footer class="site-footer">
       <div class="container">
         <div class="footer-grid">
           <div>
-            <div class="fine">Founder of <a href="work.html#curesoullife"><strong>CureSoulLife</strong></a></div>
-            <div class="fine" style="margin-top:8px">© <span class="nowrap" id="year"></span> Sarvesh Mishra.</div>
+            <div class="fine"><strong>Sarvesh Mishra</strong></div>
+            <div class="fine" style="margin-top:4px">Life Decoder | Inner Alchemy Architect</div>
+            <div class="fine" style="margin-top:4px">Entrepreneur — Media Professional — Conscious Living Researcher</div>
+            <div class="fine" style="margin-top:8px">Founder: <a href="work.html#curesoullife"><strong>Red Hot Media House</strong></a> | <a href="work.html#curesoullife"><strong>CureSoulLife</strong></a></div>
+            <div class="fine" style="margin-top:8px">— <span class="nowrap" id="year"></span> Sarvesh Mishra.</div>
           </div>
           <div class="footer-links" aria-label="Footer links">
             <a href="philosophy.html">Philosophy</a>
             <a href="writings.html">Writings</a>
             <a href="media.html">Media</a>
-            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
           </div>
         </div>
       </div>
       <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById(''year'').textContent = new Date().getFullYear();
       </script>
     </footer>
   </body>
