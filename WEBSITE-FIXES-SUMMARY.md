@@ -2,7 +2,7 @@
 
 **Date:** April 15, 2026  
 **Status:** ✓ All Priority Fixes Applied  
-**Next Steps:** Add real images to /public/images/ directory
+**Next Steps:** Add real images to /images/ directory
 
 ---
 
@@ -11,7 +11,7 @@
 ### ✓ 1. IMAGE IMPLEMENTATION
 
 **Directory Structure Created:**
-- `/public/images/` (ready for image uploads)
+- `/images/` (ready for image uploads)
 
 **Image Placeholders Added to All Pages:**
 
@@ -38,7 +38,7 @@
 | Optional portrait | `sarvesh-mishra.jpg` | "Sarvesh Mishra - Life Decoder" | 400x400px | Optional |
 
 **Image Rules Enforced:**
-- All images use `public/images/` path
+- All images use `images/` path
 - Descriptive alt text with keywords
 - Proper `loading` attributes (eager for above-fold, lazy for below-fold)
 - Width and height attributes added for performance
@@ -262,7 +262,7 @@ Subtle Option A (Recommended) Applied:
 ## FILES CREATED/MODIFIED
 
 ### New Files Created:
-1. `/public/images/` (directory)
+1. `/images/` (directory)
 2. `robots.txt`
 3. `sitemap.xml`
 4. `/writings/why-life-feels-confusing.html`
@@ -293,7 +293,7 @@ Subtle Option A (Recommended) Applied:
 
 ### CRITICAL (Before Launch):
 
-1. **Add Real Images to `/public/images/`**
+1. **Add Real Images to `/images/`**
    
    Required images:
    - `sarvesh-mishra.jpg` (main portrait - 800x1000px)
@@ -326,7 +326,7 @@ Subtle Option A (Recommended) Applied:
    
    In `about.html` line 17:
    - Change: "https://thesarveshmishra.com/images/sarvesh-mishra.jpg"
-   - To: "https://thesarveshmishra.com/public/images/sarvesh-mishra.jpg"
+   - To: "https://thesarveshmishra.com/images/sarvesh-mishra.jpg"
    - (After uploading the image)
 
 ### RECOMMENDED (Before SEO Push):
@@ -391,7 +391,7 @@ Before going live, verify:
 - [ ] No forbidden marketing words present
 
 ### Images:
-- [ ] All images uploaded to `/public/images/`
+- [ ] All images uploaded to `/images/`
 - [ ] All images compressed (under 200KB)
 - [ ] All images have descriptive alt text
 - [ ] No broken image links

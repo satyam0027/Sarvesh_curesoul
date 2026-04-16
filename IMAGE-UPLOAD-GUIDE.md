@@ -1,6 +1,6 @@
 # IMAGE UPLOAD GUIDE
 
-Upload these images to: `d:\SARVESH MISHRA\public\images\`
+Upload these images to: `d:\SARVESH MISHRA\images\`
 
 ---
 
@@ -125,7 +125,7 @@ These are marked as optional in the code:
 
 Update Schema Markup in `about.html` line 17:
 ```html
-"image": "https://thesarveshmishra.com/public/images/sarvesh-mishra.jpg",
+"image": "https://thesarveshmishra.com/images/sarvesh-mishra.jpg",
 ```
 
 This URL appears in Google Knowledge Panel and search results.
@@ -151,7 +151,7 @@ Use these exact alt texts (already in the code):
 ## TROUBLESHOOTING
 
 **If images don't display:**
-1. Check file path: `/public/images/filename.jpg`
+1. Check file path: `/images/filename.jpg`
 2. Verify filename matches exactly (case-sensitive)
 3. Clear browser cache
 4. Check file permissions

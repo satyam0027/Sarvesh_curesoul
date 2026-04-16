@@ -53,14 +53,14 @@
 ```json
 {
   "url": "https://thesarveshmishra.com",
-  "image": "https://thesarveshmishra.com/public/images/sarvesh-mishra.jpg",
+  "image": "https://thesarveshmishra.com/images/sarvesh-mishra.jpg",
   ...
 }
 ```
 
 **Also Fixed:**
 - Removed HTML link from "CureSoulLife Pvt. Ltd." in schema (JSON-LD must be plain text)
-- Updated image path to `/public/images/sarvesh-mishra.jpg`
+- Updated image path to `/images/sarvesh-mishra.jpg`
 
 ### 3. Sitemap.xml
 **All 14 URLs updated to:**
@@ -93,7 +93,7 @@ All verified ✓:
 - [x] Robots.txt references correct sitemap
 - [x] Footer displays thesarveshmishra.com
 - [x] All documentation references updated
-- [x] Schema image path corrected to /public/images/
+- [x] Schema image path corrected to /images/
 - [x] Schema JSON-LD cleaned (no HTML tags)
 
 ---
@@ -160,7 +160,7 @@ Once domain is configured and site is uploaded:
 ## NEXT STEPS (Unchanged)
 
 Still required before launch:
-1. Upload 6 real images to `/public/images/`
+1. Upload 6 real images to `/images/`
 2. Write blog post content (4 posts)
 3. Final testing and QA
 
