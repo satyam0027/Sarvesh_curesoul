@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thesarveshmishra.com/sitemap.xml
+
