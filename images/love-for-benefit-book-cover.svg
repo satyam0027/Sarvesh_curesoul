@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="1000" viewBox="0 0 700 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Love for Benefit by Sarvesh Mishra</title>
+  <desc id="desc">Book cover style image for Love for Benefit.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#2f2f2f"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="1000" fill="url(#bg)"/>
+  <rect x="48" y="48" width="604" height="904" fill="none" stroke="#d4af37" stroke-width="3"/>
+  <text x="80" y="180" fill="#f5f5f5" font-family="Georgia, serif" font-size="38" letter-spacing="2">SARVESH MISHRA</text>
+  <text x="80" y="390" fill="#d4af37" font-family="Georgia, serif" font-size="72" font-weight="700">LOVE</text>
+  <text x="80" y="475" fill="#d4af37" font-family="Georgia, serif" font-size="72" font-weight="700">FOR</text>
+  <text x="80" y="560" fill="#d4af37" font-family="Georgia, serif" font-size="72" font-weight="700">BENEFIT</text>
+  <line x1="80" y1="640" x2="620" y2="640" stroke="#5f5f5f" stroke-width="2"/>
+  <text x="80" y="710" fill="#dcdcdc" font-family="Arial, sans-serif" font-size="28">A reflection on love, value, and life choices</text>
+  <text x="80" y="860" fill="#dcdcdc" font-family="Arial, sans-serif" font-size="24">Available on Amazon</text>
+</svg>

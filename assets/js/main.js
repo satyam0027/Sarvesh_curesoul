@@ -88,6 +88,8 @@
   // Contact form (client-only, no backend)
   const contact = $("#contactForm");
   if (contact) {
+    // If form is configured for server submission, keep native submit behavior.
+    if (contact.getAttribute("data-server-submit") === "true") return;
     const toast = $("#toast");
     contact.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -181,6 +183,122 @@
     } else {
       countEls.forEach(animate);
     }
+  }
+
+  // Live YouTube stats on media page
+  const channelCards = $$("[data-channel-id]");
+  if (channelCards.length) {
+    const nf = new Intl.NumberFormat(undefined, { maximumFractionDigits: 1 });
+    const compact = (n) => {
+      if (!Number.isFinite(n)) return "N/A";
+      if (n >= 1_000_000_000) return `${nf.format(n / 1_000_000_000)}B`;
+      if (n >= 1_000_000) return `${nf.format(n / 1_000_000)}M`;
+      if (n >= 1_000) return `${nf.format(n / 1_000)}K`;
+      return nf.format(n);
+    };
+
+    const toNum = (val) => {
+      if (typeof val === "number" && Number.isFinite(val)) return val;
+      if (typeof val !== "string") return NaN;
+      const n = Number(val.replace(/[^0-9.]/g, ""));
+      return Number.isFinite(n) ? n : NaN;
+    };
+
+    const pickStats = (payload) => {
+      // socialcounts response shape:
+      // { counters: { api: { subscriberCount, viewCount }, estimation: { ... } } }
+      const api = payload?.counters?.api || {};
+      const est = payload?.counters?.estimation || {};
+      const subscribers = toNum(api.subscriberCount ?? est.subscriberCount);
+      const views = toNum(api.viewCount ?? est.viewCount);
+      return { subscribers, views };
+    };
+
+    const loadChannel = async (card) => {
+      const channelId = card.getAttribute("data-channel-id");
+      const subsEl = card.querySelector('[data-stat="subs"]');
+      const viewsEl = card.querySelector('[data-stat="views"]');
+      if (!channelId || !subsEl || !viewsEl) return;
+
+      try {
+        const url = `https://api.socialcounts.org/youtube-live-subscriber-count/${encodeURIComponent(channelId)}`;
+        const res = await fetch(url, { cache: "no-store" });
+        if (!res.ok) throw new Error("stats endpoint failed");
+        const json = await res.json();
+        const { subscribers, views } = pickStats(json);
+        subsEl.textContent = Number.isFinite(subscribers) ? compact(subscribers) : "N/A";
+        viewsEl.textContent = Number.isFinite(views) ? compact(views) : "N/A";
+      } catch (_err) {
+        subsEl.textContent = "N/A";
+        viewsEl.textContent = "N/A";
+      }
+    };
+
+    const refreshAll = () => Promise.all(channelCards.map((card) => loadChannel(card)));
+    refreshAll();
+    window.setInterval(refreshAll, 300000);
+  }
+
+  // Home page combined media reach (live aggregate from 3 channels)
+  const homeReach = $("#homeMediaReach");
+  if (homeReach) {
+    const viewEl = homeReach.querySelector('[data-home-stat="views"]');
+    const subEl = homeReach.querySelector('[data-home-stat="subs"]');
+    const videoEl = homeReach.querySelector('[data-home-stat="videos"]');
+    const ids = [
+      "UCGyDe2To67_wCtHgYQWo2kw", // The Sarvesh Mishra Show
+      "UCuhtdS3A51_5NCICv9_pX6w", // The Inner Wealth
+      "UCFVm7tBFWnxzTJpkt_s96Aw", // The Urban Sannyasi
+    ];
+    const fmtCompact = (n) => {
+      if (!Number.isFinite(n)) return "N/A";
+      return new Intl.NumberFormat(undefined, {
+        notation: "compact",
+        maximumFractionDigits: 1,
+      }).format(n);
+    };
+
+    const parse = (payload) => {
+      const api = payload?.counters?.api || {};
+      const est = payload?.counters?.estimation || {};
+      return {
+        subs: Number(api.subscriberCount ?? est.subscriberCount ?? 0),
+        views: Number(api.viewCount ?? est.viewCount ?? 0),
+        videos: Number(api.videoCount ?? est.videoCount ?? 0),
+      };
+    };
+
+    const loadCombined = async () => {
+      try {
+        const responses = await Promise.all(
+          ids.map((id) =>
+            fetch(`https://api.socialcounts.org/youtube-live-subscriber-count/${encodeURIComponent(id)}`, {
+              cache: "no-store",
+            }).then((r) => (r.ok ? r.json() : Promise.reject(new Error("stats endpoint failed"))))
+          )
+        );
+        const total = responses.reduce(
+          (acc, item) => {
+            const n = parse(item);
+            acc.subs += Number.isFinite(n.subs) ? n.subs : 0;
+            acc.views += Number.isFinite(n.views) ? n.views : 0;
+            acc.videos += Number.isFinite(n.videos) ? n.videos : 0;
+            return acc;
+          },
+          { subs: 0, views: 0, videos: 0 }
+        );
+        if (viewEl) viewEl.textContent = fmtCompact(total.views);
+        if (subEl) subEl.textContent = fmtCompact(total.subs);
+        if (videoEl) videoEl.textContent = new Intl.NumberFormat().format(total.videos);
+      } catch (_err) {
+        if (viewEl) viewEl.textContent = "N/A";
+        if (subEl) subEl.textContent = "N/A";
+        if (videoEl) videoEl.textContent = "N/A";
+      }
+    };
+
+    loadCombined();
+    window.setInterval(loadCombined, 300000);
   }
 })();
 
