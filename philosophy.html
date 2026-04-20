@@ -10,6 +10,12 @@
  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
  <link rel="stylesheet" href="assets/css/styles.css" />
  <script defer src="assets/js/main.js"></script>
+<script defer src="https://unpkg.com/lucide@latest"></script>
+<script defer>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.lucide) window.lucide.createIcons();
+});
+</script>
  </head>
  <body>
  <a class="skip-link" href="#content">Skip to content</a>
@@ -32,6 +38,7 @@
  <a data-nav href="books.html">Books</a>
  <a data-nav href="media.html">Media</a>
  <a data-nav href="speaking.html">Speaking</a>
+<a data-nav href="webinars.html">Webinars</a>
  <a data-nav href="contact.html">Contact</a>
  </div>
 
@@ -56,6 +63,7 @@
  <a data-nav href="books.html">Books & Recommendations</a>
  <a data-nav href="media.html">Media Gallery</a>
  <a data-nav href="speaking.html">Speaking & Dialogues</a>
+<a data-nav href="webinars.html">Webinars</a>
  <a data-nav href="contact.html">Contact</a>
  </div>
  </div>
@@ -241,13 +249,14 @@
 
  <footer class="site-footer">
  <div class="container">
- <div class="footer-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:48px; padding:48px 0 32px">
+<div class="footer-grid" style="padding:48px 0 32px">
  
  <!-- Left Block: Brand -->
- <div>
+<div class="footer-brand">
  <div style="font-size:1.1rem; font-weight:600; margin-bottom:8px">Sarvesh Mishra</div>
  <div class="fine" style="margin-bottom:4px">Life Decoder | Inner Alchemy Architect</div>
- <div class="fine">Entrepreneur • Media Professional • Conscious Living Researcher</div>
+<div class="fine">Entrepreneur • Media Professional • Conscious Living Researcher</div>
+<div class="fine">Founder: <a href="https://redhotmediahouse.com/" target="_blank" rel="noopener noreferrer">Red Hot Media House</a> | <a href="https://curesoullife.org/index.html" target="_blank" rel="noopener noreferrer">CureSoulLife</a></div>
  </div>
 
  <!-- Middle Block: Navigation -->

@@ -10,6 +10,12 @@
  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
  <link rel="stylesheet" href="assets/css/styles.css" />
  <script defer src="assets/js/main.js"></script>
+<script defer src="https://unpkg.com/lucide@latest"></script>
+<script defer>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.lucide) window.lucide.createIcons();
+});
+</script>
  </head>
  <body>
  <a class="skip-link" href="#content">Skip to content</a>
@@ -32,6 +38,7 @@
  <a data-nav href="books.html">Books</a>
  <a data-nav href="media.html">Media</a>
  <a data-nav href="speaking.html">Speaking</a>
+<a data-nav href="webinars.html">Webinars</a>
  <a data-nav href="contact.html">Contact</a>
  </div>
 
@@ -56,6 +63,7 @@
  <a data-nav href="books.html">Books & Recommendations</a>
  <a data-nav href="media.html">Media Gallery</a>
  <a data-nav href="speaking.html">Speaking & Dialogues</a>
+<a data-nav href="webinars.html">Webinars</a>
  <a data-nav href="contact.html">Contact</a>
  </div>
  </div>
@@ -109,18 +117,27 @@
  <p>Three pillars that guide the work — clarity without arrogance, spirituality without escape.</p>
  </div>
  <div class="grid-3">
- <article class="card tile">
- <h3>Decode the Inner World</h3>
- <p>Thoughts, emotions, identity, purpose — not as beliefs, but as systems.</p>
- </article>
- <article class="card tile">
- <h3>Practice Inner Alchemy</h3>
- <p>Transform pressure into presence, confusion into clarity.</p>
- </article>
- <article class="card tile">
- <h3>Live Consciously (Modern Life)</h3>
- <p>Spiritual depth without disconnecting from work, family, ambition.</p>
- </article>
+<article class="card tile insight-card">
+<div class="card-head">
+<span class="card-icon-wrap"><i data-lucide="brain" class="card-icon" aria-hidden="true"></i></span>
+<div><p class="card-tag">Inner Work</p><h3>Decode the Inner World</h3></div>
+</div>
+<p>Thoughts, emotions, identity, purpose - not as beliefs, but as systems.</p>
+</article>
+<article class="card tile insight-card">
+<div class="card-head">
+<span class="card-icon-wrap"><i data-lucide="flame" class="card-icon" aria-hidden="true"></i></span>
+<div><p class="card-tag">Transformation</p><h3>Practice Inner Alchemy</h3></div>
+</div>
+<p>Transform pressure into presence, confusion into clarity.</p>
+</article>
+<article class="card tile insight-card teal">
+<div class="card-head">
+<span class="card-icon-wrap"><i data-lucide="sun" class="card-icon" aria-hidden="true"></i></span>
+<div><p class="card-tag">Conscious Living</p><h3>Live Consciously (Modern Life)</h3></div>
+</div>
+<p>Spiritual depth without disconnecting from work, family, ambition.</p>
+</article>
  </div>
  </section>
 
@@ -129,12 +146,48 @@
  <h2 id="workOn">What I work on</h2>
  </div>
  <div class="grid-3">
- <div class="card tile"><h3>Inner mastery & clarity</h3><p>Understanding attention, identity, and emotional patterns — not to control them, but to see them clearly.</p></div>
- <div class="card tile"><h3>Stress, identity & meaning</h3><p>From pressure, restlessness, and confusion to grounded clarity and direction.</p></div>
- <div class="card tile"><h3>Conscious leadership</h3><p>Depth that strengthens responsibility, decision-making, and stability under pressure.</p></div>
- <div class="card tile"><h3>Modern spirituality</h3><p>Practical, non-dogmatic understanding of awareness without escaping work or life.</p></div>
- <div class="card tile"><h3>Relationships & purpose</h3><p>Clarity in how we connect, commit, choose, and live with others.</p></div>
- <div class="card tile"><h3>Inner architecture & transformation systems</h3><p>Designing a stable inner foundation using ancient wisdom and modern logic.</p></div>
+<div class="card tile insight-card teal">
+<div class="card-head">
+<span class="card-icon-wrap"><i data-lucide="target" class="card-icon" aria-hidden="true"></i></span>
+<div><p class="card-tag">Clarity</p><h3>Inner mastery & clarity</h3></div>
+</div>
+<p>Understanding attention, identity, and emotional patterns - not to control them, but to see them clearly.</p>
+</div>
+<div class="card tile insight-card">
+<div class="card-head">
+<span class="card-icon-wrap"><i data-lucide="infinity" class="card-icon" aria-hidden="true"></i></span>
+<div><p class="card-tag">Meaning</p><h3>Stress, identity & meaning</h3></div>
+</div>
+<p>From pressure, restlessness, and confusion to grounded clarity and direction.</p>
+</div>
+<div class="card tile insight-card indigo">
+<div class="card-head">
+<span class="card-icon-wrap"><i data-lucide="compass" class="card-icon" aria-hidden="true"></i></span>
+<div><p class="card-tag">Leadership</p><h3>Conscious leadership</h3></div>
+</div>
+<p>Depth that strengthens responsibility, decision-making, and stability under pressure.</p>
+</div>
+<div class="card tile insight-card">
+<div class="card-head">
+<span class="card-icon-wrap"><i data-lucide="star" class="card-icon" aria-hidden="true"></i></span>
+<div><p class="card-tag">Spirituality</p><h3>Modern spirituality</h3></div>
+</div>
+<p>Practical, non-dogmatic understanding of awareness without escaping work or life.</p>
+</div>
+<div class="card tile insight-card rose">
+<div class="card-head">
+<span class="card-icon-wrap"><i data-lucide="heart" class="card-icon" aria-hidden="true"></i></span>
+<div><p class="card-tag">Relationships</p><h3>Relationships & purpose</h3></div>
+</div>
+<p>Clarity in how we connect, commit, choose, and live with others.</p>
+</div>
+<div class="card tile insight-card indigo">
+<div class="card-head">
+<span class="card-icon-wrap"><i data-lucide="layers" class="card-icon" aria-hidden="true"></i></span>
+<div><p class="card-tag">Architecture</p><h3>Inner architecture & transformation systems</h3></div>
+</div>
+<p>Designing a stable inner foundation using ancient wisdom and modern logic.</p>
+</div>
  </div>
  </section>
 
@@ -217,10 +270,10 @@
 
  <footer class="site-footer">
  <div class="container">
- <div class="footer-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:48px; padding:48px 0 32px">
+<div class="footer-grid" style="padding:48px 0 32px">
  
  <!-- Left Block: Brand -->
- <div>
+<div class="footer-brand">
  <div style="font-size:1.1rem; font-weight:600; margin-bottom:8px">Sarvesh Mishra</div>
  <div class="fine" style="margin-bottom:4px">Life Decoder | Inner Alchemy Architect</div>
  <div class="fine">Entrepreneur • Media Professional • Conscious Living Researcher</div>

@@ -9,6 +9,43 @@
     if (href === path) a.setAttribute("aria-current", "page");
   });
 
+  // Section title icons
+  const sectionTitleIconMap = {
+    coreIdea: "sparkles",
+    workOn: "compass",
+    initiatives: "layers",
+    mediaReach: "radio",
+    softCta: "heart-handshake",
+    whatIs: "book-open",
+    fragmented: "split",
+    alchemy: "flame",
+    architecture: "drafting-compass",
+    areas: "target",
+    manifesto: "scroll-text",
+    next: "arrow-right-circle",
+    csl: "leaf",
+    rd: "messages-square",
+    mp: "mic",
+    fv: "telescope",
+    opening: "eye",
+    problem: "alert-triangle",
+    shift: "refresh-cw",
+    howItWorks: "cog",
+    whatItIsNot: "shield-x",
+    whatItLeadsTo: "route",
+    innerAlchemy: "flame-kindling",
+    innerArchitecture: "building-2",
+  };
+  Object.entries(sectionTitleIconMap).forEach(([id, icon]) => {
+    const title = document.getElementById(id);
+    if (!title || title.querySelector(".title-icon-wrap")) return;
+    const iconWrap = document.createElement("span");
+    iconWrap.className = "title-icon-wrap";
+    iconWrap.setAttribute("aria-hidden", "true");
+    iconWrap.innerHTML = `<i data-lucide="${icon}" class="title-icon"></i>`;
+    title.prepend(iconWrap);
+  });
+
   // Mobile drawer
   const drawer = $("#mobileDrawer");
   const toggle = $("#mobileToggle");
@@ -299,6 +336,14 @@
 
     loadCombined();
     window.setInterval(loadCombined, 300000);
+  }
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  } else {
+    window.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide) window.lucide.createIcons();
+    });
   }
 })();
 

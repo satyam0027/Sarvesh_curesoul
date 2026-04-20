@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+ <head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Webinars — Sarvesh Mishra</title>
+ <meta name="description" content="Live webinars and deep sessions by Sarvesh Mishra on inner transformation, conscious living, and life decoding." />
+ <link rel="canonical" href="https://thesarveshmishra.com/webinars.html" />
+ <meta name="author" content="Sarvesh Mishra - Life Decoder | Inner Alchemy Architect" />
+ <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+ <link rel="stylesheet" href="assets/css/styles.css" />
+ <script defer src="assets/js/main.js"></script>
+ <script defer src="https://unpkg.com/lucide@latest"></script>
+ <style>
+  .webinars-page{ color: var(--ink); }
+  .webinars-page .hero{
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid rgba(139,107,66,.18);
+    padding: 64px 30px 42px;
+    overflow: hidden;
+    background:
+      radial-gradient(700px 260px at 10% 0%, rgba(212,179,122,.26), transparent 55%),
+      radial-gradient(700px 260px at 100% 10%, rgba(17,58,53,.14), transparent 50%),
+      linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.72));
+  }
+  .hero-grain{
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(17,58,53,.16) 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: .12;
+    pointer-events: none;
+  }
+  .particle{
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    filter: blur(26px);
+    opacity: .22;
+    animation: drift 14s ease-in-out infinite;
+  }
+  .particle.one{ background: rgba(201,168,76,.38); top: -45px; left: -25px; }
+  .particle.two{ background: rgba(129,140,248,.32); right: -30px; top: 40px; animation-delay: -5s; }
+  .particle.three{ background: rgba(45,212,191,.30); bottom: -70px; left: 35%; animation-delay: -2.5s; }
+  @keyframes drift{
+    0%,100%{ transform: translateY(0) translateX(0);}
+    50%{ transform: translateY(-14px) translateX(8px);}
+  }
+  .webinars-page h1{ color: var(--ink); }
+  .webinars-page .subtitle{ color: var(--muted); max-width: 75ch; }
+  .webinars-page .section-title h2,
+  .webinars-page .section-title p{ color: var(--ink); }
+  .webinars-page .section-title p{ color: var(--muted); }
+
+  .webinar-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .webinar-card{
+    position: relative;
+    border-radius: 18px;
+    border: 1px solid rgba(139,107,66,.2);
+    background: linear-gradient(145deg, rgba(255,255,255,.78), rgba(255,255,255,.56));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 14px 30px rgba(11,15,20,.12);
+    padding: 18px;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .webinar-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(201,168,76,.58);
+    box-shadow: 0 18px 40px rgba(11,15,20,.16);
+  }
+  .webinar-card h3{
+    margin: 0 0 8px;
+    color: var(--ink);
+    font-size: 1.05rem;
+    font-weight: 650;
+  }
+  .webinar-card p{
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: .9rem;
+  }
+  .meta-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 12px;
+  }
+  .meta-chip{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(17,58,53,.15);
+    background: rgba(255,255,255,.62);
+    font-size: .78rem;
+    color: var(--ink);
+  }
+  .host-row{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: .82rem;
+  }
+  .host-row img{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,.5);
+    object-fit: cover;
+  }
+  .price-tag{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: .66rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 5px 8px;
+    font-weight: 700;
+  }
+  .price-tag.free{ background: rgba(45,212,191,.16); color: #0f5d52; border: 1px solid rgba(45,212,191,.36);}
+  .price-tag.paid{ background: rgba(248,113,113,.14); color: #8a3434; border: 1px solid rgba(248,113,113,.34);}
+  .btn-webinar{
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid rgba(201,168,76,.7);
+    border-radius: 999px;
+    background: linear-gradient(180deg, #cfb061, #bf9d45);
+    color: #16120b;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn-webinar:hover{ filter: brightness(1.05); }
+
+  .recording-thumb{
+    height: 170px;
+    border-radius: 12px;
+    border: 1px solid rgba(17,58,53,.16);
+    margin: 0 0 12px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.06), rgba(17,58,53,.18)),
+      radial-gradient(560px 200px at 0 0, rgba(201,168,76,.24), transparent 58%),
+      radial-gradient(500px 200px at 100% 0, rgba(129,140,248,.18), transparent 58%),
+      #d9e0ea;
+    display: grid;
+    place-items: center;
+    color: #1b2d36;
+    font-size: .78rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .lock-overlay{
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.74);
+    border: 1px solid rgba(201,168,76,.45);
+    display: grid;
+    place-items: center;
+    color: #8b6b42;
+  }
+  .newsletter-strip{
+    border-radius: 18px;
+    border: 1px solid rgba(139,107,66,.2);
+    background: linear-gradient(145deg, rgba(255,255,255,.78), rgba(248,246,241,.86));
+    padding: 24px;
+  }
+  .newsletter-form{
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .newsletter-form input{
+    flex: 1 1 250px;
+    min-width: 220px;
+    border-radius: 12px;
+    border: 1px solid rgba(17,58,53,.16);
+    background: rgba(255,255,255,.75);
+    color: var(--ink);
+    padding: 10px 12px;
+  }
+  .newsletter-form button{
+    border-radius: 12px;
+    border: 1px solid rgba(201,168,76,.7);
+    background: #c9a84c;
+    color: #15110a;
+    font-weight: 700;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+  .newsletter-note{
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: .8rem;
+  }
+
+  .webinar-modal{
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    display: none;
+  }
+  .webinar-modal.open{ display: block; }
+  .modal-backdrop{
+    position: absolute;
+    inset: 0;
+    background: rgba(11,15,20,.45);
+  }
+  .modal-card{
+    position: relative;
+    max-width: 520px;
+    margin: 8vh auto;
+    border-radius: 18px;
+    border: 1px solid rgba(139,107,66,.24);
+    background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(247,244,236,.96));
+    color: var(--ink);
+    box-shadow: 0 24px 60px rgba(11,15,20,.25);
+    padding: 18px;
+  }
+  .modal-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .modal-head h3{ margin: 0; font-size: 1.05rem; }
+  .close-modal{
+    border: 1px solid rgba(17,58,53,.16);
+    background: rgba(255,255,255,.74);
+    color: var(--ink);
+    border-radius: 999px;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+  }
+  .modal-form{
+    display: grid;
+    gap: 10px;
+  }
+  .modal-form label{
+    font-size: .82rem;
+    color: var(--muted);
+  }
+  .modal-form input{
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(17,58,53,.18);
+    background: rgba(255,255,255,.82);
+    color: var(--ink);
+    padding: 10px 12px;
+  }
+  .modal-form button{
+    margin-top: 4px;
+    border: 1px solid rgba(201,168,76,.8);
+    background: #c9a84c;
+    color: #171309;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+  }
+  .form-success{
+    display: none;
+    margin-top: 8px;
+    font-size: .86rem;
+    color: #a7f5de;
+  }
+  .form-success.show{ display: block; }
+
+  .reveal{
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .45s ease, transform .45s ease;
+  }
+  .reveal.in{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 900px){
+    .webinar-grid{ grid-template-columns: 1fr; }
+    .webinars-page .hero{ padding: 52px 20px 30px; }
+  }
+ </style>
+ </head>
+ <body class="webinars-page">
+ <a class="skip-link" href="#content">Skip to content</a>
+
+ <header class="site-header">
+ <div class="container">
+ <nav class="nav" aria-label="Primary">
+ <a class="brand" href="index.html">
+ <span class="name">Sarvesh Mishra</span>
+ <span class="tag">Life Decoder | Inner Alchemy Architect</span>
+ </a>
+ <div class="nav-links" role="navigation" aria-label="Main links">
+ <a data-nav href="index.html">Home</a>
+ <a data-nav href="about.html">About</a>
+ <a data-nav href="life-decoder.html">Life Decoder</a>
+ <a data-nav href="philosophy.html">Philosophy</a>
+ <a data-nav href="work.html">Work</a>
+ <a data-nav href="writings.html">Writings</a>
+ <a data-nav href="books.html">Books</a>
+ <a data-nav href="media.html">Media</a>
+ <a data-nav href="speaking.html">Speaking</a>
+ <a data-nav href="webinars.html">Webinars</a>
+ <a data-nav href="contact.html">Contact</a>
+ </div>
+ <div class="nav-cta">
+ <a class="btn primary" href="#upcomingWebinars">Reserve Seat</a>
+ <button id="mobileToggle" class="icon-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+ <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
+ </button>
+ </div>
+ </nav>
+ <div id="mobileDrawer" class="mobile-drawer" aria-label="Mobile navigation">
+ <div class="drawer-inner">
+ <a data-nav href="index.html">Home</a>
+ <a data-nav href="about.html">About</a>
+ <a data-nav href="life-decoder.html">Life Decoder</a>
+ <a data-nav href="philosophy.html">Life Decoder Philosophy</a>
+ <a data-nav href="work.html">Work & Initiatives</a>
+ <a data-nav href="writings.html">Blog & Writings</a>
+ <a data-nav href="books.html">Books & Recommendations</a>
+ <a data-nav href="media.html">Media Gallery</a>
+ <a data-nav href="speaking.html">Speaking & Dialogues</a>
+ <a data-nav href="webinars.html">Webinars</a>
+ <a data-nav href="contact.html">Contact</a>
+ </div>
+ </div>
+ </div>
+ </header>
+
+ <main id="content" class="page">
+ <div class="container">
+ <header class="hero reveal">
+ <div class="hero-grain" aria-hidden="true"></div>
+ <span class="particle one" aria-hidden="true"></span>
+ <span class="particle two" aria-hidden="true"></span>
+ <span class="particle three" aria-hidden="true"></span>
+ <p class="kicker">Live learning space</p>
+ <h1>Live Webinars & Deep Sessions</h1>
+ <p class="subtitle">Real-time dialogues on inner transformation, conscious living, and life decoding - join live or access recordings.</p>
+ </header>
+
+ <section id="upcomingWebinars" aria-labelledby="upcomingTitle" class="reveal">
+ <div class="section-title">
+ <h2 id="upcomingTitle">Upcoming Webinars</h2>
+ <p>Reserve your seat for the next live session.</p>
+ </div>
+ <div class="webinar-grid">
+ <article class="webinar-card">
+ <span class="price-tag free">Free</span>
+ <h3>Decoding Your Identity</h3>
+ <p>Understand the hidden patterns behind identity, choices, and emotional reactions in daily life.</p>
+ <div class="meta-row">
+ <span class="meta-chip"><i data-lucide="calendar-days" aria-hidden="true"></i> June 15, 2025</span>
+ <span class="meta-chip"><i data-lucide="clock-4" aria-hidden="true"></i> 7PM IST</span>
+ <span class="meta-chip"><i data-lucide="timer" aria-hidden="true"></i> 90 min</span>
+ </div>
+ <div class="host-row"><img src="images/sarvesh-mishra.jpg" alt="Sarvesh Mishra" />Host: Sarvesh Mishra</div>
+ <button class="btn-webinar reserve-btn" type="button" data-webinar="Decoding Your Identity" data-access="free">Reserve Your Seat</button>
+ </article>
+
+ <article class="webinar-card">
+ <span class="price-tag paid">Paid ₹499</span>
+ <h3>Inner Alchemy Masterclass</h3>
+ <p>A practical session on converting pressure into clarity through awareness, structure, and lived understanding.</p>
+ <div class="meta-row">
+ <span class="meta-chip"><i data-lucide="calendar-days" aria-hidden="true"></i> July 3, 2025</span>
+ <span class="meta-chip"><i data-lucide="clock-4" aria-hidden="true"></i> 6PM IST</span>
+ <span class="meta-chip"><i data-lucide="timer" aria-hidden="true"></i> 90 min</span>
+ </div>
+ <div class="host-row"><img src="images/sarvesh-mishra.jpg" alt="Sarvesh Mishra" />Host: Sarvesh Mishra</div>
+ <a class="btn-webinar" href="/payment.html">Reserve Your Seat</a>
+ </article>
+
+ <article class="webinar-card">
+ <span class="price-tag paid">Paid ₹799</span>
+ <h3>Conscious Leadership Live</h3>
+ <p>For founders and decision makers navigating responsibility, fatigue, and the need for deeper inner alignment.</p>
+ <div class="meta-row">
+ <span class="meta-chip"><i data-lucide="calendar-days" aria-hidden="true"></i> July 20, 2025</span>
+ <span class="meta-chip"><i data-lucide="clock-4" aria-hidden="true"></i> 5PM IST</span>
+ <span class="meta-chip"><i data-lucide="timer" aria-hidden="true"></i> 90 min</span>
+ </div>
+ <div class="host-row"><img src="images/sarvesh-mishra.jpg" alt="Sarvesh Mishra" />Host: Sarvesh Mishra</div>
+ <a class="btn-webinar" href="/payment.html">Reserve Your Seat</a>
+ </article>
+ </div>
+ </section>
+
+ <section aria-labelledby="recordingsTitle" class="reveal">
+ <div class="section-title">
+ <h2 id="recordingsTitle">On-Demand Recordings</h2>
+ <p>Access previous deep sessions at your own pace.</p>
+ </div>
+ <div class="webinar-grid">
+ <article class="webinar-card">
+ <div class="recording-thumb">Session Replay</div>
+ <h3>From Overthinking to Clarity</h3>
+ <p>Replay session on attention loops, emotional fatigue, and regaining inner stability.</p>
+ <a class="btn-webinar" href="https://www.youtube.com/@SarveshMishra" target="_blank" rel="noopener noreferrer">Watch Now</a>
+ </article>
+ <article class="webinar-card">
+ <span class="lock-overlay"><i data-lucide="lock" aria-hidden="true"></i></span>
+ <div class="recording-thumb">Premium Recording</div>
+ <h3>Identity, Stress & Meaning Intensive</h3>
+ <p>In-depth framework session with practical reflection tools for leaders and seekers.</p>
+ <a class="btn-webinar" href="/payment.html">Buy Access ₹199</a>
+ </article>
+ <article class="webinar-card">
+ <span class="lock-overlay"><i data-lucide="lock" aria-hidden="true"></i></span>
+ <div class="recording-thumb">Premium Recording</div>
+ <h3>Modern Spirituality Without Escape</h3>
+ <p>A grounded exploration of awareness, discipline, and staying engaged with modern life.</p>
+ <a class="btn-webinar" href="/payment.html">Buy Access ₹199</a>
+ </article>
+ </div>
+ </section>
+
+ <section class="reveal" aria-labelledby="newsletterTitle">
+ <div class="newsletter-strip">
+ <div class="section-title" style="margin-bottom:0">
+ <h2 id="newsletterTitle">Never miss a live session</h2>
+ </div>
+ <form class="newsletter-form" aria-label="Webinar newsletter">
+ <input type="email" placeholder="Enter your email" required />
+ <button type="submit">Notify Me</button>
+ </form>
+ <p class="newsletter-note">No spam. Just depth.</p>
+ </div>
+ </section>
+ </div>
+ </main>
+
+ <div id="freeWebinarModal" class="webinar-modal" aria-hidden="true">
+ <div class="modal-backdrop" data-close-modal></div>
+ <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal-head">
+ <h3 id="modalTitle">Reserve Free Webinar Access</h3>
+ <button class="close-modal" type="button" data-close-modal aria-label="Close registration form">×</button>
+ </div>
+ <form id="freeWebinarForm" class="modal-form">
+ <label>Name
+ <input type="text" name="name" required />
+ </label>
+ <label>Email
+ <input type="email" name="email" required />
+ </label>
+ <label>WhatsApp number (optional)
+ <input type="tel" name="whatsapp" />
+ </label>
+ <button type="submit">Get Free Access Link</button>
+ </form>
+ <p id="freeWebinarSuccess" class="form-success">Your seat is reserved. Check your email for the Zoom/Meet link.</p>
+ </div>
+ </div>
+
+ <footer class="site-footer">
+ <div class="container">
+<div class="footer-grid" style="padding:48px 0 32px">
+<div class="footer-brand">
+ <div style="font-size:1.1rem; font-weight:600; margin-bottom:8px">Sarvesh Mishra</div>
+ <div class="fine" style="margin-bottom:4px">Life Decoder | Inner Alchemy Architect</div>
+<div class="fine">Entrepreneur • Media Professional • Conscious Living Researcher</div>
+<div class="fine">Founder: <a href="https://redhotmediahouse.com/" target="_blank" rel="noopener noreferrer">Red Hot Media House</a> | <a href="https://curesoullife.org/index.html" target="_blank" rel="noopener noreferrer">CureSoulLife</a></div>
+ </div>
+ <div>
+ <div class="fine" style="font-size:0.95rem; font-weight:600; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.05em">Navigate</div>
+ <nav style="display:flex; flex-direction:column; gap:8px">
+ <a class="fine" href="index.html">Home</a>
+ <a class="fine" href="about.html">About</a>
+ <a class="fine" href="life-decoder.html">Life Decoder</a>
+ <a class="fine" href="philosophy.html">Philosophy</a>
+ <a class="fine" href="work.html">Work</a>
+ <a class="fine" href="writings.html">Writings</a>
+ <a class="fine" href="speaking.html">Speaking</a>
+ <a class="fine" href="webinars.html">Webinars</a>
+ <a class="fine" href="media.html">Media</a>
+ <a class="fine" href="contact.html">Contact</a>
+ </nav>
+ </div>
+ <div>
+ <div class="fine" style="font-size:0.95rem; font-weight:600; margin-bottom:12px; text-transform:uppercase; letter-spacing:0.05em">Connect</div>
+ <nav style="display:flex; flex-direction:column; gap:8px">
+ <a class="fine" href="https://www.youtube.com/@SarveshMishra" target="_blank" rel="noopener noreferrer">YouTube</a>
+ <a class="fine" href="https://www.linkedin.com/in/sarveshmishra" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+ <a class="fine" href="https://www.instagram.com/sarveshmishra" target="_blank" rel="noopener noreferrer">Instagram</a>
+ <a class="fine" href="https://medium.com/@sarveshmishra" target="_blank" rel="noopener noreferrer">Medium</a>
+ </nav>
+ </div>
+ </div>
+ <div class="divider" style="margin:24px 0; border-top:1px solid var(--border, #e0e0e0)"></div>
+ <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-bottom:24px">
+ <div class="fine">© 2025 Sarvesh Mishra. All rights reserved.</div>
+ <div class="fine">thesarveshmishra.com</div>
+ </div>
+ </div>
+ </footer>
+
+ <script>
+ (function () {
+   const modal = document.getElementById("freeWebinarModal");
+   const form = document.getElementById("freeWebinarForm");
+   const success = document.getElementById("freeWebinarSuccess");
+   const reserveButtons = Array.from(document.querySelectorAll(".reserve-btn[data-access='free']"));
+   const closeTriggers = Array.from(document.querySelectorAll("[data-close-modal]"));
+   let lastFocused = null;
+
+   const getFocusable = () => {
+     if (!modal) return [];
+     return Array.from(modal.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"))
+       .filter((el) => !el.hasAttribute("disabled"));
+   };
+
+   const openModal = (title) => {
+     if (!modal) return;
+     lastFocused = document.activeElement;
+     modal.classList.add("open");
+     modal.setAttribute("aria-hidden", "false");
+     const heading = document.getElementById("modalTitle");
+     if (heading && title) heading.textContent = `Reserve Free Webinar Access - ${title}`;
+     const focusable = getFocusable();
+     if (focusable.length) focusable[0].focus();
+   };
+
+   const closeModal = () => {
+     if (!modal) return;
+     modal.classList.remove("open");
+     modal.setAttribute("aria-hidden", "true");
+     if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+   };
+
+   reserveButtons.forEach((btn) => btn.addEventListener("click", () => openModal(btn.dataset.webinar || "")));
+   closeTriggers.forEach((el) => el.addEventListener("click", closeModal));
+
+   document.addEventListener("keydown", (e) => {
+     if (!modal || !modal.classList.contains("open")) return;
+     if (e.key === "Escape") {
+       e.preventDefault();
+       closeModal();
+       return;
+     }
+     if (e.key === "Tab") {
+       const focusable = getFocusable();
+       if (!focusable.length) return;
+       const first = focusable[0];
+       const last = focusable[focusable.length - 1];
+       if (e.shiftKey && document.activeElement === first) {
+         e.preventDefault();
+         last.focus();
+       } else if (!e.shiftKey && document.activeElement === last) {
+         e.preventDefault();
+         first.focus();
+       }
+     }
+   });
+
+   if (form && success) {
+     form.addEventListener("submit", (e) => {
+       e.preventDefault();
+       success.classList.add("show");
+       form.reset();
+     });
+   }
+
+   const revealEls = Array.from(document.querySelectorAll(".reveal"));
+   if ("IntersectionObserver" in window && revealEls.length) {
+     const io = new IntersectionObserver((entries, observer) => {
+       entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+           entry.target.classList.add("in");
+           observer.unobserve(entry.target);
+         }
+       });
+     }, { threshold: 0.2 });
+     revealEls.forEach((el) => io.observe(el));
+   } else {
+     revealEls.forEach((el) => el.classList.add("in"));
+   }
+
+   if (window.lucide) window.lucide.createIcons();
+ })();
+ </script>
+ </body>
+</html>
