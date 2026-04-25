@@ -1,4 +1,5 @@
 /* Sarvesh Mishra — Personal Website (Global Authority) */
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap");
 
 :root{
   --bg: #f6f4ef;
@@ -24,6 +25,7 @@
 
   --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-devanagari: "Tiro Devanagari Hindi", var(--font-serif);
 }
 
 *{box-sizing:border-box}
@@ -242,6 +244,82 @@ h1{
   gap: 10px;
   flex-wrap: wrap;
   align-items:center;
+}
+.hero-quote-carousel{
+  margin-top: 16px;
+  padding: 18px 18px 14px;
+  min-height: 170px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(247,244,236,.82));
+  border: 1px solid rgba(11,15,20,.10);
+}
+.hero-quote-track{
+  position: relative;
+  min-height: 108px;
+}
+.hero-quote-slide{
+  margin: 0;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .35s ease, transform .35s ease;
+  pointer-events: none;
+}
+.hero-quote-slide.is-active{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.hero-quote-slide p{
+  margin: 0;
+  font-family: var(--font-devanagari);
+  font-size: clamp(20px, 2.2vw, 27px);
+  line-height: 1.35;
+  color: #132229;
+  letter-spacing: -.01em;
+}
+.hero-quote-slide cite{
+  font-family: var(--font-devanagari);
+  display: inline-block;
+  margin-top: 10px;
+  font-style: normal;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.hero-quote-controls{
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero-quote-btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.9);
+  color: var(--ink);
+  cursor: pointer;
+}
+.hero-quote-dots{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.hero-quote-dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(17,58,53,.25);
+  cursor: pointer;
+}
+.hero-quote-dot.is-active{
+  background: #113a35;
+  width: 20px;
 }
 .btn{
   display:inline-flex;

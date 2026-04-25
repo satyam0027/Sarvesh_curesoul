@@ -61,6 +61,69 @@
     $$("#mobileDrawer a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
   }
 
+  // Home hero Hindi quote carousel
+  const quoteTrack = $("[data-quote-track]");
+  if (quoteTrack) {
+    const slides = $$("[data-quote-slide]", quoteTrack);
+    const dotsWrap = $("[data-quote-dots]");
+    const prevBtn = $("[data-quote-prev]");
+    const nextBtn = $("[data-quote-next]");
+    let current = slides.findIndex((s) => s.classList.contains("is-active"));
+    if (current < 0) current = 0;
+
+    const render = () => {
+      slides.forEach((slide, i) => slide.classList.toggle("is-active", i === current));
+      if (dotsWrap) {
+        $$("[data-quote-dot]", dotsWrap).forEach((dot, i) => {
+          dot.classList.toggle("is-active", i === current);
+          dot.setAttribute("aria-pressed", i === current ? "true" : "false");
+        });
+      }
+    };
+
+    if (dotsWrap) {
+      dotsWrap.innerHTML = "";
+      slides.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "hero-quote-dot";
+        b.setAttribute("data-quote-dot", "");
+        b.setAttribute("aria-label", `Go to quote ${i + 1}`);
+        b.addEventListener("click", () => {
+          current = i;
+          render();
+          restart();
+        });
+        dotsWrap.appendChild(b);
+      });
+    }
+
+    prevBtn?.addEventListener("click", () => {
+      current = (current - 1 + slides.length) % slides.length;
+      render();
+      restart();
+    });
+    nextBtn?.addEventListener("click", () => {
+      current = (current + 1) % slides.length;
+      render();
+      restart();
+    });
+
+    let timer = null;
+    const start = () => {
+      timer = window.setInterval(() => {
+        current = (current + 1) % slides.length;
+        render();
+      }, 4500);
+    };
+    const restart = () => {
+      if (timer) window.clearInterval(timer);
+      start();
+    };
+    render();
+    start();
+  }
+
   // Writings filter
   const filterWrap = $("#filters");
   if (filterWrap) {
