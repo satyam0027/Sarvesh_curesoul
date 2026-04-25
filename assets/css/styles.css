@@ -1006,6 +1006,185 @@ section{
   border:0;
 }
 
+/* Podcast episode cards — blog channel hubs */
+.podcast-episode-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+a.podcast-ep-card{
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  color: inherit;
+  text-decoration: none;
+}
+a.podcast-ep-card:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: rgba(139,107,66,.35);
+  color: inherit;
+}
+a.podcast-ep-card:focus-visible{
+  outline-offset: 4px;
+}
+.podcast-ep-card__media{
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0b0f14;
+}
+.podcast-ep-card__media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.podcast-ep-card__badge{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(11,15,20,.88);
+  color: #faf9f6;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 999px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.podcast-ep-card__body{
+  padding: 14px 16px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.podcast-ep-card__body h3{
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.38;
+  color: var(--ink);
+}
+.podcast-ep-card__guest{
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.podcast-ep-card__cta{
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* Inner Wealth — 7-day series day grid */
+.inner-wealth-day-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+a.series-day-card,
+div.series-day-card{
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  color: inherit;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, opacity .2s ease;
+}
+a.series-day-card:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: rgba(17,58,53,.35);
+  color: inherit;
+}
+div.series-day-card.is-soon{
+  opacity: 0.72;
+  cursor: default;
+  pointer-events: none;
+}
+.series-day-card__media{
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #0b0f14;
+}
+.series-day-card__media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.series-day-card__badge{
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(17,58,53,.9);
+  color: #faf9f6;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 6px;
+  letter-spacing: .04em;
+}
+.series-day-card__badge--soon{
+  background: rgba(11,15,20,.75);
+}
+.series-day-card__body{
+  padding: 10px 12px 12px;
+  flex: 1;
+}
+.series-day-card__body h3{
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.series-day-card__meta{
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Blog channel logo badges */
+.channel-logo{
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.35);
+  box-shadow: 0 8px 18px rgba(11,15,20,.18);
+}
+.channel-logo.tsms{ background: linear-gradient(135deg, #113a35, #8b6b42); }
+.channel-logo.tiw{ background: linear-gradient(135deg, #312e81, #0ea5e9); }
+.channel-logo.tus{ background: linear-gradient(135deg, #7f1d1d, #f59e0b); }
+.channel-logo-img{
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(11,15,20,.12);
+  box-shadow: 0 8px 18px rgba(11,15,20,.14);
+  background: #fff;
+}
+
 /* Responsive */
 @media (max-width: 920px){
   .hero-grid{grid-template-columns: 1fr; }

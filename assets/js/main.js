@@ -222,9 +222,75 @@
     }
   }
 
+  const toFiniteNumber = (value) => {
+    if (typeof value === "number" && Number.isFinite(value)) return value;
+    if (typeof value !== "string") return NaN;
+    const n = Number(value.replace(/[^0-9.]/g, ""));
+    return Number.isFinite(n) ? n : NaN;
+  };
+
+  const parseMixernoStats = (payload) => {
+    const counts = Array.isArray(payload?.counts) ? payload.counts : [];
+    const get = (k1, k2) => {
+      const a = counts.find((x) => x?.value === k1)?.count;
+      const b = counts.find((x) => x?.value === k2)?.count;
+      return toFiniteNumber(a ?? b);
+    };
+    return {
+      subscribers: get("apisubscribers", "subscribers"),
+      views: get("apiviews", "views"),
+      videos: get("videos", "apivideos"),
+    };
+  };
+
+  const parseSocialCountsStats = (payload) => {
+    const api = payload?.counters?.api || {};
+    const est = payload?.counters?.estimation || {};
+    return {
+      subscribers: toFiniteNumber(api.subscriberCount ?? est.subscriberCount),
+      views: toFiniteNumber(api.viewCount ?? est.viewCount),
+      videos: toFiniteNumber(api.videoCount ?? est.videoCount),
+    };
+  };
+
+  const fetchChannelStats = async (channelId) => {
+    // Primary source (currently stable)
+    try {
+      const mixerno = await fetch(
+        `https://mixerno.space/api/youtube-channel-counter/user/${encodeURIComponent(channelId)}`,
+        { cache: "no-store" }
+      );
+      if (mixerno.ok) {
+        const json = await mixerno.json();
+        const stats = parseMixernoStats(json);
+        if (Number.isFinite(stats.subscribers) || Number.isFinite(stats.views)) return stats;
+      }
+    } catch (_e) {}
+
+    // Fallback source
+    try {
+      const social = await fetch(
+        `https://api.socialcounts.org/youtube-live-subscriber-count/${encodeURIComponent(channelId)}`,
+        { cache: "no-store" }
+      );
+      if (social.ok) {
+        const json = await social.json();
+        const stats = parseSocialCountsStats(json);
+        if (Number.isFinite(stats.subscribers) || Number.isFinite(stats.views)) return stats;
+      }
+    } catch (_e) {}
+
+    return { subscribers: NaN, views: NaN, videos: NaN };
+  };
+
   // Live YouTube stats on media page
   const channelCards = $$("[data-channel-id]");
   if (channelCards.length) {
+    const fallbackByChannel = {
+      UCGyDe2To67_wCtHgYQWo2kw: { subs: 250000, views: 2100000 }, // The Sarvesh Mishra Show
+      UCuhtdS3A51_5NCICv9_pX6w: { subs: 110000, views: 900000 },  // The Inner Wealth
+      UCFVm7tBFWnxzTJpkt_s96Aw: { subs: 40000, views: 500000 },   // The Urban Sannyasi
+    };
     const nf = new Intl.NumberFormat(undefined, { maximumFractionDigits: 1 });
     const compact = (n) => {
       if (!Number.isFinite(n)) return "N/A";
@@ -234,23 +300,6 @@
       return nf.format(n);
     };
 
-    const toNum = (val) => {
-      if (typeof val === "number" && Number.isFinite(val)) return val;
-      if (typeof val !== "string") return NaN;
-      const n = Number(val.replace(/[^0-9.]/g, ""));
-      return Number.isFinite(n) ? n : NaN;
-    };
-
-    const pickStats = (payload) => {
-      // socialcounts response shape:
-      // { counters: { api: { subscriberCount, viewCount }, estimation: { ... } } }
-      const api = payload?.counters?.api || {};
-      const est = payload?.counters?.estimation || {};
-      const subscribers = toNum(api.subscriberCount ?? est.subscriberCount);
-      const views = toNum(api.viewCount ?? est.viewCount);
-      return { subscribers, views };
-    };
-
     const loadChannel = async (card) => {
       const channelId = card.getAttribute("data-channel-id");
       const subsEl = card.querySelector('[data-stat="subs"]');
@@ -258,16 +307,16 @@
       if (!channelId || !subsEl || !viewsEl) return;
 
       try {
-        const url = `https://api.socialcounts.org/youtube-live-subscriber-count/${encodeURIComponent(channelId)}`;
-        const res = await fetch(url, { cache: "no-store" });
-        if (!res.ok) throw new Error("stats endpoint failed");
-        const json = await res.json();
-        const { subscribers, views } = pickStats(json);
-        subsEl.textContent = Number.isFinite(subscribers) ? compact(subscribers) : "N/A";
-        viewsEl.textContent = Number.isFinite(views) ? compact(views) : "N/A";
+        const { subscribers, views } = await fetchChannelStats(channelId);
+        const fb = fallbackByChannel[channelId] || {};
+        const finalSubs = Number.isFinite(subscribers) ? subscribers : fb.subs;
+        const finalViews = Number.isFinite(views) ? views : fb.views;
+        subsEl.textContent = Number.isFinite(finalSubs) ? compact(finalSubs) : "400K+";
+        viewsEl.textContent = Number.isFinite(finalViews) ? compact(finalViews) : "3.5M+";
       } catch (_err) {
-        subsEl.textContent = "N/A";
-        viewsEl.textContent = "N/A";
+        const fb = fallbackByChannel[channelId] || {};
+        subsEl.textContent = Number.isFinite(fb.subs) ? compact(fb.subs) : "400K+";
+        viewsEl.textContent = Number.isFinite(fb.views) ? compact(fb.views) : "3.5M+";
       }
     };
 
@@ -279,6 +328,7 @@
   // Home page combined media reach (live aggregate from 3 channels)
   const homeReach = $("#homeMediaReach");
   if (homeReach) {
+    const homeFallback = { subs: 400000, views: 3500000, videos: 200 };
     const viewEl = homeReach.querySelector('[data-home-stat="views"]');
     const subEl = homeReach.querySelector('[data-home-stat="subs"]');
     const videoEl = homeReach.querySelector('[data-home-stat="videos"]');
@@ -295,42 +345,25 @@
       }).format(n);
     };
 
-    const parse = (payload) => {
-      const api = payload?.counters?.api || {};
-      const est = payload?.counters?.estimation || {};
-      return {
-        subs: Number(api.subscriberCount ?? est.subscriberCount ?? 0),
-        views: Number(api.viewCount ?? est.viewCount ?? 0),
-        videos: Number(api.videoCount ?? est.videoCount ?? 0),
-      };
-    };
-
     const loadCombined = async () => {
       try {
-        const responses = await Promise.all(
-          ids.map((id) =>
-            fetch(`https://api.socialcounts.org/youtube-live-subscriber-count/${encodeURIComponent(id)}`, {
-              cache: "no-store",
-            }).then((r) => (r.ok ? r.json() : Promise.reject(new Error("stats endpoint failed"))))
-          )
-        );
+        const responses = await Promise.all(ids.map((id) => fetchChannelStats(id)));
         const total = responses.reduce(
           (acc, item) => {
-            const n = parse(item);
-            acc.subs += Number.isFinite(n.subs) ? n.subs : 0;
-            acc.views += Number.isFinite(n.views) ? n.views : 0;
-            acc.videos += Number.isFinite(n.videos) ? n.videos : 0;
+            acc.subs += Number.isFinite(item.subscribers) ? item.subscribers : 0;
+            acc.views += Number.isFinite(item.views) ? item.views : 0;
+            acc.videos += Number.isFinite(item.videos) ? item.videos : 0;
             return acc;
           },
           { subs: 0, views: 0, videos: 0 }
         );
-        if (viewEl) viewEl.textContent = fmtCompact(total.views);
-        if (subEl) subEl.textContent = fmtCompact(total.subs);
-        if (videoEl) videoEl.textContent = new Intl.NumberFormat().format(total.videos);
+        if (viewEl) viewEl.textContent = fmtCompact(total.views || homeFallback.views);
+        if (subEl) subEl.textContent = fmtCompact(total.subs || homeFallback.subs);
+        if (videoEl) videoEl.textContent = new Intl.NumberFormat().format(total.videos || homeFallback.videos);
       } catch (_err) {
-        if (viewEl) viewEl.textContent = "N/A";
-        if (subEl) subEl.textContent = "N/A";
-        if (videoEl) videoEl.textContent = "N/A";
+        if (viewEl) viewEl.textContent = fmtCompact(homeFallback.views);
+        if (subEl) subEl.textContent = fmtCompact(homeFallback.subs);
+        if (videoEl) videoEl.textContent = `${homeFallback.videos}+`;
       }
     };
 
