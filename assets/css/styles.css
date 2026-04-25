@@ -976,6 +976,21 @@ section{
   font-size: 13.5px;
 }
 
+/* Media page gallery rows */
+.gallery-scroll-row{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 32%);
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
+  scroll-snap-type: x proximity;
+}
+.gallery-scroll-row > img{
+  scroll-snap-align: start;
+}
+
 /* Forms */
 .form{
   display:grid;
@@ -1261,6 +1276,17 @@ div.series-day-card.is-soon{
   border: 1px solid rgba(11,15,20,.12);
   box-shadow: 0 8px 18px rgba(11,15,20,.14);
   background: #fff;
+}
+.media-reach-logos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 14px;
+}
+.media-reach-logos .channel-logo-img{
+  margin-bottom: 0;
 }
 
 /* Responsive */
