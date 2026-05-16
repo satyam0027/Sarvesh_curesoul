@@ -1365,6 +1365,691 @@ div.series-day-card.is-soon{
   margin-bottom: 0;
 }
 
+/* ====================================================
+   Journey page — "Before the framework, the field"
+   ==================================================== */
+.journey-page .hero h1{
+  font-size: clamp(34px, 5.2vw, 60px);
+}
+.journey-page .kicker{
+  color: var(--accent);
+}
+
+/* Cinematic figure used across the journey page */
+.journey-figure{
+  position: relative;
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(11,15,20,.10);
+  box-shadow: 0 18px 40px rgba(11,15,20,.14);
+  aspect-ratio: 4 / 3;
+  background:
+    radial-gradient(640px 280px at 18% 10%, rgba(139,107,66,.32), transparent 60%),
+    radial-gradient(620px 280px at 90% 90%, rgba(17,58,53,.34), transparent 55%),
+    linear-gradient(160deg, #1c1410 0%, #2b1f17 45%, #0f1a18 100%);
+  isolation: isolate;
+}
+.journey-figure img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.92) contrast(1.04);
+  transition: transform .8s ease, filter .4s ease;
+  z-index: 1;
+}
+.journey-figure:hover img{
+  transform: scale(1.03);
+  filter: saturate(1) contrast(1.06);
+}
+.journey-figure img.is-missing{
+  opacity: 0;
+}
+/* Aesthetic placeholder grain when image is missing — uses inline SVG noise */
+.journey-figure::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0 2px, transparent 2px 6px),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,.06) 0 2px, transparent 2px 8px);
+  opacity: .9;
+}
+.journey-figure::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(11,15,20,0) 40%, rgba(11,15,20,.78) 100%);
+  pointer-events: none;
+}
+.journey-figure-overlay{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #faf9f6;
+  pointer-events: none;
+}
+.journey-figure-year{
+  font-family: var(--font-serif);
+  font-size: 18px;
+  letter-spacing: .06em;
+  color: #f0d9a8;
+}
+.journey-figure-label{
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.82);
+}
+
+/* Hero feature frame */
+.journey-feature-frame{
+  margin: 6px 0 26px;
+}
+.journey-figure--hero{
+  aspect-ratio: 21 / 9;
+  border-radius: 22px;
+  box-shadow: 0 30px 70px rgba(11,15,20,.20);
+}
+.journey-figure--hero .journey-figure-year{
+  font-size: 22px;
+}
+
+/* Turning-point: large image + body text */
+.journey-turning-point{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+.journey-figure--large{
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+}
+.journey-turning-point__text{
+  background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(247,244,236,.82));
+  border: 1px solid rgba(11,15,20,.10);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow-soft);
+}
+.journey-turning-point__text p{
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+.journey-turning-point__text p strong{
+  color: var(--ink);
+}
+
+/* Pull quote inside turning-point */
+.journey-pullquote{
+  margin: 18px 0;
+  padding: 16px 18px;
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(135deg, rgba(139,107,66,.10), rgba(212,179,122,.05));
+  border-radius: 10px;
+}
+.journey-pullquote p{
+  margin: 0 0 6px;
+  font-family: var(--font-devanagari);
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.5;
+  color: #132229;
+  letter-spacing: -.01em;
+}
+.journey-pullquote cite{
+  font-style: normal;
+  font-size: 12.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent2);
+}
+
+/* Prose card */
+.journey-prose{
+  padding: 22px;
+}
+.journey-prose p{
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+.journey-prose p:last-child{
+  margin-bottom: 0;
+}
+.journey-prose p strong{
+  color: var(--ink);
+}
+
+/* Vertical timeline of chapters */
+.journey-timeline{
+  position: relative;
+  display: grid;
+  gap: 32px;
+  padding: 10px 0;
+}
+.journey-timeline::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(139,107,66,0) 0%, rgba(139,107,66,.45) 12%, rgba(17,58,53,.45) 88%, rgba(17,58,53,0) 100%);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.journey-chapter{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  align-items: center;
+}
+.journey-chapter::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  border: 3px solid #faf9f6;
+  box-shadow: 0 0 0 1px rgba(139,107,66,.4), 0 8px 20px rgba(139,107,66,.35);
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+.journey-chapter.is-reversed{
+  direction: rtl;
+}
+.journey-chapter.is-reversed > *{
+  direction: ltr;
+}
+.journey-chapter__text{
+  padding: 6px 4px;
+}
+.journey-chapter__text .kicker{
+  margin-bottom: 6px;
+  font-size: 11.5px;
+  letter-spacing: .28em;
+}
+.journey-chapter__text h3{
+  font-family: var(--font-serif);
+  font-weight: 650;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.2;
+  letter-spacing: -.01em;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+.journey-chapter__text p{
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* Lessons grid sits inside grid-3; keep cards slightly taller */
+.journey-lessons .card.tile{
+  padding: 18px;
+}
+
+/* Quote band */
+.journey-quote-band{
+  margin: 30px 0;
+  padding: 36px 24px;
+  border-radius: 22px;
+  background:
+    radial-gradient(600px 240px at 20% 0%, rgba(212,179,122,.30), transparent 55%),
+    radial-gradient(600px 240px at 90% 100%, rgba(17,58,53,.28), transparent 55%),
+    linear-gradient(180deg, #0f1a18 0%, #1a2622 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 28px 60px rgba(11,15,20,.22);
+  text-align: center;
+}
+.journey-quote-band blockquote{
+  margin: 0;
+  color: #faf9f6;
+}
+.journey-quote-band blockquote p{
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.35;
+  letter-spacing: -.01em;
+  margin: 0 0 14px;
+}
+.journey-quote-band blockquote cite{
+  font-style: normal;
+  font-size: 12.5px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(240,217,168,.85);
+}
+
+/* Journey teaser — used on media.html */
+.journey-teaser{
+  position: relative;
+  margin: 24px 0;
+  padding: 28px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(11,15,20,.10);
+  background:
+    radial-gradient(700px 260px at 8% 0%, rgba(212,179,122,.30), transparent 60%),
+    radial-gradient(700px 260px at 100% 100%, rgba(17,58,53,.22), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(247,244,236,.86));
+  box-shadow: 0 22px 48px rgba(11,15,20,.12);
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 22px;
+  align-items: center;
+}
+.journey-teaser__media{
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.journey-teaser__media .journey-figure{
+  height: 100%;
+  border-radius: 16px;
+  aspect-ratio: auto;
+}
+.journey-teaser__body .kicker{
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.journey-teaser__body h3{
+  font-family: var(--font-serif);
+  font-weight: 650;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.2;
+  letter-spacing: -.01em;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+.journey-teaser__body p{
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ====================================================
+   Event grid — clickable cards that open a photo lightbox
+   ==================================================== */
+.event-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.event-card{
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(11,15,20,.10);
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(247,244,236,.86));
+  box-shadow: 0 18px 38px rgba(11,15,20,.10);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.event-card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(139,107,66,.42);
+  box-shadow: 0 24px 50px rgba(11,15,20,.16);
+}
+.event-card__open{
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+}
+.event-card__open:focus-visible{
+  outline: 3px solid rgba(240,178,90,.55);
+  outline-offset: -3px;
+  border-radius: 18px;
+}
+.event-card .journey-figure{
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(11,15,20,.08);
+  box-shadow: none;
+  aspect-ratio: 4 / 3;
+}
+.event-card__body{
+  padding: 16px 18px 18px;
+}
+.event-card__body h3{
+  margin: 0 0 8px;
+  font-family: var(--font-serif);
+  font-weight: 650;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.event-card__body p{
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.event-card__cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--accent2);
+  transition: color .2s ease, gap .2s ease;
+}
+.event-card:hover .event-card__cta{
+  color: var(--accent);
+  gap: 12px;
+}
+.event-card__cta span{
+  font-weight: 700;
+}
+.event-photos{
+  display: none;
+}
+
+/* ====================================================
+   Event Lightbox — opens with multi-photo gallery
+   ==================================================== */
+body.lightbox-open{
+  overflow: hidden;
+}
+.event-lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 18px;
+  opacity: 0;
+  transition: opacity .24s ease;
+}
+.event-lightbox.is-open{
+  opacity: 1;
+}
+.event-lightbox[hidden]{
+  display: none;
+}
+.event-lightbox__backdrop{
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: radial-gradient(900px 600px at 50% 30%, rgba(17,58,53,.32), rgba(11,15,20,.86) 70%);
+  backdrop-filter: blur(6px);
+}
+.event-lightbox__panel{
+  position: relative;
+  width: min(1080px, 100%);
+  max-height: calc(100vh - 56px);
+  background: linear-gradient(180deg, #faf9f6 0%, #f3f1ec 100%);
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.30);
+  box-shadow: 0 40px 90px rgba(0,0,0,.40);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(12px) scale(.98);
+  transition: transform .28s ease;
+}
+.event-lightbox.is-open .event-lightbox__panel{
+  transform: translateY(0) scale(1);
+}
+.event-lightbox__head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px;
+  border-bottom: 1px solid rgba(11,15,20,.08);
+  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.85));
+}
+.event-lightbox__head h2{
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 650;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.event-lightbox__meta{
+  margin: 0 0 2px;
+  font-size: 11.5px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.event-lightbox__close{
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(11,15,20,.16);
+  background: rgba(255,255,255,.95);
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.event-lightbox__close:hover{
+  transform: scale(1.05);
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(11,15,20,.12);
+}
+.event-lightbox__story{
+  margin: 0;
+  padding: 14px 22px 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.event-lightbox__stage{
+  position: relative;
+  padding: 18px 22px 8px;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.event-lightbox__figure{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+}
+.event-lightbox__image-wrap{
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  overflow: hidden;
+  background:
+    radial-gradient(640px 280px at 18% 10%, rgba(139,107,66,.22), transparent 60%),
+    radial-gradient(620px 280px at 90% 90%, rgba(17,58,53,.24), transparent 55%),
+    linear-gradient(160deg, #1c1410 0%, #2b1f17 45%, #0f1a18 100%);
+  border: 1px solid rgba(11,15,20,.10);
+  min-height: 320px;
+  max-height: 60vh;
+}
+.event-lightbox__image-wrap img{
+  width: 100%;
+  height: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  display: block;
+}
+.event-lightbox__figure figcaption{
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--muted);
+  padding: 0 8px;
+  line-height: 1.4;
+  min-height: 18px;
+}
+.event-lightbox__nav{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(11,15,20,.14);
+  background: rgba(255,255,255,.92);
+  color: var(--ink);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.event-lightbox__nav:hover{
+  transform: scale(1.08);
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(11,15,20,.14);
+}
+.event-lightbox__thumbs{
+  padding: 8px 22px 14px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+}
+.event-lightbox__thumb{
+  flex: 0 0 auto;
+  width: 76px;
+  height: 56px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-color: #1c1410;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: transform .15s ease, border-color .15s ease, opacity .15s ease;
+  opacity: .7;
+}
+.event-lightbox__thumb:hover{
+  opacity: 1;
+  transform: translateY(-2px);
+}
+.event-lightbox__thumb.is-active{
+  border-color: var(--accent);
+  opacity: 1;
+  box-shadow: 0 8px 18px rgba(139,107,66,.32);
+}
+.event-lightbox__count{
+  margin: 0;
+  padding: 0 22px 16px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* Responsive — Journey + Lightbox */
+@media (max-width: 920px){
+  .event-grid{
+    grid-template-columns: 1fr;
+  }
+  .journey-turning-point{
+    grid-template-columns: 1fr;
+  }
+  .journey-timeline::before{
+    left: 16px;
+  }
+  .journey-chapter{
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-left: 36px;
+  }
+  .journey-chapter.is-reversed{
+    direction: ltr;
+  }
+  .journey-chapter::before{
+    left: 16px;
+    top: 28px;
+  }
+  .journey-figure--hero{
+    aspect-ratio: 16 / 10;
+  }
+  .journey-teaser{
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .event-lightbox{
+    padding: 12px;
+  }
+  .event-lightbox__panel{
+    max-height: calc(100vh - 24px);
+    border-radius: 18px;
+  }
+  .event-lightbox__head{
+    padding: 14px 16px;
+  }
+  .event-lightbox__story{
+    padding: 12px 16px 0;
+    font-size: 13.5px;
+  }
+  .event-lightbox__stage{
+    padding: 12px 8px 6px;
+    grid-template-columns: 36px 1fr 36px;
+    gap: 6px;
+  }
+  .event-lightbox__nav{
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+  .event-lightbox__image-wrap{
+    min-height: 220px;
+  }
+  .event-lightbox__thumbs{
+    padding: 6px 12px 10px;
+  }
+  .event-lightbox__count{
+    padding: 0 12px 12px;
+  }
+}
+@media (max-width: 640px){
+  .event-grid{
+    gap: 14px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 920px){
   .hero-grid{grid-template-columns: 1fr; }
