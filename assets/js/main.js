@@ -198,6 +198,7 @@
       const payload = {
         name: String(data.get("name") || "").trim(),
         email: String(data.get("email") || "").trim(),
+        phone: String(data.get("phone") || "").trim(),
         topic: String(data.get("topic") || "").trim(),
         message: String(data.get("message") || "").trim(),
       };
