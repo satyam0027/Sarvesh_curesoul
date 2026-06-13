@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India's Best Business Podcast | The Sarvesh Mishra Show | Entrepreneur & Founder Podcast</title>
+<meta name="description" content="Join The Sarvesh Mishra Show, India's Best Business Podcast featuring entrepreneurs, startup founders, CEOs and business leaders. Build authority, generate leads and grow your personal brand through impactful podcast interviews.">
+<meta name="keywords" content="India's Best Business Podcast, Top Business Podcast India, Entrepreneur Podcast India, Founder Podcast India, Startup Podcast India, CEO Podcast India">
+<link rel="canonical" href="https://thesarveshmishra.com/podast-enquiry" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #080810;
+  --bg2: #0D0D1A;
+  --bg3: #12121F;
+  --gold: #F0B429;
+  --gold2: #FFD166;
+  --gold-dark: #C48B00;
+  --blue: #1A1A3E;
+  --blue2: #0F0F2D;
+  --text: #F0EEF8;
+  --muted: #8A8AA8;
+  --border: rgba(240,180,41,0.15);
+  --border2: rgba(255,255,255,0.06);
+  --radius: 6px;
+  --radius-lg: 14px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: rgba(8,8,16,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border2);
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.nav-logo span { color: var(--gold); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-link {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--text); }
+.nav-cta {
+  background: var(--gold);
+  color: #080810;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.nav-cta:hover { background: var(--gold2); transform: translateY(-1px); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, #1A1040 0%, #080810 65%);
+}
+.hero-bg-glow {
+  position: absolute;
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(240,180,41,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(240,180,41,0.1);
+  border: 1px solid rgba(240,180,41,0.25);
+  border-radius: 40px;
+  padding: 7px 18px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+.hero-pill::before { content: '🎙️'; font-size: 0.85rem; }
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.2rem, 6.5vw, 5rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  margin-bottom: 10px;
+}
+.hero h1 .gold { color: var(--gold); }
+.hero h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
+}
+.hero-sub {
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  color: var(--muted);
+  max-width: 620px;
+  margin-bottom: 32px;
+  line-height: 1.75;
+  font-weight: 300;
+}
+.hero-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+.hero-tag {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border2);
+  border-radius: 40px;
+  padding: 5px 14px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.hero-checks {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 44px;
+}
+.hero-check {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.hero-check::before {
+  content: '✓';
+  background: var(--gold);
+  color: #080810;
+  font-size: 0.65rem;
+  font-weight: 900;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+.btn-gold {
+  background: var(--gold);
+  color: #080810;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 16px 38px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(240,180,41,0.25);
+}
+.btn-gold:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(240,180,41,0.35); }
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 16px 38px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ─── COUNTER STATS ─── */
+.hero-stats {
+  display: flex;
+  gap: 0;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 720px;
+  width: 100%;
+}
+.hero-stat {
+  flex: 1;
+  padding: 28px 20px;
+  text-align: center;
+  border-right: 1px solid var(--border2);
+  position: relative;
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.hero-stat-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─── TRUST BAR ─── */
+.trust-bar {
+  background: var(--bg2);
+  border-top: 1px solid var(--border2);
+  border-bottom: 1px solid var(--border2);
+  padding: 28px 24px;
+  overflow: hidden;
+}
+.trust-bar-label {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.video-carousel-wrap { overflow: hidden; position: relative; padding: 4px 0 8px; }
+.video-carousel-wrap::before, .video-carousel-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.video-carousel-wrap::before { left: 0; background: linear-gradient(to right, var(--bg2), transparent); }
+.video-carousel-wrap::after { right: 0; background: linear-gradient(to left, var(--bg2), transparent); }
+.video-carousel {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  animation: scroll-videos 30s linear infinite;
+  width: max-content;
+}
+.video-carousel:hover { animation-play-state: paused; }
+@keyframes scroll-videos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.video-carousel-item {
+  flex-shrink: 0;
+  width: min(300px, 78vw);
+}
+.video-carousel-frame {
+  position: relative;
+  padding-bottom: 56.25%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+}
+.video-carousel-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-carousel-caption {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── SECTION BASE ─── */
+.section { padding: 88px 24px; }
+.section-alt { background: var(--bg2); }
+.section-dark { background: var(--bg3); }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-eyebrow::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 32px;
+  background: var(--gold);
+  opacity: 0.4;
+}
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+.section-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.75;
+  font-weight: 300;
+}
+.text-center { text-align: center; }
+.text-center .section-sub { margin: 0 auto; }
+.text-center .section-eyebrow { justify-content: center; }
+.text-center .section-eyebrow::after { display: none; }
+
+/* ─── WHY THE SHOW ─── */
+.why-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  margin-top: 0;
+}
+.why-left .section-sub { margin-bottom: 32px; }
+.why-checks { list-style: none; }
+.why-checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border2);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+.why-checks li:last-child { border-bottom: none; }
+.why-checks li::before {
+  content: '✔';
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 900;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.why-right {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.why-right::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(240,180,41,0.08), transparent 70%);
+}
+.why-quote {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+.why-quote span { color: var(--gold); }
+.why-mini-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+.why-mini-stat {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+.why-mini-stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.why-mini-stat-label {
+  font-size: 0.7rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ─── WHY APPEAR ─── */
+.appear-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: 48px;
+}
+.appear-card {
+  background: var(--bg3);
+  padding: 36px 30px;
+  transition: background 0.2s;
+  position: relative;
+}
+.appear-card:hover { background: #16162A; }
+.appear-icon {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  display: block;
+}
+.appear-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.appear-card p {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ─── WHO SHOULD APPLY ─── */
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 48px;
+}
+.who-item {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: default;
+}
+.who-item:hover { border-color: var(--gold); background: rgba(240,180,41,0.05); }
+.who-item::before {
+  content: '✔';
+  color: var(--gold);
+  font-size: 0.72rem;
+  flex-shrink: 0;
+}
+
+/* ─── PROCESS ─── */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 56px;
+  position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 38px;
+  left: calc(12.5% + 16px);
+  right: calc(12.5% + 16px);
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), var(--border2) 50%, var(--gold));
+  opacity: 0.3;
+}
+.process-step {
+  text-align: center;
+  padding: 0 16px;
+  position: relative;
+}
+.step-num {
+  width: 56px; height: 56px;
+  background: var(--bg3);
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 1;
+}
+.process-step h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.process-step p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.step-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  background: rgba(240,180,41,0.1);
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin-top: 8px;
+}
+
+/* ─── WHAT YOU GET ─── */
+.get-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 48px;
+}
+.get-item {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: border-color 0.2s;
+}
+.get-item:hover { border-color: var(--gold); }
+.get-check {
+  width: 22px; height: 22px;
+  background: rgba(240,180,41,0.12);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--gold);
+  font-weight: 900;
+}
+
+/* ─── WHY CHOOSE US ─── */
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.choose-card {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.choose-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+.choose-card-icon { font-size: 1.6rem; margin-bottom: 14px; display: block; }
+.choose-card h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.choose-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+
+/* ─── YOUTUBE EMBED ─── */
+.yt-wrap {
+  margin-top: 56px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  padding-top: 56.25%;
+}
+.yt-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+.yt-label {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 12px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* ─── FAQ ─── */
+.faq-wrap {
+  max-width: 740px;
+  margin: 48px auto 0;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border2);
+}
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 22px 0;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--gold); }
+.faq-icon {
+  width: 26px; height: 26px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--gold);
+  transition: transform 0.25s, background 0.2s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(240,180,41,0.12); }
+.faq-a {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.2s;
+}
+.faq-item.open .faq-a { max-height: 200px; padding-bottom: 20px; }
+
+/* ─── CTA SECTION ─── */
+.cta-section {
+  background: linear-gradient(135deg, #1A1040 0%, #0D0D1A 60%, #1A0A00 100%);
+  padding: 88px 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(240,180,41,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-section .section-title { margin-bottom: 12px; }
+.cta-section .section-sub { margin: 0 auto 36px; }
+
+/* ─── FORM SECTION ─── */
+.form-section { background: var(--bg2); padding: 88px 24px; }
+.form-outer { max-width: 700px; margin: 48px auto 0; }
+.form-box {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 52px 48px;
+}
+.form-box-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.form-box-sub {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-field { margin-bottom: 18px; }
+.form-field label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus { border-color: var(--gold); }
+.form-field select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8AA8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+.form-field textarea { resize: vertical; min-height: 100px; }
+.form-field input::placeholder, .form-field textarea::placeholder { color: rgba(138,138,168,0.45); }
+.form-notice {
+  font-size: 0.78rem;
+  color: var(--text);
+  background: rgba(240,180,41,0.07);
+  border-left: 3px solid var(--gold);
+  padding: 12px 16px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin-bottom: 24px;
+}
+.form-submit {
+  width: 100%;
+  background: var(--gold);
+  color: #080810;
+  border: none;
+  border-radius: var(--radius);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(240,180,41,0.2);
+}
+.form-submit:hover { background: var(--gold2); transform: translateY(-1px); box-shadow: 0 8px 30px rgba(240,180,41,0.35); }
+.form-privacy {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 14px;
+}
+
+/* ─── SUCCESS ─── */
+.success-msg { display: none; text-align: center; padding: 40px 20px; }
+.success-msg.visible { display: block; }
+.success-icon { font-size: 3rem; margin-bottom: 18px; }
+.success-msg h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.success-msg p { color: var(--muted); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border2);
+  padding: 36px 24px;
+  text-align: center;
+}
+footer p { font-size: 0.78rem; color: var(--muted); margin-bottom: 6px; }
+footer a { color: var(--gold); text-decoration: none; }
+.footer-divider {
+  display: inline-block;
+  margin: 0 10px;
+  color: var(--border2);
+}
+
+/* ─── WHATSAPP FLOAT ─── */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 300;
+  background: #25D366;
+  color: white;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  text-decoration: none;
+  transition: all 0.2s;
+  animation: wa-pulse 2.5s infinite;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+.wa-float svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+  display: block;
+}
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+}
+
+/* ─── GUEST APPLY POPUP ─── */
+.guest-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.guest-popup.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.guest-popup__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 4, 12, 0.82);
+  backdrop-filter: blur(6px);
+}
+.guest-popup__panel {
+  position: relative;
+  z-index: 1;
+  width: min(440px, 100%);
+  background: linear-gradient(160deg, #141428 0%, #0D0D1A 100%);
+  border: 1px solid rgba(240,180,41,0.35);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px 32px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04);
+  transform: translateY(24px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.guest-popup.is-open .guest-popup__panel {
+  transform: translateY(0) scale(1);
+}
+.guest-popup__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border2);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  color: var(--muted);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+.guest-popup__close:hover { color: var(--text); border-color: rgba(240,180,41,0.4); }
+.guest-popup__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(240,180,41,0.12);
+  border: 1px solid rgba(240,180,41,0.28);
+  border-radius: 40px;
+  padding: 5px 14px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.guest-popup__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+.guest-popup__title span { color: var(--gold); }
+.guest-popup__text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+.guest-popup__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+.guest-popup__actions .btn-gold,
+#guestPopupApply {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.guest-popup__later {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+  padding: 8px;
+  text-align: center;
+  transition: color 0.2s;
+}
+.guest-popup__later:hover { color: var(--text); }
+
+/* ─── REVEAL ANIMATION ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .why-layout { grid-template-columns: 1fr; }
+  .appear-grid { grid-template-columns: 1fr 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .process-steps::before { display: none; }
+  .choose-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  nav { padding: 0 16px; }
+  .nav-link { display: none; }
+  .appear-grid { grid-template-columns: 1fr; }
+  .choose-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .form-box { padding: 32px 20px; }
+  .hero-stat-num { font-size: 1.3rem; }
+  .process-steps { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div id="guestPopup" class="guest-popup" role="dialog" aria-labelledby="guestPopupTitle" aria-modal="true" aria-hidden="true">
+  <div class="guest-popup__backdrop" data-close-popup></div>
+  <div class="guest-popup__panel">
+    <button type="button" class="guest-popup__close" aria-label="Close notification" data-close-popup>×</button>
+    <div class="guest-popup__badge">🎙️ Guest slots open</div>
+    <h2 id="guestPopupTitle" class="guest-popup__title">Apply as a <span>Podcast Guest</span></h2>
+    <p class="guest-popup__text">Get featured on The Sarvesh Mishra Show — build authority, reach 1M+ business audience, and grow your personal brand. Fill the short application form below to reserve your interview slot.</p>
+    <div class="guest-popup__actions">
+      <a href="#book" class="btn-gold" id="guestPopupApply">Apply Now</a>
+      <button type="button" class="guest-popup__later" data-close-popup>Maybe later</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo" style="text-decoration:none;color:inherit">The <span>Sarvesh Mishra</span> Show</a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-link">Main site</a>
+    <a href="#why" class="nav-link">Why Us</a>
+    <a href="#process" class="nav-link">Process</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <a href="#book" class="nav-cta">Apply Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-pill">India's Best Business Podcast</div>
+  <h1>Get Featured on<br><span class="gold">India's #1</span><br>Business Podcast</h1>
+  <h2>The Sarvesh Mishra Show</h2>
+  <p class="hero-sub">Where India's Top Entrepreneurs, CEOs & Business Leaders Share Their Success Stories. Get featured and build trust, authority, personal brand and high-value business opportunities.</p>
+  <div class="hero-tags">
+    <span class="hero-tag">Founders</span>
+    <span class="hero-tag">CEOs</span>
+    <span class="hero-tag">Startup Owners</span>
+    <span class="hero-tag">Investors</span>
+    <span class="hero-tag">Coaches</span>
+    <span class="hero-tag">Business Leaders</span>
+  </div>
+  <div class="hero-checks">
+    <span class="hero-check">1M+ Business Audience Reach</span>
+    <span class="hero-check">Professional Studio Production</span>
+    <span class="hero-check">SEO Optimized Content</span>
+    <span class="hero-check">YouTube · Instagram · Spotify</span>
+  </div>
+  <div class="hero-btns">
+    <a href="#book" class="btn-gold">Apply as a Podcast Guest</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-target="300" data-suffix="K+">0</div>
+      <div class="hero-stat-label">Subscribers</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-target="29" data-suffix="M+">0</div>
+      <div class="hero-stat-label">Total Views</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-target="700" data-suffix="+">0</div>
+      <div class="hero-stat-label">Episodes</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-target="1" data-suffix="M+">0</div>
+      <div class="hero-stat-label">Audience Reach</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-label">Trusted By Leaders Across Industries</div>
+  <div class="video-carousel-wrap">
+    <div class="video-carousel" id="videoCarousel" aria-label="Featured podcast episodes">
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/9nYnZEuM3VY" title="Dr. Anshuman Kumar — Cancer &amp; Tumor | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">Dr. Anshuman Kumar · Cancer &amp; Tumor</p>
+      </div>
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/K7yJwmnxd1Y" title="GFE Business — Global Startup | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">GFE Business · Global Startup</p>
+      </div>
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/Q8MWgpVA44g" title="Jairam Yoga — Fitness &amp; Health | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">Jairam Yoga · Fitness &amp; Health</p>
+      </div>
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/Hg-wWyU1Sis" title="Kapil Varshney — Business Loans | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">Kapil Varshney · Business Loans</p>
+      </div>
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/QHHaVretwaY" title="Umesh Kumar — Crypto Trading | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">Umesh Kumar · Crypto Trading</p>
+      </div>
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/Th1HRRd7q9A" title="Udit Chawla — Sea Buckthorn | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">Udit Chawla · Sea Buckthorn</p>
+      </div>
+      <!-- duplicate set for seamless loop -->
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/9nYnZEuM3VY" title="Dr. Anshuman Kumar — Cancer &amp; Tumor | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">Dr. Anshuman Kumar · Cancer &amp; Tumor</p>
+      </div>
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/K7yJwmnxd1Y" title="GFE Business — Global Startup | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">GFE Business · Global Startup</p>
+      </div>
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/Q8MWgpVA44g" title="Jairam Yoga — Fitness &amp; Health | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">Jairam Yoga · Fitness &amp; Health</p>
+      </div>
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/Hg-wWyU1Sis" title="Kapil Varshney — Business Loans | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">Kapil Varshney · Business Loans</p>
+      </div>
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/QHHaVretwaY" title="Umesh Kumar — Crypto Trading | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">Umesh Kumar · Crypto Trading</p>
+      </div>
+      <div class="video-carousel-item">
+        <div class="video-carousel-frame">
+          <iframe src="https://www.youtube.com/embed/Th1HRRd7q9A" title="Udit Chawla — Sea Buckthorn | The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-carousel-caption">Udit Chawla · Sea Buckthorn</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY THE SHOW -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="why-layout">
+      <div class="why-left reveal">
+        <div class="section-eyebrow">Why The Sarvesh Mishra Show</div>
+        <h2 class="section-title">More Than A Podcast.<br>It's Your Personal<br>Branding Machine.</h2>
+        <p class="section-sub">Your story deserves more than social media posts. We help founders and business owners establish authority through powerful long-form conversations that generate trust, visibility and premium opportunities.</p>
+        <ul class="why-checks">
+          <li>Build Personal Brand That Lasts for Years</li>
+          <li>Generate High-Quality Inbound Leads</li>
+          <li>Increase Business Credibility Instantly</li>
+          <li>Rank On Google &amp; YouTube Search</li>
+          <li>Attract Investors, Clients &amp; Collaborators</li>
+          <li>Become the Recognised Authority in Your Industry</li>
+        </ul>
+      </div>
+      <div class="why-right reveal">
+        <div class="why-quote">"One podcast episode gave me more qualified leads than <span>6 months of paid ads.</span>"</div>
+        <p style="font-size:0.8rem;color:var(--muted);">Join 700+ business leaders who've already amplified their brand through The Sarvesh Mishra Show.</p>
+        <div class="why-mini-stats">
+          <div class="why-mini-stat">
+            <div class="why-mini-stat-num">300K+</div>
+            <div class="why-mini-stat-label">YouTube Subscribers</div>
+          </div>
+          <div class="why-mini-stat">
+            <div class="why-mini-stat-num">29M+</div>
+            <div class="why-mini-stat-label">Total Video Views</div>
+          </div>
+          <div class="why-mini-stat">
+            <div class="why-mini-stat-num">700+</div>
+            <div class="why-mini-stat-label">Episodes Published</div>
+          </div>
+          <div class="why-mini-stat">
+            <div class="why-mini-stat-num">#1</div>
+            <div class="why-mini-stat-label">Business Podcast India</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTER-CTA 1 -->
+<div style="background:var(--bg2);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:36px 24px;text-align:center;">
+  <p style="font-size:0.88rem;color:var(--muted);margin-bottom:16px;">Limited guest slots available each month — early applicants get priority scheduling.</p>
+  <a href="#book" class="btn-gold">Apply as a Podcast Guest</a>
+</div>
+
+<!-- WHY APPEAR -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-eyebrow">Why Appear on Our Podcast</div>
+      <h2 class="section-title">Turn Your Story Into<br>Your Biggest Business Asset</h2>
+    </div>
+    <div class="appear-grid reveal">
+      <div class="appear-card">
+        <span class="appear-icon">🏆</span>
+        <h3>Authority Building</h3>
+        <p>Position yourself as a trusted industry leader. A long-form conversation signals expertise that no social post can replicate.</p>
+      </div>
+      <div class="appear-card">
+        <span class="appear-icon">🔥</span>
+        <h3>High-Quality Leads</h3>
+        <p>Attract warm prospects who already know, like and trust you before they even reach out. Pre-sold clients come from podcast appearances.</p>
+      </div>
+      <div class="appear-card">
+        <span class="appear-icon">🔍</span>
+        <h3>SEO Benefits</h3>
+        <p>Your interview ranks on both Google and YouTube search results, driving organic traffic to your brand for years.</p>
+      </div>
+      <div class="appear-card">
+        <span class="appear-icon">📱</span>
+        <h3>Social Media Content</h3>
+        <p>One recording session creates weeks of reels, shorts and clips. Multiply your content output without extra effort.</p>
+      </div>
+      <div class="appear-card">
+        <span class="appear-icon">💼</span>
+        <h3>Investor Visibility</h3>
+        <p>Share your startup journey, traction and vision with India's active business ecosystem — and get noticed by the right people.</p>
+      </div>
+      <div class="appear-card">
+        <span class="appear-icon">♾️</span>
+        <h3>Lifetime Digital Asset</h3>
+        <p>Your episode lives permanently on YouTube, Spotify and Instagram. It keeps generating visibility, trust and leads for years.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO SHOULD APPLY -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-eyebrow">Who Should Apply</div>
+      <h2 class="section-title">This Podcast Is Perfect For</h2>
+      <p class="section-sub">If you have a journey, expertise, or business story that can inspire India's entrepreneurial community, we want to hear from you.</p>
+    </div>
+    <div class="who-grid reveal">
+      <div class="who-item">Startup Founders</div>
+      <div class="who-item">Business Owners</div>
+      <div class="who-item">CEOs &amp; MDs</div>
+      <div class="who-item">Entrepreneurs</div>
+      <div class="who-item">Investors &amp; VCs</div>
+      <div class="who-item">Coaches &amp; Mentors</div>
+      <div class="who-item">Authors &amp; Speakers</div>
+      <div class="who-item">Consultants</div>
+      <div class="who-item">Personal Brands</div>
+      <div class="who-item">Industry Experts</div>
+      <div class="who-item">Business Influencers</div>
+      <div class="who-item">Finance Leaders</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="section-title">Get Featured In<br>4 Simple Steps</h2>
+    </div>
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h4>Fill The Application Form</h4>
+        <p>Share your profile, story and goals. Takes less than 2 minutes.</p>
+        <span class="step-badge">2 Minutes</span>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4>Our Team Reviews Your Profile</h4>
+        <p>We personally review every application and confirm your slot.</p>
+        <span class="step-badge">24–48 Hours</span>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h4>Studio Recording With Sarvesh Mishra</h4>
+        <p>Professional multi-camera recording at our premium studio in Noida.</p>
+        <span class="step-badge">In-Studio</span>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h4>Editing &amp; Multi-Platform Distribution</h4>
+        <p>Your episode goes live on YouTube, Instagram, Spotify &amp; more.</p>
+        <span class="step-badge">2–4 Weeks</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTER-CTA 2 -->
+<div style="background:linear-gradient(135deg,#1A1040,#0D0D1A);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 24px;text-align:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(240,180,41,0.09),transparent 70%);pointer-events:none;"></div>
+  <p style="font-family:'Montserrat',sans-serif;font-size:clamp(1.2rem,3vw,1.8rem);font-weight:800;margin-bottom:8px;">Ready to Share Your Story with India?</p>
+  <p style="font-size:0.9rem;color:var(--muted);margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto;">Join hundreds of founders and leaders who've built their brand through The Sarvesh Mishra Show.</p>
+  <a href="#book" class="btn-gold">Apply as a Podcast Guest</a>
+</div>
+
+<!-- WHAT YOU GET -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-eyebrow">What's Included</div>
+      <h2 class="section-title">Everything Included<br>In Your Guest Package</h2>
+    </div>
+    <div class="get-grid reveal">
+      <div class="get-item"><div class="get-check">✓</div>Premium Studio Recording</div>
+      <div class="get-item"><div class="get-check">✓</div>Professional Multi-Camera Setup</div>
+      <div class="get-item"><div class="get-check">✓</div>High-Quality Audio Production</div>
+      <div class="get-item"><div class="get-check">✓</div>YouTube Full Episode Publishing</div>
+      <div class="get-item"><div class="get-check">✓</div>Instagram Reels &amp; Shorts</div>
+      <div class="get-item"><div class="get-check">✓</div>SEO Optimised Title &amp; Description</div>
+      <div class="get-item"><div class="get-check">✓</div>Custom Thumbnail Design</div>
+      <div class="get-item"><div class="get-check">✓</div>Spotify &amp; Podcast Distribution</div>
+      <div class="get-item"><div class="get-check">✓</div>Social Media Promotion</div>
+      <div class="get-item"><div class="get-check">✓</div>Pre-Show Briefing Call</div>
+      <div class="get-item"><div class="get-check">✓</div>Episode Transcript</div>
+      <div class="get-item"><div class="get-check">✓</div>Shareable Content Clips for You</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-eyebrow">Why Choose Us</div>
+      <h2 class="section-title">India's Premium<br>Business Podcast Experience</h2>
+    </div>
+    <div class="choose-grid reveal">
+      <div class="choose-card">
+        <span class="choose-card-icon">🎬</span>
+        <h4>Professional Production</h4>
+        <p>Multi-camera studio, broadcast-quality audio and professional editing — every episode looks and sounds world-class.</p>
+      </div>
+      <div class="choose-card">
+        <span class="choose-card-icon">🎙️</span>
+        <h4>Experienced Host</h4>
+        <p>Sarvesh Mishra is India's Life Decoder & Inner Alchemy Architect — he knows how to draw out your most impactful story.</p>
+      </div>
+      <div class="choose-card">
+        <span class="choose-card-icon">🎯</span>
+        <h4>Business-First Audience</h4>
+        <p>300K+ subscribers who are entrepreneurs, founders, and leaders actively seeking growth and inspiration.</p>
+      </div>
+      <div class="choose-card">
+        <span class="choose-card-icon">📊</span>
+        <h4>High Engagement</h4>
+        <p>29M+ total views with an engaged community that comments, shares and acts on what they hear.</p>
+      </div>
+      <div class="choose-card">
+        <span class="choose-card-icon">♻️</span>
+        <h4>Content Repurposing</h4>
+        <p>One session generates weeks of content: full episode, reels, shorts, clips, thumbnails — all handled for you.</p>
+      </div>
+      <div class="choose-card">
+        <span class="choose-card-icon">🌐</span>
+        <h4>SEO-Optimised Publishing</h4>
+        <p>Every episode is published with keyword-optimised titles, descriptions and tags to rank on Google and YouTube.</p>
+      </div>
+      <div class="choose-card">
+        <span class="choose-card-icon">🏅</span>
+        <h4>Brand Positioning</h4>
+        <p>Appear alongside India's top founders and investors — elevating your brand by association.</p>
+      </div>
+      <div class="choose-card">
+        <span class="choose-card-icon">🤝</span>
+        <h4>Founder Community</h4>
+        <p>Join a growing network of entrepreneurs connected through the show's ecosystem of guests and alumni.</p>
+      </div>
+      <div class="choose-card">
+        <span class="choose-card-icon">🔗</span>
+        <h4>Networking Opportunities</h4>
+        <p>Your appearance opens doors to collaborations, partnerships and introductions within the Indian startup ecosystem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="form-section" id="book">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-eyebrow">Book Your Interview</div>
+      <h2 class="section-title">Book Your Podcast<br>Interview Today</h2>
+      <p class="section-sub">Fill in the form below and our team will reach out within 48 hours to confirm your slot and next steps.</p>
+    </div>
+    <div class="form-outer reveal">
+      <div class="form-box">
+        <form id="guestForm" action="https://formsubmit.co/sarveshshow@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Podcast guest enquiry — The Sarvesh Mishra Show" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="" />
+          <input type="text" name="_honey" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" />
+          <div id="form-container">
+          <div class="form-box-title">Guest Application Form</div>
+          <p class="form-box-sub">All fields marked required must be filled. We review every application personally — no spam, no bots.</p>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="f-name">Full Name</label>
+              <input type="text" id="f-name" name="name" placeholder="Your Full Name" required />
+            </div>
+            <div class="form-field">
+              <label for="f-phone">Phone Number</label>
+              <input type="tel" id="f-phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="f-email">Email Address</label>
+            <input type="email" id="f-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+          <div class="form-field">
+            <label for="f-website">Your Website</label>
+            <input type="url" id="f-website" name="website" placeholder="https://yourwebsite.com" />
+          </div>
+          <div class="form-field">
+            <label for="f-linkedin">LinkedIn Profile URL</label>
+            <input type="url" id="f-linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourname" />
+          </div>
+          <div class="form-field">
+            <label for="f-industry">Industry / Niche</label>
+            <select id="f-industry" name="industry" required>
+              <option value="">Select your primary domain...</option>
+              <option>Business &amp; Entrepreneurship</option>
+              <option>Finance &amp; Investing</option>
+              <option>Technology &amp; Startups</option>
+              <option>Health &amp; Wellness</option>
+              <option>Self-Development &amp; Mindset</option>
+              <option>Real Estate</option>
+              <option>Marketing &amp; Sales</option>
+              <option>Spirituality &amp; Philosophy</option>
+              <option>Entertainment &amp; Media</option>
+              <option>Education &amp; Coaching</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-notice">
+            ⚡ We typically confirm within 48 hours. Limited guest slots available monthly — early applicants get priority.
+          </div>
+          <button class="form-submit" type="submit">Apply as a Podcast Guest</button>
+          <p class="form-privacy">🔒 Your information is 100% private and will never be shared with third parties.</p>
+          </div>
+        </form>
+        <div class="success-msg" id="success-msg">
+          <div class="success-icon">🎙️</div>
+          <h3>Application Submitted!</h3>
+          <p>Thank you for applying. Our team will review your profile and contact you within <strong>48 hours</strong> on the number and email provided.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST EPISODE EMBED -->
+<section class="section section-dark">
+  <div class="container reveal">
+    <div class="text-center">
+      <div class="section-eyebrow">Watch the Show</div>
+      <h2 class="section-title">See What a Feature<br>Looks Like</h2>
+      <p class="section-sub">Watch our latest episode and experience the quality, depth and production value you'll receive as a featured guest.</p>
+    </div>
+    <div class="yt-wrap">
+      <iframe src="https://www.youtube.com/embed/wzh8mUmcEsc?si=1fevnO7cF969b-FT" title="YouTube video player — The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="yt-label">⬆ Latest episode from The Sarvesh Mishra Show · youtube.com/@sarveshmishrashow</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-eyebrow">Frequently Asked Questions</div>
+      <h2 class="section-title">Common Questions<br>Answered</h2>
+    </div>
+    <div class="faq-wrap reveal">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Who can apply to be a guest? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Any entrepreneur, founder, CEO, coach, investor or business owner with an inspiring journey and valuable insights for our audience. If you have a story that can help India's business community, we want to feature you.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is the recording done professionally? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes. We provide premium multi-camera studio recording with professional lighting and broadcast-quality audio at our studio in Noida, Delhi NCR. The production quality is on par with major national media outlets.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Where will my episode be published? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Your episode is published on YouTube (300K+ subscribers), Instagram, Spotify and all major podcast platforms. Short-form clips are also published across our social media channels at launch.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can early-stage startups apply? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Absolutely. Early-stage founders with inspiring stories, genuine expertise and a clear mission are welcome. We value authentic journeys over revenue numbers.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will I receive social media clips? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes, you will receive multiple branded reels and short-form promotional clips from your episode that you can post on your own Instagram, LinkedIn and WhatsApp channels.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">When will my episode go live after recording? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Episodes are typically edited and published within 2–4 weeks of the recording date, depending on our production schedule. You'll receive a preview before it goes live.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What payment methods are accepted? <span class="faq-icon">+</span></button>
+        <div class="faq-a">We accept UPI, NEFT/IMPS bank transfer, and credit/debit cards. Payment is processed after we confirm your application and slot availability. A GST invoice is provided.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="container reveal">
+    <div class="section-eyebrow" style="justify-content:center;">Start Your Journey</div>
+    <h2 class="section-title">Ready To Build Your<br>Personal Brand?</h2>
+    <p class="section-sub">Join India's Best Business Podcast and inspire millions while growing your business authority. Limited slots available every month.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+      <a href="#book" class="btn-gold">Apply as a Podcast Guest</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.9rem;color:var(--text);margin-bottom:10px;">The Sarvesh Mishra Show</p>
+  <p><a href="index.html">thesarveshmishra.com</a> <span class="footer-divider">|</span> <a href="contact.html">Contact</a> <span class="footer-divider">|</span> <a href="mailto:sarveshshow@gmail.com">sarveshshow@gmail.com</a></p>
+  <p style="margin-top:10px;">© 2025 The Sarvesh Mishra Show · All Rights Reserved <span class="footer-divider">|</span> <a href="media.html">Media</a> <span class="footer-divider">|</span> <a href="blog-sarvesh-mishra-show.html">Episode blogs</a></p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/916207388940?text=Hi%2C%20I%27d%20like%20to%20apply%20as%20a%20podcast%20guest%20on%20The%20Sarvesh%20Mishra%20Show." class="wa-float" target="_blank" rel="noopener noreferrer" title="Apply as a Podcast Guest" aria-label="Apply as a Podcast Guest">
+  <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+// ─ Animated counters
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const duration = 2000;
+  const step = target / (duration / 16);
+  let current = 0;
+  const timer = setInterval(() => {
+    current += step;
+    if (current >= target) { current = target; clearInterval(timer); }
+    el.textContent = Math.floor(current) + suffix;
+  }, 16);
+}
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
+
+// ─ Scroll reveal
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ─ FAQ
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ─ Guest apply popup (on page load)
+(function initGuestPopup() {
+  if (new URLSearchParams(window.location.search).get('submitted') === '1') return;
+
+  var popup = document.getElementById('guestPopup');
+  if (!popup) return;
+
+  function openPopup() {
+    popup.classList.add('is-open');
+    popup.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopup() {
+    popup.classList.remove('is-open');
+    popup.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  popup.querySelectorAll('[data-close-popup]').forEach(function (el) {
+    el.addEventListener('click', closePopup);
+  });
+
+  var applyBtn = document.getElementById('guestPopupApply');
+  if (applyBtn) {
+    applyBtn.addEventListener('click', function () {
+      closePopup();
+      setTimeout(function () {
+        var book = document.getElementById('book');
+        if (book) book.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && popup.classList.contains('is-open')) closePopup();
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', openPopup);
+  } else {
+    openPopup();
+  }
+})();
+
+// ─ Guest form → sarveshshow@gmail.com via FormSubmit
+(function initGuestForm() {
+  var form = document.getElementById('guestForm');
+  if (!form) return;
+
+  var nextInput = form.querySelector('input[name="_next"]');
+  if (nextInput) {
+    nextInput.value = window.location.origin + window.location.pathname + '?submitted=1#book';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('.form-submit');
+    var fc = document.getElementById('form-container');
+    var sm = document.getElementById('success-msg');
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+    }
+
+    fetch('https://formsubmit.co/ajax/sarveshshow@gmail.com', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (String(data.success).toLowerCase() !== 'true') {
+          throw new Error(data.message || 'Submission failed');
+        }
+        if (fc) fc.style.display = 'none';
+        if (sm) sm.classList.add('visible');
+        form.reset();
+        if (window.history.replaceState) {
+          window.history.replaceState({}, '', window.location.pathname + '?submitted=1#book');
+        }
+      })
+      .catch(function () {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = 'Apply as a Podcast Guest';
+        }
+        alert('Could not send your application. Please try again or email sarveshshow@gmail.com directly.');
+      });
+  });
+})();
+
+// ─ Show success after FormSubmit redirect (no-JS fallback)
+if (new URLSearchParams(window.location.search).get('submitted') === '1') {
+  const fc = document.getElementById('form-container');
+  const sm = document.getElementById('success-msg');
+  if (fc) fc.style.display = 'none';
+  if (sm) sm.classList.add('visible');
+  if (window.history.replaceState) {
+    window.history.replaceState({}, '', window.location.pathname + '#book');
+  }
+}
+</script>
+</body>
+</html>
