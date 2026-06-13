@@ -30,6 +30,62 @@
   --radius-lg: 14px;
 }
 html { scroll-behavior: smooth; }
+
+/* ─── ICONS ─── */
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.icon--xs { width: 14px; height: 14px; }
+.icon--sm { width: 18px; height: 18px; }
+.icon--md { width: 24px; height: 24px; }
+.icon--lg { width: 32px; height: 32px; }
+.icon--xl { width: 52px; height: 52px; }
+.icon--gold { color: var(--gold); }
+.icon-badge {
+  width: 18px;
+  height: 18px;
+  padding: 3px;
+  box-sizing: content-box;
+  background: var(--gold);
+  color: #080810;
+  border-radius: 50%;
+  stroke-width: 2.5;
+}
+.appear-icon,
+.choose-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.appear-icon { margin-bottom: 16px; }
+.appear-icon .icon,
+.choose-card-icon .icon {
+  width: 28px;
+  height: 28px;
+}
+.success-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.success-icon .icon { color: var(--gold); }
+.get-check { color: var(--gold); }
+.get-check .icon {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2.5;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -132,48 +188,77 @@ nav {
   color: var(--gold);
   margin-bottom: 28px;
 }
-.hero-pill::before { content: '🎙️'; font-size: 0.85rem; }
-.hero h1 {
+.hero-pill .icon { width: 14px; height: 14px; }
+.hero h1,
+.hero-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2.2rem, 6.5vw, 5rem);
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.35rem, 7vw, 5.4rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
   max-width: 900px;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
+}
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.hero-title-line {
+  display: block;
+  font-weight: 700;
+  color: var(--text);
+}
+.hero-title-accent {
+  display: block;
+  font-weight: 900;
+  font-size: 1.1em;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, var(--gold2) 0%, var(--gold) 55%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 18px rgba(240,180,41,0.28));
 }
 .hero h1 .gold { color: var(--gold); }
 .hero h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
   font-weight: 600;
   color: var(--muted);
   margin-bottom: 20px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .hero-sub {
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(0.9rem, 1.8vw, 1.05rem);
   color: var(--muted);
   max-width: 620px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   line-height: 1.75;
   font-weight: 300;
 }
-.hero-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 36px;
-}
-.hero-tag {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border2);
-  border-radius: 40px;
-  padding: 5px 14px;
-  font-size: 0.76rem;
+.hero-audience {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.88rem, 1.7vw, 1.02rem);
   font-weight: 500;
   color: var(--muted);
+  max-width: 760px;
+  margin: 0 auto 36px;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+.hero-audience strong {
+  font-weight: 800;
+  color: var(--gold2);
+  background: linear-gradient(135deg, var(--gold2) 0%, var(--gold) 55%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 0 12px rgba(240,180,41,0.25));
 }
 .hero-checks {
   display: flex;
@@ -188,21 +273,9 @@ nav {
   color: var(--text);
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
 }
-.hero-check::before {
-  content: '✓';
-  background: var(--gold);
-  color: #080810;
-  font-size: 0.65rem;
-  font-weight: 900;
-  width: 18px; height: 18px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
+.hero-check .icon-badge { flex-shrink: 0; }
 .hero-btns {
   display: flex;
   gap: 14px;
@@ -417,12 +490,14 @@ nav {
 }
 .why-checks li:last-child { border-bottom: none; }
 .why-checks li::before {
-  content: '✔';
-  color: var(--gold);
-  font-size: 0.75rem;
-  font-weight: 900;
+  content: '';
+  width: 18px;
+  height: 18px;
   margin-top: 2px;
   flex-shrink: 0;
+  background: var(--gold);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 .why-right {
   background: var(--bg3);
@@ -492,11 +567,6 @@ nav {
   position: relative;
 }
 .appear-card:hover { background: #16162A; }
-.appear-icon {
-  font-size: 1.8rem;
-  margin-bottom: 16px;
-  display: block;
-}
 .appear-card h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
@@ -530,11 +600,34 @@ nav {
   cursor: default;
 }
 .who-item:hover { border-color: var(--gold); background: rgba(240,180,41,0.05); }
-.who-item::before {
-  content: '✔';
-  color: var(--gold);
-  font-size: 0.72rem;
+.who-item--featured {
+  border-color: rgba(240,180,41,0.45);
+  background: linear-gradient(135deg, rgba(240,180,41,0.12), rgba(240,180,41,0.03));
+  color: var(--gold2);
+  font-weight: 700;
+  box-shadow: 0 0 24px rgba(240,180,41,0.08);
+}
+.who-item--featured:hover {
+  border-color: var(--gold);
+  background: linear-gradient(135deg, rgba(240,180,41,0.18), rgba(240,180,41,0.06));
+}
+.who-item--featured::before {
+  content: '';
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
+  background: var(--gold);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/svg%3E") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.who-item:not(.who-item--featured)::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  background: var(--gold);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
 /* ─── PROCESS ─── */
@@ -627,9 +720,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-  color: var(--gold);
-  font-weight: 900;
 }
 
 /* ─── WHY CHOOSE US ─── */
@@ -647,7 +737,6 @@ nav {
   transition: border-color 0.2s, transform 0.2s;
 }
 .choose-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-.choose-card-icon { font-size: 1.6rem; margin-bottom: 14px; display: block; }
 .choose-card h4 {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.92rem;
@@ -673,6 +762,11 @@ nav {
   border: none;
 }
 .yt-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
   text-align: center;
   font-size: 0.72rem;
   color: var(--muted);
@@ -680,6 +774,12 @@ nav {
   letter-spacing: 0.06em;
   font-weight: 500;
   text-transform: uppercase;
+}
+.yt-label .icon {
+  width: 14px;
+  height: 14px;
+  color: var(--gold);
+  flex-shrink: 0;
 }
 
 /* ─── FAQ ─── */
@@ -717,11 +817,16 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
   color: var(--gold);
-  transition: transform 0.25s, background 0.2s;
+  transition: background 0.2s;
 }
-.faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(240,180,41,0.12); }
+.faq-icon .icon {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s;
+}
+.faq-item.open .faq-icon { background: rgba(240,180,41,0.12); }
+.faq-item.open .faq-icon .icon { transform: rotate(45deg); }
 .faq-a {
   font-size: 0.88rem;
   color: var(--muted);
@@ -813,6 +918,9 @@ nav {
 .form-field textarea { resize: vertical; min-height: 100px; }
 .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(138,138,168,0.45); }
 .form-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   font-size: 0.78rem;
   color: var(--text);
   background: rgba(240,180,41,0.07);
@@ -820,6 +928,29 @@ nav {
   padding: 12px 16px;
   border-radius: 0 var(--radius) var(--radius) 0;
   margin-bottom: 24px;
+}
+.form-notice .icon {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.form-privacy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 14px;
+}
+.form-privacy .icon {
+  width: 14px;
+  height: 14px;
+  color: var(--muted);
+  flex-shrink: 0;
 }
 .form-submit {
   width: 100%;
@@ -838,17 +969,10 @@ nav {
   box-shadow: 0 4px 20px rgba(240,180,41,0.2);
 }
 .form-submit:hover { background: var(--gold2); transform: translateY(-1px); box-shadow: 0 8px 30px rgba(240,180,41,0.35); }
-.form-privacy {
-  text-align: center;
-  font-size: 0.72rem;
-  color: var(--muted);
-  margin-top: 14px;
-}
 
 /* ─── SUCCESS ─── */
 .success-msg { display: none; text-align: center; padding: 40px 20px; }
 .success-msg.visible { display: block; }
-.success-icon { font-size: 3rem; margin-bottom: 18px; }
 .success-msg h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.7rem;
@@ -1043,11 +1167,34 @@ footer a { color: var(--gold); text-decoration: none; }
 </head>
 <body>
 
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><polygon points="10 9 16 12 10 15 10 9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+  <symbol id="i-trending" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></symbol>
+  <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4z"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
 <div id="guestPopup" class="guest-popup" role="dialog" aria-labelledby="guestPopupTitle" aria-modal="true" aria-hidden="true">
   <div class="guest-popup__backdrop" data-close-popup></div>
   <div class="guest-popup__panel">
     <button type="button" class="guest-popup__close" aria-label="Close notification" data-close-popup>×</button>
-    <div class="guest-popup__badge">🎙️ Guest slots open</div>
+    <div class="guest-popup__badge"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-mic"/></svg> Guest slots open</div>
     <h2 id="guestPopupTitle" class="guest-popup__title">Apply as a <span>Podcast Guest</span></h2>
     <p class="guest-popup__text">Get featured on The Sarvesh Mishra Show — build authority, reach 1M+ business audience, and grow your personal brand. Fill the short application form below to reserve your interview slot.</p>
     <div class="guest-popup__actions">
@@ -1073,23 +1220,20 @@ footer a { color: var(--gold); text-decoration: none; }
 <section class="hero">
   <div class="hero-bg-glow"></div>
   <div class="hero-grid-lines"></div>
-  <div class="hero-pill">India's Best Business Podcast</div>
-  <h1>Get Featured on<br><span class="gold">India's #1</span><br>Business Podcast</h1>
+  <div class="hero-pill"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-mic"/></svg> India's Best Business Podcast</div>
+  <h1 class="hero-title">
+    <span class="hero-title-line">Get Featured on</span>
+    <span class="hero-title-accent">India's #1</span>
+    <span class="hero-title-line">Business Podcast</span>
+  </h1>
   <h2>The Sarvesh Mishra Show</h2>
-  <p class="hero-sub">Where India's Top Entrepreneurs, CEOs & Business Leaders Share Their Success Stories. Get featured and build trust, authority, personal brand and high-value business opportunities.</p>
-  <div class="hero-tags">
-    <span class="hero-tag">Founders</span>
-    <span class="hero-tag">CEOs</span>
-    <span class="hero-tag">Startup Owners</span>
-    <span class="hero-tag">Investors</span>
-    <span class="hero-tag">Coaches</span>
-    <span class="hero-tag">Business Leaders</span>
-  </div>
+  <p class="hero-sub">Where India's top business voices share their success stories. Get featured and build trust, authority, personal brand and high-value business opportunities.</p>
+  <p class="hero-audience">Perfect for <strong>Founders</strong>, <strong>CEOs</strong>, <strong>Startup Owners</strong>, <strong>Investors</strong>, <strong>Coaches</strong> &amp; <strong>Business Leaders</strong></p>
   <div class="hero-checks">
-    <span class="hero-check">1M+ Business Audience Reach</span>
-    <span class="hero-check">Professional Studio Production</span>
-    <span class="hero-check">SEO Optimized Content</span>
-    <span class="hero-check">YouTube · Instagram · Spotify</span>
+    <span class="hero-check"><svg class="icon icon-badge" aria-hidden="true"><use href="#i-check"/></svg>1M+ Business Audience Reach</span>
+    <span class="hero-check"><svg class="icon icon-badge" aria-hidden="true"><use href="#i-check"/></svg>Professional Studio Production</span>
+    <span class="hero-check"><svg class="icon icon-badge" aria-hidden="true"><use href="#i-check"/></svg>SEO Optimized Content</span>
+    <span class="hero-check"><svg class="icon icon-badge" aria-hidden="true"><use href="#i-check"/></svg>YouTube · Instagram · Spotify</span>
   </div>
   <div class="hero-btns">
     <a href="#book" class="btn-gold">Apply as a Podcast Guest</a>
@@ -1254,32 +1398,32 @@ footer a { color: var(--gold); text-decoration: none; }
     </div>
     <div class="appear-grid reveal">
       <div class="appear-card">
-        <span class="appear-icon">🏆</span>
+        <span class="appear-icon"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg></span>
         <h3>Authority Building</h3>
         <p>Position yourself as a trusted industry leader. A long-form conversation signals expertise that no social post can replicate.</p>
       </div>
       <div class="appear-card">
-        <span class="appear-icon">🔥</span>
+        <span class="appear-icon"><svg class="icon" aria-hidden="true"><use href="#i-trending"/></svg></span>
         <h3>High-Quality Leads</h3>
         <p>Attract warm prospects who already know, like and trust you before they even reach out. Pre-sold clients come from podcast appearances.</p>
       </div>
       <div class="appear-card">
-        <span class="appear-icon">🔍</span>
+        <span class="appear-icon"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span>
         <h3>SEO Benefits</h3>
         <p>Your interview ranks on both Google and YouTube search results, driving organic traffic to your brand for years.</p>
       </div>
       <div class="appear-card">
-        <span class="appear-icon">📱</span>
+        <span class="appear-icon"><svg class="icon" aria-hidden="true"><use href="#i-smartphone"/></svg></span>
         <h3>Social Media Content</h3>
         <p>One recording session creates weeks of reels, shorts and clips. Multiply your content output without extra effort.</p>
       </div>
       <div class="appear-card">
-        <span class="appear-icon">💼</span>
+        <span class="appear-icon"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
         <h3>Investor Visibility</h3>
         <p>Share your startup journey, traction and vision with India's active business ecosystem — and get noticed by the right people.</p>
       </div>
       <div class="appear-card">
-        <span class="appear-icon">♾️</span>
+        <span class="appear-icon"><svg class="icon" aria-hidden="true"><use href="#i-infinity"/></svg></span>
         <h3>Lifetime Digital Asset</h3>
         <p>Your episode lives permanently on YouTube, Spotify and Instagram. It keeps generating visibility, trust and leads for years.</p>
       </div>
@@ -1296,12 +1440,12 @@ footer a { color: var(--gold); text-decoration: none; }
       <p class="section-sub">If you have a journey, expertise, or business story that can inspire India's entrepreneurial community, we want to hear from you.</p>
     </div>
     <div class="who-grid reveal">
-      <div class="who-item">Startup Founders</div>
-      <div class="who-item">Business Owners</div>
-      <div class="who-item">CEOs &amp; MDs</div>
-      <div class="who-item">Entrepreneurs</div>
-      <div class="who-item">Investors &amp; VCs</div>
-      <div class="who-item">Coaches &amp; Mentors</div>
+      <div class="who-item who-item--featured">Founders</div>
+      <div class="who-item who-item--featured">CEOs</div>
+      <div class="who-item who-item--featured">Startup Owners</div>
+      <div class="who-item who-item--featured">Investors</div>
+      <div class="who-item who-item--featured">Coaches</div>
+      <div class="who-item who-item--featured">Business Leaders</div>
       <div class="who-item">Authors &amp; Speakers</div>
       <div class="who-item">Consultants</div>
       <div class="who-item">Personal Brands</div>
@@ -1364,18 +1508,18 @@ footer a { color: var(--gold); text-decoration: none; }
       <h2 class="section-title">Everything Included<br>In Your Guest Package</h2>
     </div>
     <div class="get-grid reveal">
-      <div class="get-item"><div class="get-check">✓</div>Premium Studio Recording</div>
-      <div class="get-item"><div class="get-check">✓</div>Professional Multi-Camera Setup</div>
-      <div class="get-item"><div class="get-check">✓</div>High-Quality Audio Production</div>
-      <div class="get-item"><div class="get-check">✓</div>YouTube Full Episode Publishing</div>
-      <div class="get-item"><div class="get-check">✓</div>Instagram Reels &amp; Shorts</div>
-      <div class="get-item"><div class="get-check">✓</div>SEO Optimised Title &amp; Description</div>
-      <div class="get-item"><div class="get-check">✓</div>Custom Thumbnail Design</div>
-      <div class="get-item"><div class="get-check">✓</div>Spotify &amp; Podcast Distribution</div>
-      <div class="get-item"><div class="get-check">✓</div>Social Media Promotion</div>
-      <div class="get-item"><div class="get-check">✓</div>Pre-Show Briefing Call</div>
-      <div class="get-item"><div class="get-check">✓</div>Episode Transcript</div>
-      <div class="get-item"><div class="get-check">✓</div>Shareable Content Clips for You</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>Premium Studio Recording</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>Professional Multi-Camera Setup</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>High-Quality Audio Production</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>YouTube Full Episode Publishing</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>Instagram Reels &amp; Shorts</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>SEO Optimised Title &amp; Description</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>Custom Thumbnail Design</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>Spotify &amp; Podcast Distribution</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>Social Media Promotion</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>Pre-Show Briefing Call</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>Episode Transcript</div>
+      <div class="get-item"><div class="get-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>Shareable Content Clips for You</div>
     </div>
   </div>
 </section>
@@ -1389,47 +1533,47 @@ footer a { color: var(--gold); text-decoration: none; }
     </div>
     <div class="choose-grid reveal">
       <div class="choose-card">
-        <span class="choose-card-icon">🎬</span>
+        <span class="choose-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg></span>
         <h4>Professional Production</h4>
         <p>Multi-camera studio, broadcast-quality audio and professional editing — every episode looks and sounds world-class.</p>
       </div>
       <div class="choose-card">
-        <span class="choose-card-icon">🎙️</span>
+        <span class="choose-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></span>
         <h4>Experienced Host</h4>
         <p>Sarvesh Mishra is India's Life Decoder & Inner Alchemy Architect — he knows how to draw out your most impactful story.</p>
       </div>
       <div class="choose-card">
-        <span class="choose-card-icon">🎯</span>
+        <span class="choose-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></span>
         <h4>Business-First Audience</h4>
         <p>300K+ subscribers who are entrepreneurs, founders, and leaders actively seeking growth and inspiration.</p>
       </div>
       <div class="choose-card">
-        <span class="choose-card-icon">📊</span>
+        <span class="choose-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></span>
         <h4>High Engagement</h4>
         <p>29M+ total views with an engaged community that comments, shares and acts on what they hear.</p>
       </div>
       <div class="choose-card">
-        <span class="choose-card-icon">♻️</span>
+        <span class="choose-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg></span>
         <h4>Content Repurposing</h4>
         <p>One session generates weeks of content: full episode, reels, shorts, clips, thumbnails — all handled for you.</p>
       </div>
       <div class="choose-card">
-        <span class="choose-card-icon">🌐</span>
+        <span class="choose-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></span>
         <h4>SEO-Optimised Publishing</h4>
         <p>Every episode is published with keyword-optimised titles, descriptions and tags to rank on Google and YouTube.</p>
       </div>
       <div class="choose-card">
-        <span class="choose-card-icon">🏅</span>
+        <span class="choose-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg></span>
         <h4>Brand Positioning</h4>
         <p>Appear alongside India's top founders and investors — elevating your brand by association.</p>
       </div>
       <div class="choose-card">
-        <span class="choose-card-icon">🤝</span>
+        <span class="choose-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-handshake"/></svg></span>
         <h4>Founder Community</h4>
         <p>Join a growing network of entrepreneurs connected through the show's ecosystem of guests and alumni.</p>
       </div>
       <div class="choose-card">
-        <span class="choose-card-icon">🔗</span>
+        <span class="choose-card-icon"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></span>
         <h4>Networking Opportunities</h4>
         <p>Your appearance opens doors to collaborations, partnerships and introductions within the Indian startup ecosystem.</p>
       </div>
@@ -1508,14 +1652,15 @@ footer a { color: var(--gold); text-decoration: none; }
             </div>
           </div>
           <div class="form-notice">
-            ⚡ We typically confirm within 48 hours. Limited guest slots available monthly — early applicants get priority.
+            <svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg>
+            <span>We typically confirm within 48 hours. Limited guest slots available monthly — early applicants get priority.</span>
           </div>
           <button class="form-submit" type="submit">Apply as a Podcast Guest</button>
-          <p class="form-privacy">🔒 Your information is 100% private and will never be shared with third parties.</p>
+          <p class="form-privacy"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg> Your information is 100% private and will never be shared with third parties.</p>
           </div>
         </form>
         <div class="success-msg" id="success-msg">
-          <div class="success-icon">🎙️</div>
+          <div class="success-icon"><svg class="icon icon--xl" aria-hidden="true"><use href="#i-mic"/></svg></div>
           <h3>Application Submitted!</h3>
           <p>Thank you for applying. Our team will review your profile and contact you within <strong>48 hours</strong> on the number and email provided.</p>
         </div>
@@ -1535,7 +1680,7 @@ footer a { color: var(--gold); text-decoration: none; }
     <div class="yt-wrap">
       <iframe src="https://www.youtube.com/embed/wzh8mUmcEsc?si=1fevnO7cF969b-FT" title="YouTube video player — The Sarvesh Mishra Show" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
     </div>
-    <p class="yt-label">⬆ Latest episode from The Sarvesh Mishra Show · youtube.com/@sarveshmishrashow</p>
+    <p class="yt-label"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> Latest episode from The Sarvesh Mishra Show · youtube.com/@sarveshmishrashow</p>
   </div>
 </section>
 
@@ -1548,31 +1693,31 @@ footer a { color: var(--gold); text-decoration: none; }
     </div>
     <div class="faq-wrap reveal">
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Who can apply to be a guest? <span class="faq-icon">+</span></button>
+        <button class="faq-q" onclick="toggleFaq(this)">Who can apply to be a guest? <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
         <div class="faq-a">Any entrepreneur, founder, CEO, coach, investor or business owner with an inspiring journey and valuable insights for our audience. If you have a story that can help India's business community, we want to feature you.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Is the recording done professionally? <span class="faq-icon">+</span></button>
+        <button class="faq-q" onclick="toggleFaq(this)">Is the recording done professionally? <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
         <div class="faq-a">Yes. We provide premium multi-camera studio recording with professional lighting and broadcast-quality audio at our studio in Noida, Delhi NCR. The production quality is on par with major national media outlets.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Where will my episode be published? <span class="faq-icon">+</span></button>
+        <button class="faq-q" onclick="toggleFaq(this)">Where will my episode be published? <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
         <div class="faq-a">Your episode is published on YouTube (300K+ subscribers), Instagram, Spotify and all major podcast platforms. Short-form clips are also published across our social media channels at launch.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Can early-stage startups apply? <span class="faq-icon">+</span></button>
+        <button class="faq-q" onclick="toggleFaq(this)">Can early-stage startups apply? <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
         <div class="faq-a">Absolutely. Early-stage founders with inspiring stories, genuine expertise and a clear mission are welcome. We value authentic journeys over revenue numbers.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Will I receive social media clips? <span class="faq-icon">+</span></button>
+        <button class="faq-q" onclick="toggleFaq(this)">Will I receive social media clips? <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
         <div class="faq-a">Yes, you will receive multiple branded reels and short-form promotional clips from your episode that you can post on your own Instagram, LinkedIn and WhatsApp channels.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">When will my episode go live after recording? <span class="faq-icon">+</span></button>
+        <button class="faq-q" onclick="toggleFaq(this)">When will my episode go live after recording? <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
         <div class="faq-a">Episodes are typically edited and published within 2–4 weeks of the recording date, depending on our production schedule. You'll receive a preview before it goes live.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What payment methods are accepted? <span class="faq-icon">+</span></button>
+        <button class="faq-q" onclick="toggleFaq(this)">What payment methods are accepted? <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></button>
         <div class="faq-a">We accept UPI, NEFT/IMPS bank transfer, and credit/debit cards. Payment is processed after we confirm your application and slot availability. A GST invoice is provided.</div>
       </div>
     </div>
