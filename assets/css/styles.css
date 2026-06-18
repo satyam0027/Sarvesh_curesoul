@@ -132,6 +132,21 @@ button,input,textarea{font:inherit}
   color: var(--ink);
 }
 
+.nav-links a.nav-guest-link{
+  background: var(--accent2);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.nav-links a.nav-guest-link:hover{
+  background: #0f4a44;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
 .nav-cta{
   display:flex;
   align-items:center;
