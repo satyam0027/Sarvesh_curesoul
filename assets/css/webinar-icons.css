@@ -1,0 +1,201 @@
+/* ============================================================
+   Webinar — animated SVG icons (replaces emojis)
+   ============================================================ */
+
+.w-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold);
+  line-height: 0;
+}
+
+.w-icon svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Experience cards */
+.exp-card .w-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 16px;
+  color: var(--green);
+}
+
+.exp-card .w-icon .accent { color: var(--gold); }
+.w-icon--inline {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: -3px;
+}
+
+.trust-row span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.trust-row .w-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  color: var(--gold);
+}
+
+/* Button icon */
+.btn--icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn .w-icon--btn {
+  width: 22px;
+  height: 22px;
+  color: currentColor;
+}
+
+/* What-not lists */
+.what-not li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.what-not .w-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.what-not .w-icon--cross { color: #b54a4a; }
+.what-not .w-icon--check { color: var(--gold-deep); }
+
+/* Success check */
+.form-success .w-icon--success {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 14px;
+  color: var(--gold);
+}
+
+/* ---- Animations ---- */
+
+@keyframes w-icon-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes w-icon-compass-sway {
+  0%, 100% { transform: rotate(-18deg); }
+  50% { transform: rotate(18deg); }
+}
+
+@keyframes w-icon-shine {
+  0% { transform: translateX(-120%) skewX(-12deg); opacity: 0; }
+  30% { opacity: 0.85; }
+  100% { transform: translateX(220%) skewX(-12deg); opacity: 0; }
+}
+
+@keyframes w-icon-bar-grow {
+  0%, 100% { transform: scaleY(0.55); transform-origin: bottom center; }
+  50% { transform: scaleY(1); transform-origin: bottom center; }
+}
+
+@keyframes w-icon-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes w-icon-leaf-sway {
+  0%, 100% { transform: rotate(-6deg); transform-origin: 24px 34px; }
+  50% { transform: rotate(8deg); transform-origin: 24px 34px; }
+}
+
+@keyframes w-icon-stem-grow {
+  0%, 100% { transform: scaleY(0.88); transform-origin: bottom center; }
+  50% { transform: scaleY(1); transform-origin: bottom center; }
+}
+
+@keyframes w-icon-tassel {
+  0%, 100% { transform: rotate(-8deg); transform-origin: 30px 14px; }
+  50% { transform: rotate(10deg); transform-origin: 30px 14px; }
+}
+
+@keyframes w-icon-check-draw {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes w-icon-check-pop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes w-icon-cross-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.92); opacity: 0.75; }
+}
+
+.w-icon--gear svg .gear-body {
+  animation: w-icon-spin 8s linear infinite;
+  transform-origin: 24px 24px;
+}
+
+.w-icon--compass svg .compass-needle {
+  animation: w-icon-compass-sway 3.5s ease-in-out infinite;
+  transform-origin: 24px 24px;
+}
+
+.w-icon--mirror svg .mirror-shine {
+  animation: w-icon-shine 2.8s ease-in-out infinite;
+}
+
+.w-icon--chart svg .bar-1 { animation: w-icon-bar-grow 2.2s ease-in-out infinite; }
+.w-icon--chart svg .bar-2 { animation: w-icon-bar-grow 2.2s ease-in-out 0.25s infinite; }
+.w-icon--chart svg .bar-3 { animation: w-icon-bar-grow 2.2s ease-in-out 0.5s infinite; }
+
+.w-icon--puzzle svg .puzzle-piece {
+  animation: w-icon-float 2.6s ease-in-out infinite;
+}
+
+.w-icon--seedling svg .seedling-stem {
+  animation: w-icon-stem-grow 2.4s ease-in-out infinite;
+}
+.w-icon--seedling svg .seedling-leaf {
+  animation: w-icon-leaf-sway 2.4s ease-in-out infinite;
+}
+
+.w-icon--graduation svg .grad-tassel {
+  animation: w-icon-tassel 2.5s ease-in-out infinite;
+}
+
+.w-icon--check svg .check-mark {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 0;
+  animation: w-icon-check-draw 1.2s ease forwards, w-icon-check-pop 2.4s ease-in-out 1.2s infinite;
+}
+
+.w-icon--cross svg .cross-mark {
+  animation: w-icon-cross-pulse 2s ease-in-out infinite;
+  transform-origin: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .w-icon--gear svg .gear-body,
+  .w-icon--compass svg .compass-needle,
+  .w-icon--mirror svg .mirror-shine,
+  .w-icon--chart svg .bar-1,
+  .w-icon--chart svg .bar-2,
+  .w-icon--chart svg .bar-3,
+  .w-icon--puzzle svg .puzzle-piece,
+  .w-icon--seedling svg .seedling-stem,
+  .w-icon--seedling svg .seedling-leaf,
+  .w-icon--graduation svg .grad-tassel,
+  .w-icon--check svg .check-mark,
+  .w-icon--cross svg .cross-mark {
+    animation: none !important;
+  }
+}

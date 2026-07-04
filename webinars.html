@@ -369,71 +369,16 @@
  </div>
  <div class="webinar-grid">
  <article class="webinar-card">
- <span class="price-tag free">Free</span>
- <h3>Decoding Your Identity</h3>
- <p>Understand the hidden patterns behind identity, choices, and emotional reactions in daily life.</p>
+ <span class="price-tag free">Free · Featured</span>
+ <h3>Life Reset™ Masterclass</h3>
+ <p>Live Online Masterclass with Sarvesh Mishra — अपनी ज़िंदगी को पहली बार समझिए। Structured inner work, Life Reset Assessment, and free registration.</p>
  <div class="meta-row">
- <span class="meta-chip"><i data-lucide="calendar-days" aria-hidden="true"></i> June 15, 2025</span>
- <span class="meta-chip"><i data-lucide="clock-4" aria-hidden="true"></i> 7PM IST</span>
+ <span class="meta-chip"><i data-lucide="calendar-days" aria-hidden="true"></i> 25 July 2026</span>
+ <span class="meta-chip"><i data-lucide="clock-4" aria-hidden="true"></i> 6:00 PM IST</span>
  <span class="meta-chip"><i data-lucide="timer" aria-hidden="true"></i> 90 min</span>
  </div>
- <div class="host-row"><img src="images/sarvesh-mishra.jpg" alt="Sarvesh Mishra" />Host: Sarvesh Mishra</div>
- <button class="btn-webinar reserve-btn" type="button" data-webinar="Decoding Your Identity" data-access="free">Reserve Your Seat</button>
- </article>
-
- <article class="webinar-card">
- <span class="price-tag paid">Paid ₹499</span>
- <h3>Inner Alchemy Masterclass</h3>
- <p>A practical session on converting pressure into clarity through awareness, structure, and lived understanding.</p>
- <div class="meta-row">
- <span class="meta-chip"><i data-lucide="calendar-days" aria-hidden="true"></i> July 3, 2025</span>
- <span class="meta-chip"><i data-lucide="clock-4" aria-hidden="true"></i> 6PM IST</span>
- <span class="meta-chip"><i data-lucide="timer" aria-hidden="true"></i> 90 min</span>
- </div>
- <div class="host-row"><img src="images/sarvesh-mishra.jpg" alt="Sarvesh Mishra" />Host: Sarvesh Mishra</div>
- <a class="btn-webinar" href="/payment.html">Reserve Your Seat</a>
- </article>
-
- <article class="webinar-card">
- <span class="price-tag paid">Paid ₹799</span>
- <h3>Conscious Leadership Live</h3>
- <p>For founders and decision makers navigating responsibility, fatigue, and the need for deeper inner alignment.</p>
- <div class="meta-row">
- <span class="meta-chip"><i data-lucide="calendar-days" aria-hidden="true"></i> July 20, 2025</span>
- <span class="meta-chip"><i data-lucide="clock-4" aria-hidden="true"></i> 5PM IST</span>
- <span class="meta-chip"><i data-lucide="timer" aria-hidden="true"></i> 90 min</span>
- </div>
- <div class="host-row"><img src="images/sarvesh-mishra.jpg" alt="Sarvesh Mishra" />Host: Sarvesh Mishra</div>
- <a class="btn-webinar" href="/payment.html">Reserve Your Seat</a>
- </article>
- </div>
- </section>
-
- <section aria-labelledby="recordingsTitle" class="reveal">
- <div class="section-title">
- <h2 id="recordingsTitle">On-Demand Recordings</h2>
- <p>Access previous deep sessions at your own pace.</p>
- </div>
- <div class="webinar-grid">
- <article class="webinar-card">
- <div class="recording-thumb">Session Replay</div>
- <h3>From Overthinking to Clarity</h3>
- <p>Replay session on attention loops, emotional fatigue, and regaining inner stability.</p>
- <a class="btn-webinar" href="https://youtube.com/@sarveshmishrashow?si=NpcyymaUU810sMmn" target="_blank" rel="noopener noreferrer">Watch Now</a>
- </article>
- <article class="webinar-card">
- <span class="lock-overlay"><i data-lucide="lock" aria-hidden="true"></i></span>
- <div class="recording-thumb">Premium Recording</div>
- <h3>Identity, Stress & Meaning Intensive</h3>
- <p>In-depth framework session with practical reflection tools for leaders and seekers.</p>
- <a class="btn-webinar" href="/payment.html">Buy Access ₹199</a>
- </article>
- <article class="webinar-card">
- <span class="lock-overlay"><i data-lucide="lock" aria-hidden="true"></i></span>
- <div class="recording-thumb">Premium Recording</div>
- <h3>Modern Spirituality Without Escape</h3>
- <p>A grounded exploration of awareness, discipline, and staying engaged with modern life.</p>
- <a class="btn-webinar" href="/payment.html">Buy Access ₹199</a>
+ <div class="host-row"><img src="images/sarvesh-mishra.jpg" alt="Sarvesh Mishra" />Host: Sarvesh Mishra · CureSoulLife</div>
+ <a class="btn-webinar" href="webinar/index.html">View Landing Page & Register</a>
  </article>
  </div>
  </section>
@@ -452,29 +397,6 @@
  </section>
  </div>
  </main>
-
- <div id="freeWebinarModal" class="webinar-modal" aria-hidden="true">
- <div class="modal-backdrop" data-close-modal></div>
- <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
- <div class="modal-head">
- <h3 id="modalTitle">Reserve Free Webinar Access</h3>
- <button class="close-modal" type="button" data-close-modal aria-label="Close registration form">×</button>
- </div>
- <form id="freeWebinarForm" class="modal-form">
- <label>Name
- <input type="text" name="name" required />
- </label>
- <label>Email
- <input type="email" name="email" required />
- </label>
- <label>WhatsApp number (optional)
- <input type="tel" name="whatsapp" />
- </label>
- <button type="submit">Get Free Access Link</button>
- </form>
- <p id="freeWebinarSuccess" class="form-success">Your seat is reserved. Check your email for the Zoom/Meet link.</p>
- </div>
- </div>
 
  <footer class="site-footer">
  <div class="container">
@@ -520,70 +442,6 @@
 
  <script>
  (function () {
-   const modal = document.getElementById("freeWebinarModal");
-   const form = document.getElementById("freeWebinarForm");
-   const success = document.getElementById("freeWebinarSuccess");
-   const reserveButtons = Array.from(document.querySelectorAll(".reserve-btn[data-access='free']"));
-   const closeTriggers = Array.from(document.querySelectorAll("[data-close-modal]"));
-   let lastFocused = null;
-
-   const getFocusable = () => {
-     if (!modal) return [];
-     return Array.from(modal.querySelectorAll("button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"))
-       .filter((el) => !el.hasAttribute("disabled"));
-   };
-
-   const openModal = (title) => {
-     if (!modal) return;
-     lastFocused = document.activeElement;
-     modal.classList.add("open");
-     modal.setAttribute("aria-hidden", "false");
-     const heading = document.getElementById("modalTitle");
-     if (heading && title) heading.textContent = `Reserve Free Webinar Access - ${title}`;
-     const focusable = getFocusable();
-     if (focusable.length) focusable[0].focus();
-   };
-
-   const closeModal = () => {
-     if (!modal) return;
-     modal.classList.remove("open");
-     modal.setAttribute("aria-hidden", "true");
-     if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
-   };
-
-   reserveButtons.forEach((btn) => btn.addEventListener("click", () => openModal(btn.dataset.webinar || "")));
-   closeTriggers.forEach((el) => el.addEventListener("click", closeModal));
-
-   document.addEventListener("keydown", (e) => {
-     if (!modal || !modal.classList.contains("open")) return;
-     if (e.key === "Escape") {
-       e.preventDefault();
-       closeModal();
-       return;
-     }
-     if (e.key === "Tab") {
-       const focusable = getFocusable();
-       if (!focusable.length) return;
-       const first = focusable[0];
-       const last = focusable[focusable.length - 1];
-       if (e.shiftKey && document.activeElement === first) {
-         e.preventDefault();
-         last.focus();
-       } else if (!e.shiftKey && document.activeElement === last) {
-         e.preventDefault();
-         first.focus();
-       }
-     }
-   });
-
-   if (form && success) {
-     form.addEventListener("submit", (e) => {
-       e.preventDefault();
-       success.classList.add("show");
-       form.reset();
-     });
-   }
-
    const revealEls = Array.from(document.querySelectorAll(".reveal"));
    if ("IntersectionObserver" in window && revealEls.length) {
      const io = new IntersectionObserver((entries, observer) => {
