@@ -1,5 +1,5 @@
 // ============================================================
-// LIFE RESET™ — shared interactivity
+// LIFE RESET — shared interactivity
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', function () {

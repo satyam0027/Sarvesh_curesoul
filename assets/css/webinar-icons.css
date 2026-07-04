@@ -183,7 +183,18 @@
   transform-origin: 24px 24px;
 }
 
+/* Hero highlight + chip icons */
+.hero__highlight-icon.w-icon {
+  margin: 0;
+}
+
+.hero__chip .w-icon,
+.hero__form-trust .w-icon--lock {
+  line-height: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .hero__live-dot,
   .w-icon--gear svg .gear-body,
   .w-icon--compass svg .compass-needle,
   .w-icon--mirror svg .mirror-shine,
