@@ -134,7 +134,18 @@
     font-weight: 700;
   }
   .price-tag.free{ background: rgba(45,212,191,.16); color: #0f5d52; border: 1px solid rgba(45,212,191,.36);}
-  .price-tag.paid{ background: rgba(248,113,113,.14); color: #8a3434; border: 1px solid rgba(248,113,113,.34);}
+  .price-tag.paid{
+    background: linear-gradient(145deg, rgba(196, 154, 40, 0.18), rgba(196, 154, 40, 0.08));
+    color: #7a5a12;
+    border: 1px solid rgba(196, 154, 40, 0.42);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .price-tag.paid strong{
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.05em;
+    color: #5c4510;
+  }
   .btn-webinar{
     width: 100%;
     padding: 10px 14px;
@@ -369,11 +380,11 @@
  </div>
  <div class="webinar-grid">
  <article class="webinar-card">
- <span class="price-tag free">Free · Featured</span>
+ <span class="price-tag paid"><strong>₹99</strong> · Featured</span>
  <h3>Life Reset Masterclass</h3>
- <p>Live Online Masterclass with Sarvesh Mishra — अपनी ज़िंदगी को पहली बार समझिए। Structured inner work, Life Reset Assessment, and free registration.</p>
+ <p>Live Online Masterclass with Sarvesh Mishra — अपनी ज़िंदगी को पहली बार समझिए। Structured inner work, Life Reset Assessment, and registration at ₹99 only.</p>
  <div class="meta-row">
- <span class="meta-chip"><i data-lucide="calendar-days" aria-hidden="true"></i> 25 July 2026</span>
+ <span class="meta-chip"><i data-lucide="calendar-days" aria-hidden="true"></i> 26 July 2026</span>
  <span class="meta-chip"><i data-lucide="clock-4" aria-hidden="true"></i> 6:00 PM IST</span>
  <span class="meta-chip"><i data-lucide="timer" aria-hidden="true"></i> 90 min</span>
  </div>

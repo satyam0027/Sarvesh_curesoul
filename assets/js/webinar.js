@@ -4,6 +4,316 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  var PENDING_REG_KEY = 'lr_pending_registration';
+
+  function getGoogleScriptUrl() {
+    var fromConfig = (window.WEBINAR_CONFIG && window.WEBINAR_CONFIG.googleScriptUrl) || '';
+    if (fromConfig) return fromConfig;
+    var regForm = document.getElementById('registration-form');
+    if (regForm && regForm.getAttribute('data-script-url')) {
+      return regForm.getAttribute('data-script-url');
+    }
+    return '';
+  }
+
+  function fireGetBeacon(payload) {
+    return new Promise(function (resolve) {
+      var url = getGoogleScriptUrl().trim() + '?' + buildFullParams(payload).toString() + '&_t=' + Date.now();
+      var img = new Image();
+      var done = false;
+      function finish() {
+        if (done) return;
+        done = true;
+        resolve();
+      }
+      img.onload = finish;
+      img.onerror = finish;
+      img.src = url;
+      setTimeout(finish, 2500);
+    });
+  }
+
+  function buildWebAppParams(payload, requiredKeys) {
+    var params = new URLSearchParams();
+    var required = {};
+    (requiredKeys || []).forEach(function (key) { required[key] = 1; });
+    Object.keys(payload).forEach(function (key) {
+      var val = payload[key];
+      if (required[key] || (val !== undefined && val !== null && val !== '')) {
+        params.append(key, val == null ? '' : String(val));
+      }
+    });
+    return params;
+  }
+
+  function extractJsonFromText(text) {
+    if (!text) return null;
+    var trimmed = String(text).trim();
+    try {
+      return JSON.parse(trimmed);
+    } catch (ignore) {}
+
+    var start = trimmed.indexOf('{');
+    var end = trimmed.lastIndexOf('}');
+    if (start !== -1 && end > start) {
+      try {
+        return JSON.parse(trimmed.slice(start, end + 1));
+      } catch (ignore2) {}
+    }
+    return null;
+  }
+
+  function makeClientRegistrationId() {
+    return 'LR-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+  }
+
+  function buildFullParams(payload) {
+    var params = new URLSearchParams();
+    Object.keys(payload).forEach(function (key) {
+      if (payload[key] !== undefined && payload[key] !== null) {
+        params.append(key, String(payload[key]));
+      }
+    });
+    return params;
+  }
+
+  function upsertHiddenInput(form, name, value) {
+    var existing = form.querySelector('input[name="' + name + '"]');
+    if (existing) {
+      existing.value = value;
+      return existing;
+    }
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    form.appendChild(input);
+    return input;
+  }
+
+  /* Native GET form → iframe — identical to opening the API URL in a browser tab. */
+  function submitNativeRegistrationForm(form, payload) {
+    return new Promise(function (resolve) {
+      var scriptUrl = getGoogleScriptUrl().trim();
+      upsertHiddenInput(form, 'action', 'register');
+      upsertHiddenInput(form, 'timestamp', payload.timestamp || new Date().toISOString());
+      upsertHiddenInput(form, 'source', payload.source || 'Life Reset Masterclass');
+      upsertHiddenInput(form, 'registration_id', payload.registration_id);
+
+      var previous = {
+        action: form.getAttribute('action') || '',
+        method: form.getAttribute('method') || '',
+        target: form.getAttribute('target') || ''
+      };
+
+      form.setAttribute('action', scriptUrl);
+      form.setAttribute('method', 'GET');
+      form.setAttribute('target', 'reg-sheet-frame');
+      form.submit();
+
+      setTimeout(function () {
+        if (previous.action) form.setAttribute('action', previous.action);
+        else form.removeAttribute('action');
+        if (previous.method) form.setAttribute('method', previous.method);
+        else form.removeAttribute('method');
+        if (previous.target) form.setAttribute('target', previous.target);
+        else form.removeAttribute('target');
+        resolve();
+      }, 6000);
+    });
+  }
+
+  function callWebAppJsonp(payload) {
+    return new Promise(function (resolve, reject) {
+      var callbackName = 'lrRegCb_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+      var script = document.createElement('script');
+      var finished = false;
+      var timeoutId = setTimeout(function () {
+        finish(new Error('Registration timed out. Please try again.'));
+      }, 30000);
+
+      function finish(err, data) {
+        if (finished) return;
+        finished = true;
+        clearTimeout(timeoutId);
+        try { delete window[callbackName]; } catch (ignore) {}
+        if (script.parentNode) script.parentNode.removeChild(script);
+        if (err) reject(err);
+        else resolve(data);
+      }
+
+      window[callbackName] = function (data) { finish(null, data); };
+      script.onerror = function () { finish(new Error('Could not reach Google Sheets.')); };
+
+      var jsonpPayload = Object.assign({}, payload, { callback: callbackName });
+      script.src = getGoogleScriptUrl().trim() + '?' + buildFullParams(jsonpPayload).toString();
+      document.body.appendChild(script);
+    });
+  }
+
+  function callWebAppPost(payload) {
+    var scriptUrl = getGoogleScriptUrl().trim();
+    return fetch(scriptUrl, {
+      method: 'POST',
+      mode: 'cors',
+      redirect: 'follow',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      body: buildFullParams(payload).toString()
+    })
+      .then(function (res) { return res.text(); })
+      .then(function (text) {
+        var json = extractJsonFromText(text);
+        if (json) return json;
+        throw new Error('Invalid server response');
+      });
+  }
+
+  function callWebAppFetch(payload) {
+    var scriptUrl = getGoogleScriptUrl().trim();
+    var query = scriptUrl + '?' + buildFullParams(payload).toString();
+    return fetch(query, { method: 'GET', redirect: 'follow' })
+      .then(function (res) { return res.text(); })
+      .then(function (text) {
+        var json = extractJsonFromText(text);
+        if (json) return json;
+        throw new Error('Invalid server response');
+      });
+  }
+
+  function registerOnServer(payload, form) {
+    function mustBeSaved(result) {
+      if (result && result.saved && result.registration_id) {
+        return result;
+      }
+      throw new Error((result && result.error) || 'Could not save registration');
+    }
+
+    /* JSONP = one GET request (same as API URL test) that saves the row AND returns JSON. */
+    return callWebAppJsonp(payload)
+      .then(mustBeSaved)
+      .catch(function () {
+        return fireGetBeacon(payload).then(function () {
+          return callWebAppFetch(payload).then(mustBeSaved);
+        });
+      })
+      .catch(function () {
+        return submitNativeRegistrationForm(form, payload).then(function () {
+          return callWebAppJsonp(payload).then(mustBeSaved);
+        });
+      });
+  }
+
+  function submitViaHiddenIframe(payload) {
+    return new Promise(function (resolve) {
+      var iframeName = 'lr_gas_' + Date.now();
+      var iframe = document.createElement('iframe');
+      iframe.name = iframeName;
+      iframe.style.cssText = 'display:none;width:0;height:0;border:0';
+      document.body.appendChild(iframe);
+
+      var form = document.createElement('form');
+      form.method = 'GET';
+      form.action = getGoogleScriptUrl().trim();
+      form.target = iframeName;
+      form.style.display = 'none';
+      Object.keys(payload).forEach(function (key) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = payload[key] == null ? '' : String(payload[key]);
+        form.appendChild(input);
+      });
+      document.body.appendChild(form);
+      form.submit();
+      setTimeout(function () {
+        if (form.parentNode) form.parentNode.removeChild(form);
+        if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+        resolve();
+      }, 5000);
+    });
+  }
+
+  function persistPendingRegistration(registration) {
+    var raw = JSON.stringify(registration);
+    try { sessionStorage.setItem(PENDING_REG_KEY, raw); } catch (ignore) {}
+    try { localStorage.setItem(PENDING_REG_KEY, raw); } catch (ignore) {}
+  }
+
+  function readPendingRegistration(fromSessionOnly) {
+    var raw = null;
+    if (!fromSessionOnly) {
+      try { raw = localStorage.getItem(PENDING_REG_KEY); } catch (ignore) {}
+    }
+    if (!raw) {
+      try { raw = sessionStorage.getItem(PENDING_REG_KEY); } catch (ignore2) {}
+    }
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw);
+    } catch (ignore3) {
+      return null;
+    }
+  }
+
+  function clearPendingRegistration() {
+    try { sessionStorage.removeItem(PENDING_REG_KEY); } catch (ignore) {}
+    try { localStorage.removeItem(PENDING_REG_KEY); } catch (ignore2) {}
+  }
+
+  function markPaidOnServer(details) {
+    var payload = {
+      action: 'mark_paid',
+      registration_id: details.registration_id || '',
+      email: details.email || '',
+      razorpay_payment_id: details.razorpay_payment_id || ''
+    };
+
+    function mustBePaid(result) {
+      if (result && (result.ok || result.payment_status === 'success')) {
+        return result;
+      }
+      throw new Error((result && result.error) || 'Could not update payment status');
+    }
+
+    return callWebAppPost(payload)
+      .then(mustBePaid)
+      .catch(function () {
+        return callWebAppFetch(payload).then(mustBePaid);
+      })
+      .catch(function () {
+        return submitViaHiddenIframe(payload).then(function () {
+          return callWebAppPost(payload).then(mustBePaid);
+        });
+      });
+  }
+
+  function isRazorpayReturn(params) {
+    if (params.get('paid') === '1') return true;
+    if (params.get('razorpay_payment_id')) return true;
+    var linkStatus = (params.get('razorpay_payment_link_status') || '').toLowerCase();
+    return linkStatus === 'paid' || linkStatus === 'partially_paid';
+  }
+
+  function resolveRegistrationFromReturn(params) {
+    var registrationId = params.get('registration_id') ||
+      params.get('reference_id') ||
+      params.get('razorpay_payment_link_reference_id') ||
+      '';
+    var email = params.get('email') || '';
+    var pending = readPendingRegistration(false);
+
+    if (pending) {
+      if (!registrationId) registrationId = pending.registration_id || '';
+      if (!email) email = pending.email || '';
+    }
+
+    return {
+      registration_id: registrationId,
+      email: email,
+      razorpay_payment_id: params.get('razorpay_payment_id') || ''
+    };
+  }
+
   /* ---------------- Subtle reveal-on-scroll ---------------- */
   var revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealEls.length) {
@@ -163,14 +473,13 @@ document.addEventListener('DOMContentLoaded', function () {
     renderQuestion();
   }
 
-  /* ---------------- Registration form → Google Sheets ---------------- */
+  /* ---------------- Registration form → Google Sheets → Razorpay Payment Page ---------------- */
   var regForm = document.getElementById('registration-form');
   if (regForm) {
     var regError = document.getElementById('reg-error');
     var regSubmit = document.getElementById('reg-submit');
-    var regSuccess = document.getElementById('reg-success');
-    var regTrustBelow = document.querySelector('.reg-trust-below');
-    var defaultSubmitLabel = regSubmit ? regSubmit.textContent : 'Reserve My Free Seat';
+    var regIdInput = document.getElementById('registration-id');
+    var defaultSubmitLabel = regSubmit ? (regSubmit.querySelector('.btn__label') ? regSubmit.querySelector('.btn__label').textContent : regSubmit.textContent) : 'Reserve My Seat';
 
     function showRegError(message) {
       if (!regError) return;
@@ -184,94 +493,80 @@ document.addEventListener('DOMContentLoaded', function () {
       regError.hidden = true;
     }
 
-    function setSubmitting(isSubmitting) {
+    function setSubmitting(isSubmitting, label) {
       if (!regSubmit) return;
       regSubmit.disabled = isSubmitting;
-      regSubmit.textContent = isSubmitting ? 'Saving your seat…' : defaultSubmitLabel;
+      var labelEl = regSubmit.querySelector('.btn__label');
+      var priceEl = regSubmit.querySelector('.btn__price-tag');
+      var nextLabel = label || defaultSubmitLabel;
+      if (labelEl) {
+        labelEl.textContent = isSubmitting ? nextLabel : defaultSubmitLabel;
+        if (priceEl) priceEl.hidden = isSubmitting;
+      } else {
+        regSubmit.textContent = isSubmitting ? nextLabel : defaultSubmitLabel;
+      }
       regSubmit.classList.toggle('is-loading', isSubmitting);
     }
 
-    function showRegSuccess() {
-      regForm.style.display = 'none';
-      if (regTrustBelow) regTrustBelow.style.display = 'none';
-      if (regSuccess) regSuccess.classList.add('active');
-      setTimeout(function () {
-        window.location.href = 'welcome.html';
-      }, 1600);
+    function getPaymentPageUrl() {
+      return (window.WEBINAR_CONFIG && window.WEBINAR_CONFIG.paymentPageUrl) || '';
     }
 
-    function getGoogleScriptUrl() {
-      return (window.WEBINAR_CONFIG && window.WEBINAR_CONFIG.googleScriptUrl) || '';
+    function registerLead(payload) {
+      payload.registration_id = makeClientRegistrationId();
+      if (regIdInput) {
+        regIdInput.value = payload.registration_id;
+      }
+      return registerOnServer(payload, regForm);
     }
 
-    function buildParams(payload) {
-      var params = new URLSearchParams();
-      Object.keys(payload).forEach(function (key) {
-        params.append(key, payload[key]);
-      });
-      return params;
+    function buildPayloadFromForm() {
+      var fullNameEl = document.getElementById('full-name');
+      var mobileEl = document.getElementById('mobile');
+      var emailEl = document.getElementById('email');
+      var cityEl = document.getElementById('city');
+      var professionEl = document.getElementById('profession');
+      var scoreEl = document.getElementById('assessment-score');
+
+      return {
+        action: 'register',
+        timestamp: new Date().toISOString(),
+        full_name: fullNameEl ? fullNameEl.value.trim() : '',
+        mobile: mobileEl ? mobileEl.value.trim() : '',
+        email: emailEl ? emailEl.value.trim() : '',
+        city: cityEl ? cityEl.value.trim() : '',
+        profession: professionEl ? professionEl.value : '',
+        assessment_score: scoreEl ? scoreEl.value : '',
+        source: 'Life Reset Masterclass'
+      };
     }
 
-    function responseLooksSuccessful(text) {
-      if (!text) return false;
-      return text.indexOf('"saved":true') !== -1 || text.indexOf('"saved": true') !== -1;
+    function buildPaymentPageUrl(registration) {
+      var baseUrl = getPaymentPageUrl().trim();
+      if (!baseUrl || baseUrl.indexOf('REPLACE_WITH') !== -1) {
+        throw new Error('Razorpay Payment Page URL is not configured in webinar-config.js');
+      }
+
+      var parts = [];
+      if (registration.email) parts.push('email=' + encodeURIComponent(registration.email));
+      if (registration.mobile) {
+        parts.push('phone=' + encodeURIComponent(registration.mobile));
+        parts.push('contact=' + encodeURIComponent(registration.mobile));
+      }
+      if (registration.full_name) parts.push('name=' + encodeURIComponent(registration.full_name));
+      if (registration.registration_id) {
+        parts.push('registration_id=' + encodeURIComponent(registration.registration_id));
+        parts.push('reference_id=' + encodeURIComponent(registration.registration_id));
+      }
+
+      if (!parts.length) return baseUrl;
+      return baseUrl + (baseUrl.indexOf('?') === -1 ? '?' : '&') + parts.join('&');
     }
 
-    function submitViaHiddenForm(payload, scriptUrl) {
-      return new Promise(function (resolve, reject) {
-        var iframe = document.getElementById('reg-sheet-frame');
-        var tempForm = document.createElement('form');
-        var finished = false;
-
-        function finish(ok) {
-          if (finished) return;
-          finished = true;
-          iframe.onload = null;
-          if (tempForm.parentNode) tempForm.parentNode.removeChild(tempForm);
-          ok ? resolve() : reject(new Error('Form submit failed'));
-        }
-
-        tempForm.method = 'GET';
-        tempForm.action = scriptUrl;
-        tempForm.target = 'reg-sheet-frame';
-        tempForm.style.display = 'none';
-
-        Object.keys(payload).forEach(function (key) {
-          var input = document.createElement('input');
-          input.type = 'hidden';
-          input.name = key;
-          input.value = payload[key];
-          tempForm.appendChild(input);
-        });
-
-        iframe.onload = function () { finish(true); };
-        document.body.appendChild(tempForm);
-        tempForm.submit();
-
-        setTimeout(function () { finish(true); }, 2500);
-      });
-    }
-
-    function submitRegistration(payload) {
-      var params = buildParams(payload);
-      var scriptUrl = getGoogleScriptUrl().trim();
-      var query = scriptUrl + '?' + params.toString();
-
-      return fetch(query)
-        .then(function (res) { return res.text(); })
-        .then(function (text) {
-          if (responseLooksSuccessful(text)) return;
-          if (text.indexOf('"error"') !== -1) {
-            throw new Error('server');
-          }
-          return submitViaHiddenForm(payload, scriptUrl);
-        })
-        .catch(function (err) {
-          if (err && err.message === 'server') {
-            throw err;
-          }
-          return submitViaHiddenForm(payload, scriptUrl);
-        });
+    function redirectToPaymentPage(registration) {
+      persistPendingRegistration(registration);
+      if (regIdInput) regIdInput.value = registration.registration_id;
+      window.location.href = buildPaymentPageUrl(registration);
     }
 
     regForm.addEventListener('submit', function (e) {
@@ -284,30 +579,55 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      var payload = {
-        timestamp: new Date().toISOString(),
-        full_name: document.getElementById('full-name').value.trim(),
-        mobile: document.getElementById('mobile').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        city: (document.getElementById('city').value || '').trim(),
-        profession: document.getElementById('profession').value || '',
-        assessment_score: document.getElementById('assessment-score').value || '',
-        source: 'Life Reset Masterclass'
-      };
+      var payload = buildPayloadFromForm();
 
-      setSubmitting(true);
+      if (!payload.full_name || !payload.mobile || !payload.email) {
+        showRegError('Please fill in your name, mobile number, and email.');
+        return;
+      }
 
-      submitRegistration(payload)
-        .then(function () {
-          showRegSuccess();
+      setSubmitting(true, 'Saving your details…');
+      clearPendingRegistration();
+
+      registerLead(payload)
+        .then(function (registerResult) {
+          setSubmitting(true, 'Redirecting to payment…');
+          redirectToPaymentPage(registerResult);
         })
-        .catch(function () {
-          showRegError('Could not save your registration. In Apps Script, set SPREADSHEET_ID, run testWriteRow(), then redeploy.');
-        })
-        .finally(function () {
+        .catch(function (err) {
+          var sheetUrl = (window.WEBINAR_CONFIG && window.WEBINAR_CONFIG.spreadsheetUrl) || '';
+          var msg = (err && err.message) ||
+            'Could not save to Google Sheets. Disable ad-blocker for this page, then try again.';
+          if (sheetUrl) {
+            msg += ' Rows save to: ' + sheetUrl;
+          }
+          showRegError(msg);
           setSubmitting(false);
         });
     });
+  }
+
+  /* ---------------- Welcome page — mark payment success after Razorpay redirect ---------------- */
+  if (document.body.classList.contains('welcome-page')) {
+    var welcomeParams = new URLSearchParams(window.location.search);
+
+    if (isRazorpayReturn(welcomeParams)) {
+      var welcomeTitle = document.getElementById('welcome-title');
+      if (welcomeTitle) {
+        welcomeTitle.textContent = 'Payment Successful — Your Seat Is Confirmed.';
+      }
+
+      var paymentDetails = resolveRegistrationFromReturn(welcomeParams);
+      if ((paymentDetails.registration_id || paymentDetails.email) && getGoogleScriptUrl()) {
+        markPaidOnServer(paymentDetails)
+          .then(function () {
+            clearPendingRegistration();
+          })
+          .catch(function (err) {
+            console.warn('Could not mark payment as success in Google Sheet:', err);
+          });
+      }
+    }
   }
 
   /* ---------------- Smooth-scroll CTA links ---------------- */
