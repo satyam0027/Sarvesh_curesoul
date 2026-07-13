@@ -70,10 +70,26 @@
 <section>
   <div class="container container--narrow reveal">
     <h3 class="center">A Personal Welcome From Sarvesh Mishra</h3>
-    <div class="video-note">
-      <div class="play">▶</div>
-      Personal welcome video (45–60 sec) — manual play, no autoplay
-    </div>
+    <figure class="welcome-video" id="welcome-video-wrap">
+      <div class="welcome-video__shell" id="welcome-video-shell">
+        <video
+          id="welcome-video"
+          class="welcome-video__player"
+          controls
+          playsinline
+          preload="none"
+          poster="../images/sarvesh-mishra-speaking-hero.png"
+          width="720"
+          height="1280"
+          data-src="../assets/video/sarvesh-welcome.mp4"
+          aria-label="Personal welcome message from Sarvesh Mishra">
+        </video>
+        <button type="button" class="welcome-video__play" id="welcome-video-play" aria-label="Play welcome video">
+          <span class="welcome-video__play-icon" aria-hidden="true">▶</span>
+        </button>
+      </div>
+      <figcaption class="welcome-video__caption">Tap play to watch — video loads only when you start it.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -150,7 +166,7 @@
     <div class="support">हम 26 जुलाई 2026 को मिलेंगे। Support: <a href="mailto:support@curesoullife.org">support@curesoullife.org</a></div>
   </div>
 </footer>
-<script src="../assets/js/webinar-config.js?v=20260710" defer></script>
-<script src="../assets/js/webinar.js?v=20260710" defer></script>
+<script src="../assets/js/webinar-config.js?v=20260713" defer></script>
+<script src="../assets/js/webinar.js?v=20260713c" defer></script>
 </body>
 </html>

@@ -275,15 +275,10 @@ document.addEventListener('DOMContentLoaded', function () {
       throw new Error((result && result.error) || 'Could not update payment status');
     }
 
-    return callWebAppPost(payload)
+    return callWebAppJsonp(payload)
       .then(mustBePaid)
       .catch(function () {
         return callWebAppFetch(payload).then(mustBePaid);
-      })
-      .catch(function () {
-        return submitViaHiddenIframe(payload).then(function () {
-          return callWebAppPost(payload).then(mustBePaid);
-        });
       });
   }
 
@@ -610,23 +605,73 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ---------------- Welcome page — mark payment success after Razorpay redirect ---------------- */
   if (document.body.classList.contains('welcome-page')) {
     var welcomeParams = new URLSearchParams(window.location.search);
+    var razorpayReturn = isRazorpayReturn(welcomeParams);
+    var pendingReg = readPendingRegistration(false);
 
-    if (isRazorpayReturn(welcomeParams)) {
+    console.log('[welcome] URL:', window.location.href);
+    console.log('[welcome] isRazorpayReturn:', razorpayReturn);
+    console.log('[welcome] pendingReg from localStorage:', pendingReg);
+
+    if (razorpayReturn || pendingReg) {
       var welcomeTitle = document.getElementById('welcome-title');
       if (welcomeTitle) {
         welcomeTitle.textContent = 'Payment Successful — Your Seat Is Confirmed.';
       }
 
       var paymentDetails = resolveRegistrationFromReturn(welcomeParams);
+      console.log('[welcome] paymentDetails for mark_paid:', paymentDetails);
+
       if ((paymentDetails.registration_id || paymentDetails.email) && getGoogleScriptUrl()) {
+        console.log('[welcome] Calling markPaidOnServer…');
         markPaidOnServer(paymentDetails)
-          .then(function () {
+          .then(function (result) {
+            console.log('[welcome] markPaidOnServer SUCCESS:', result);
             clearPendingRegistration();
           })
           .catch(function (err) {
-            console.warn('Could not mark payment as success in Google Sheet:', err);
+            console.warn('[welcome] markPaidOnServer FAILED:', err);
           });
+      } else {
+        console.warn('[welcome] Skipped mark_paid — no registration_id/email or no script URL.',
+          'registration_id:', paymentDetails.registration_id,
+          'email:', paymentDetails.email,
+          'scriptUrl:', getGoogleScriptUrl());
       }
+    }
+
+    /* Lazy-load welcome video — ~77 MB file; zero bytes until user taps play */
+    var welcomeVideo = document.getElementById('welcome-video');
+    var welcomeVideoPlay = document.getElementById('welcome-video-play');
+    var welcomeVideoWrap = document.getElementById('welcome-video-wrap');
+    if (welcomeVideo && welcomeVideoPlay && welcomeVideo.dataset.src) {
+      var welcomeVideoLoaded = false;
+
+      function loadWelcomeVideo() {
+        if (welcomeVideoLoaded) return Promise.resolve();
+        welcomeVideoLoaded = true;
+        if (welcomeVideoWrap) welcomeVideoWrap.classList.add('is-loading');
+        welcomeVideo.src = welcomeVideo.dataset.src;
+        welcomeVideo.load();
+        return new Promise(function (resolve, reject) {
+          welcomeVideo.addEventListener('loadeddata', resolve, { once: true });
+          welcomeVideo.addEventListener('error', reject, { once: true });
+        });
+      }
+
+      welcomeVideoPlay.addEventListener('click', function () {
+        loadWelcomeVideo()
+          .then(function () {
+            if (welcomeVideoWrap) {
+              welcomeVideoWrap.classList.remove('is-loading');
+              welcomeVideoWrap.classList.add('is-playing');
+            }
+            return welcomeVideo.play();
+          })
+          .catch(function () {
+            welcomeVideoLoaded = false;
+            if (welcomeVideoWrap) welcomeVideoWrap.classList.remove('is-loading', 'is-playing');
+          });
+      });
     }
   }
 
