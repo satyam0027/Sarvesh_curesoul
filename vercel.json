@@ -1,6 +1,12 @@
 {
-     "cleanUrls": true,
-     "routes": [
-        { "src": "/(.*)", "dest": "/index.html" }
-     ]
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "thesarveshmishra.com" }],
+      "destination": "https://www.thesarveshmishra.com/:path*",
+      "permanent": true
+    }
+  ]
 }
