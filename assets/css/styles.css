@@ -1,5 +1,4 @@
 /* Sarvesh Mishra — Personal Website (Global Authority) */
-@import url("https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&display=swap");
 
 :root{
   --bg: #f6f4ef;
@@ -160,8 +159,8 @@ button,input,textarea{font:inherit}
 .mobile-drawer{display:none;}
 .mobile-drawer.open{display:block;}
 .icon-btn{
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: rgba(255,255,255,.78);
@@ -205,7 +204,8 @@ button,input,textarea{font:inherit}
   gap: 10px;
 }
 .mobile-drawer a{
-  padding: 10px 12px;
+  padding: 12px 12px;
+  min-height: 48px;
   border-radius: 12px;
   color: var(--muted);
   border: 1px solid transparent;
@@ -311,8 +311,8 @@ h1{
   justify-content: space-between;
 }
 .hero-quote-btn{
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: rgba(255,255,255,.9);
