@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /SEO_BLOG_TEMPLATE
 
-Sitemap: https://thesarveshmishra.com/sitemap.xml
+Sitemap: https://www.thesarveshmishra.com/sitemap.xml
 

@@ -7,6 +7,18 @@
       "has": [{ "type": "host", "value": "thesarveshmishra.com" }],
       "destination": "https://www.thesarveshmishra.com/:path*",
       "permanent": true
-    }
+    },
+    { "source": "/work", "destination": "/businesses", "permanent": true },
+    { "source": "/work.html", "destination": "/businesses", "permanent": true },
+    { "source": "/books", "destination": "/book", "permanent": true },
+    { "source": "/books.html", "destination": "/book", "permanent": true },
+    { "source": "/media", "destination": "/press", "permanent": true },
+    { "source": "/media.html", "destination": "/press", "permanent": true },
+    { "source": "/speaking", "destination": "/press", "permanent": true },
+    { "source": "/speaking.html", "destination": "/press", "permanent": true },
+    { "source": "/life-decoder", "destination": "/curesoullife", "permanent": true },
+    { "source": "/life-decoder.html", "destination": "/curesoullife", "permanent": true },
+    { "source": "/philosophy", "destination": "/curesoullife", "permanent": true },
+    { "source": "/philosophy.html", "destination": "/curesoullife", "permanent": true }
   ]
 }
