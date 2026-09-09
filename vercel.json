@@ -21,6 +21,8 @@
     { "source": "/philosophy", "destination": "/curesoullife", "permanent": true },
     { "source": "/philosophy.html", "destination": "/curesoullife", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/acharya-shivam-mishra-skm-yoga", "destination": "/writings/the-sarvesh-mishra-show-acharya-shivam-mishra-skm-yoga", "permanent": true },
-    { "source": "/the-sarvesh-mishra-show/acharya-shivam-mishra-skm-yoga.html", "destination": "/writings/the-sarvesh-mishra-show-acharya-shivam-mishra-skm-yoga", "permanent": true }
+    { "source": "/the-sarvesh-mishra-show/acharya-shivam-mishra-skm-yoga.html", "destination": "/writings/the-sarvesh-mishra-show-acharya-shivam-mishra-skm-yoga", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/np-singh-sarkari-naukri-education", "destination": "/writings/the-sarvesh-mishra-show-np-singh-sarkari-naukri-education", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/np-singh-sarkari-naukri-education.html", "destination": "/writings/the-sarvesh-mishra-show-np-singh-sarkari-naukri-education", "permanent": true }
   ]
 }
