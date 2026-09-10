@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_URL = "https://thesarveshmishra.com"
+BASE_URL = "https://www.thesarveshmishra.com"
 TODAY = date.today().isoformat()
 
 

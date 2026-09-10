@@ -5,8 +5,8 @@
    Razorpay Payment Page (no API keys on website):
    1. Create a Rs 99 Payment Page in Razorpay Dashboard
    2. Set success redirect URL to match where you test:
-      Local:  http://localhost:8080/webinar/welcome.html?paid=1
-      Live:   https://thesarveshmishra.com/webinar/welcome.html?paid=1
+      Local:  http://localhost:8080/webinar/welcome?paid=1
+      Live:   https://www.thesarveshmishra.com/webinar/welcome?paid=1
    3. Paste your Payment Page link below (paymentPageUrl)
 
    IMPORTANT: Upload this file AND assets/js/webinar.js to your live site after changes. */

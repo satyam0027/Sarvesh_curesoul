@@ -8,6 +8,8 @@
       "destination": "https://www.thesarveshmishra.com/:path*",
       "permanent": true
     },
+    { "source": "/index", "destination": "/", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/work", "destination": "/businesses", "permanent": true },
     { "source": "/work.html", "destination": "/businesses", "permanent": true },
     { "source": "/books", "destination": "/book", "permanent": true },
@@ -20,9 +22,26 @@
     { "source": "/life-decoder.html", "destination": "/curesoullife", "permanent": true },
     { "source": "/philosophy", "destination": "/curesoullife", "permanent": true },
     { "source": "/philosophy.html", "destination": "/curesoullife", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/writings.html", "destination": "/writings", "permanent": true },
+    { "source": "/blog-sarvesh-mishra-show.html", "destination": "/blog-sarvesh-mishra-show", "permanent": true },
+    { "source": "/podast-enquiry.html", "destination": "/podast-enquiry", "permanent": true },
+    { "source": "/writings/the-sarvesh-mishra-show-sip-wealth-investing.html", "destination": "/writings/the-sarvesh-mishra-show-sip-wealth-investing", "permanent": true },
+    { "source": "/writings/the-sarvesh-mishra-show-sagar-sinha-real-rich.html", "destination": "/writings/the-sarvesh-mishra-show-sagar-sinha-real-rich", "permanent": true },
+    { "source": "/writings/the-sarvesh-mishra-show-hemant-kaushik-property-law.html", "destination": "/writings/the-sarvesh-mishra-show-hemant-kaushik-property-law", "permanent": true },
+    { "source": "/writings/the-sarvesh-mishra-show-vishnu-mane-garbh-sanskar.html", "destination": "/writings/the-sarvesh-mishra-show-vishnu-mane-garbh-sanskar", "permanent": true },
+    { "source": "/writings/the-sarvesh-mishra-show-gurnandan-singh-brain-optimization.html", "destination": "/writings/the-sarvesh-mishra-show-gurnandan-singh-brain-optimization", "permanent": true },
+    { "source": "/writings/the-sarvesh-mishra-show-ashish-agarwal-business-1-lakh.html", "destination": "/writings/the-sarvesh-mishra-show-ashish-agarwal-business-1-lakh", "permanent": true },
+    { "source": "/writings/the-sarvesh-mishra-show-anurag-rishi-aura-prana.html", "destination": "/writings/the-sarvesh-mishra-show-anurag-rishi-aura-prana", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/acharya-shivam-mishra-skm-yoga", "destination": "/writings/the-sarvesh-mishra-show-acharya-shivam-mishra-skm-yoga", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/acharya-shivam-mishra-skm-yoga.html", "destination": "/writings/the-sarvesh-mishra-show-acharya-shivam-mishra-skm-yoga", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/np-singh-sarkari-naukri-education", "destination": "/writings/the-sarvesh-mishra-show-np-singh-sarkari-naukri-education", "permanent": true },
-    { "source": "/the-sarvesh-mishra-show/np-singh-sarkari-naukri-education.html", "destination": "/writings/the-sarvesh-mishra-show-np-singh-sarkari-naukri-education", "permanent": true }
+    { "source": "/the-sarvesh-mishra-show/np-singh-sarkari-naukri-education.html", "destination": "/writings/the-sarvesh-mishra-show-np-singh-sarkari-naukri-education", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/yogacharya-dhakaram-yoga-career", "destination": "/writings/the-sarvesh-mishra-show-yogacharya-dhakaram-yoga-career", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/yogacharya-dhakaram-yoga-career.html", "destination": "/writings/the-sarvesh-mishra-show-yogacharya-dhakaram-yoga-career", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/dhakaram", "destination": "/writings/the-sarvesh-mishra-show-yogacharya-dhakaram-yoga-career", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/dhakaram.html", "destination": "/writings/the-sarvesh-mishra-show-yogacharya-dhakaram-yoga-career", "permanent": true },
+    { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
