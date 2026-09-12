@@ -1708,6 +1708,7 @@ div.series-day-card.is-soon{
   color: var(--accent);
   margin-bottom: 8px;
 }
+.journey-teaser__body h2,
 .journey-teaser__body h3{
   font-family: var(--font-serif);
   font-weight: 650;

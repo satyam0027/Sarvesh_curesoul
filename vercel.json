@@ -46,6 +46,14 @@
     { "source": "/the-sarvesh-mishra-show/gautam-jain-chatgpt-ai-business.html", "destination": "/writings/the-sarvesh-mishra-show-gautam-jain-chatgpt-ai-business", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/gautam-jain", "destination": "/writings/the-sarvesh-mishra-show-gautam-jain-chatgpt-ai-business", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/gautam-jain.html", "destination": "/writings/the-sarvesh-mishra-show-gautam-jain-chatgpt-ai-business", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/raghav-kumar-garg-debt-free", "destination": "/writings/the-sarvesh-mishra-show-raghav-kumar-garg-debt-free", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/raghav-kumar-garg-debt-free.html", "destination": "/writings/the-sarvesh-mishra-show-raghav-kumar-garg-debt-free", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/raghav-kumar-garg", "destination": "/writings/the-sarvesh-mishra-show-raghav-kumar-garg-debt-free", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/raghav-kumar-garg.html", "destination": "/writings/the-sarvesh-mishra-show-raghav-kumar-garg-debt-free", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/samarthguru-siddharth-aulia-osho-meditation", "destination": "/writings/the-sarvesh-mishra-show-samarthguru-siddharth-aulia-osho-meditation", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/samarthguru-siddharth-aulia-osho-meditation.html", "destination": "/writings/the-sarvesh-mishra-show-samarthguru-siddharth-aulia-osho-meditation", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/samarthguru-siddharth-aulia", "destination": "/writings/the-sarvesh-mishra-show-samarthguru-siddharth-aulia-osho-meditation", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/samarthguru-siddharth-aulia.html", "destination": "/writings/the-sarvesh-mishra-show-samarthguru-siddharth-aulia-osho-meditation", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }

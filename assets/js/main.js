@@ -3,10 +3,14 @@
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   // Current page highlighting
-  const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  const normalizeNavPath = (value) => {
+    const last = (value || "").split("?")[0].replace(/\/+$/, "").split("/").pop().toLowerCase();
+    if (!last || last === "index" || last === "index.html") return "/";
+    return last;
+  };
+  const path = normalizeNavPath(location.pathname);
   $$("[data-nav]").forEach((a) => {
-    const href = (a.getAttribute("href") || "").toLowerCase();
-    if (href === path) a.setAttribute("aria-current", "page");
+    if (normalizeNavPath(a.getAttribute("href")) === path) a.setAttribute("aria-current", "page");
   });
 
   // Section title icons
