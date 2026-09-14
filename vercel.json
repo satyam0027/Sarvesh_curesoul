@@ -54,6 +54,10 @@
     { "source": "/the-sarvesh-mishra-show/samarthguru-siddharth-aulia-osho-meditation.html", "destination": "/writings/the-sarvesh-mishra-show-samarthguru-siddharth-aulia-osho-meditation", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/samarthguru-siddharth-aulia", "destination": "/writings/the-sarvesh-mishra-show-samarthguru-siddharth-aulia-osho-meditation", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/samarthguru-siddharth-aulia.html", "destination": "/writings/the-sarvesh-mishra-show-samarthguru-siddharth-aulia-osho-meditation", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/avneesh-real-estate-investment", "destination": "/writings/the-sarvesh-mishra-show-avneesh-real-estate-investment", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/avneesh-real-estate-investment.html", "destination": "/writings/the-sarvesh-mishra-show-avneesh-real-estate-investment", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/avneesh", "destination": "/writings/the-sarvesh-mishra-show-avneesh-real-estate-investment", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/avneesh.html", "destination": "/writings/the-sarvesh-mishra-show-avneesh-real-estate-investment", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
