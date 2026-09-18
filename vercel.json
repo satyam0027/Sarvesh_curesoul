@@ -66,6 +66,14 @@
     { "source": "/the-sarvesh-mishra-show/sachin-jain-scripbox-sip.html", "destination": "/writings/the-sarvesh-mishra-show-sachin-jain-scripbox-sip", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/sachin-jain", "destination": "/writings/the-sarvesh-mishra-show-sachin-jain-scripbox-sip", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/sachin-jain.html", "destination": "/writings/the-sarvesh-mishra-show-sachin-jain-scripbox-sip", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/lalit-arora-ubon", "destination": "/writings/the-sarvesh-mishra-show-lalit-arora-ubon", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/lalit-arora-ubon.html", "destination": "/writings/the-sarvesh-mishra-show-lalit-arora-ubon", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/lalit-arora", "destination": "/writings/the-sarvesh-mishra-show-lalit-arora-ubon", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/lalit-arora.html", "destination": "/writings/the-sarvesh-mishra-show-lalit-arora-ubon", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sumedh-sandanshiv-knee-replacement", "destination": "/writings/the-sarvesh-mishra-show-sumedh-sandanshiv-knee-replacement", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sumedh-sandanshiv-knee-replacement.html", "destination": "/writings/the-sarvesh-mishra-show-sumedh-sandanshiv-knee-replacement", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sumedh-sandanshiv", "destination": "/writings/the-sarvesh-mishra-show-sumedh-sandanshiv-knee-replacement", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sumedh-sandanshiv.html", "destination": "/writings/the-sarvesh-mishra-show-sumedh-sandanshiv-knee-replacement", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
