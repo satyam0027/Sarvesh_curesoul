@@ -74,6 +74,10 @@
     { "source": "/the-sarvesh-mishra-show/sumedh-sandanshiv-knee-replacement.html", "destination": "/writings/the-sarvesh-mishra-show-sumedh-sandanshiv-knee-replacement", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/sumedh-sandanshiv", "destination": "/writings/the-sarvesh-mishra-show-sumedh-sandanshiv-knee-replacement", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/sumedh-sandanshiv.html", "destination": "/writings/the-sarvesh-mishra-show-sumedh-sandanshiv-knee-replacement", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/priyank-sharma-intraday-trading", "destination": "/writings/the-sarvesh-mishra-show-priyank-sharma-intraday-trading", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/priyank-sharma-intraday-trading.html", "destination": "/writings/the-sarvesh-mishra-show-priyank-sharma-intraday-trading", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/priyank-sharma", "destination": "/writings/the-sarvesh-mishra-show-priyank-sharma-intraday-trading", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/priyank-sharma.html", "destination": "/writings/the-sarvesh-mishra-show-priyank-sharma-intraday-trading", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
