@@ -78,6 +78,14 @@
     { "source": "/the-sarvesh-mishra-show/priyank-sharma-intraday-trading.html", "destination": "/writings/the-sarvesh-mishra-show-priyank-sharma-intraday-trading", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/priyank-sharma", "destination": "/writings/the-sarvesh-mishra-show-priyank-sharma-intraday-trading", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/priyank-sharma.html", "destination": "/writings/the-sarvesh-mishra-show-priyank-sharma-intraday-trading", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/shivam-thakur-sports-career", "destination": "/writings/the-sarvesh-mishra-show-shivam-thakur-sports-career", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/shivam-thakur-sports-career.html", "destination": "/writings/the-sarvesh-mishra-show-shivam-thakur-sports-career", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/shivam-thakur", "destination": "/writings/the-sarvesh-mishra-show-shivam-thakur-sports-career", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/shivam-thakur.html", "destination": "/writings/the-sarvesh-mishra-show-shivam-thakur-sports-career", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sanjeev-jain-ai-revolution", "destination": "/writings/the-sarvesh-mishra-show-sanjeev-jain-ai-revolution", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sanjeev-jain-ai-revolution.html", "destination": "/writings/the-sarvesh-mishra-show-sanjeev-jain-ai-revolution", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sanjeev-jain", "destination": "/writings/the-sarvesh-mishra-show-sanjeev-jain-ai-revolution", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sanjeev-jain.html", "destination": "/writings/the-sarvesh-mishra-show-sanjeev-jain-ai-revolution", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
