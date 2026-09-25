@@ -90,6 +90,10 @@
     { "source": "/the-sarvesh-mishra-show/nitin-murarka-options-trading.html", "destination": "/writings/the-sarvesh-mishra-show-nitin-murarka-options-trading", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/nitin-murarka", "destination": "/writings/the-sarvesh-mishra-show-nitin-murarka-options-trading", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/nitin-murarka.html", "destination": "/writings/the-sarvesh-mishra-show-nitin-murarka-options-trading", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sudhir-kove-signature-logo-wristwatch", "destination": "/writings/the-sarvesh-mishra-show-sudhir-kove-signature-logo-wristwatch", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sudhir-kove-signature-logo-wristwatch.html", "destination": "/writings/the-sarvesh-mishra-show-sudhir-kove-signature-logo-wristwatch", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sudhir-kove", "destination": "/writings/the-sarvesh-mishra-show-sudhir-kove-signature-logo-wristwatch", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sudhir-kove.html", "destination": "/writings/the-sarvesh-mishra-show-sudhir-kove-signature-logo-wristwatch", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
