@@ -94,6 +94,14 @@
     { "source": "/the-sarvesh-mishra-show/sudhir-kove-signature-logo-wristwatch.html", "destination": "/writings/the-sarvesh-mishra-show-sudhir-kove-signature-logo-wristwatch", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/sudhir-kove", "destination": "/writings/the-sarvesh-mishra-show-sudhir-kove-signature-logo-wristwatch", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/sudhir-kove.html", "destination": "/writings/the-sarvesh-mishra-show-sudhir-kove-signature-logo-wristwatch", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sunetri-singh-ayurveda-wellness", "destination": "/writings/the-sarvesh-mishra-show-sunetri-singh-ayurveda-wellness", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sunetri-singh-ayurveda-wellness.html", "destination": "/writings/the-sarvesh-mishra-show-sunetri-singh-ayurveda-wellness", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sunetri-singh", "destination": "/writings/the-sarvesh-mishra-show-sunetri-singh-ayurveda-wellness", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sunetri-singh.html", "destination": "/writings/the-sarvesh-mishra-show-sunetri-singh-ayurveda-wellness", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/jitu-sharma-manifestation-nlp", "destination": "/writings/the-sarvesh-mishra-show-jitu-sharma-manifestation-nlp", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/jitu-sharma-manifestation-nlp.html", "destination": "/writings/the-sarvesh-mishra-show-jitu-sharma-manifestation-nlp", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/jitu-sharma", "destination": "/writings/the-sarvesh-mishra-show-jitu-sharma-manifestation-nlp", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/jitu-sharma.html", "destination": "/writings/the-sarvesh-mishra-show-jitu-sharma-manifestation-nlp", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
