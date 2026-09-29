@@ -41,17 +41,6 @@
 <link rel="manifest" href="../assets/site.webmanifest" />
  <link rel="stylesheet" href="../assets/css/styles.css" />
  <script defer src="../assets/js/main.js"></script>
- <style>
- .related{margin-top:2.5rem;padding:22px 24px;background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:var(--radius-sm)}
- .related h3{margin:0 0 14px;font-size:16px;font-family:var(--font-serif)}
- .related-links{display:flex;flex-wrap:wrap;gap:10px}
- .related-link{display:inline-flex;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:500;text-decoration:none;border:1px solid var(--line);color:var(--muted);background:rgba(255,255,255,.9)}
- .related-link:hover{border-color:rgba(139,107,66,.45);color:var(--accent)}
- .faq-item{border-bottom:1px solid var(--line)}
- .faq-q{padding:16px 0;cursor:pointer;font-weight:600;font-size:15px;list-style:none}
- .faq-q::-webkit-details-marker{display:none}
- .faq-a{padding:0 0 16px;font-size:14.5px;color:var(--muted);line-height:1.65}
- </style>
 
  <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -71,9 +60,82 @@
 {"@type":"Question","name":"Can crypto replace UPI?","acceptedAnswer":{"@type":"Answer","text":"Umesh believes not. It suits investing, trading, and cross-border payments better."}}
 ]}
 ]}
-</script>
+ </script>
+
+ <style>
+  #blog-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent2);z-index:200;transition:width .1s linear}
+  .blog-article{font-size:1.05rem;line-height:1.78}
+  .blog-article .episode-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(17,58,53,.08);color:var(--accent2);border:1px solid rgba(17,58,53,.18);border-radius:999px;padding:5px 14px;font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px}
+  .blog-article .episode-badge span{width:6px;height:6px;background:var(--accent2);border-radius:50%}
+  .blog-article .hero-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:24px}
+  .blog-article .hero-meta-dot{width:3px;height:3px;background:var(--faint);border-radius:50%}
+  .blog-article .guest-author-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+  .blog-article .person-card{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:var(--radius-sm)}
+  .blog-article .person-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:15px;font-weight:600;flex-shrink:0}
+  .blog-article .person-avatar.guest{background:rgba(17,58,53,.1);color:var(--accent2)}
+  .blog-article .person-avatar.host{background:rgba(139,107,66,.14);color:var(--accent)}
+  .blog-article .person-label{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);margin-bottom:3px}
+  .blog-article .person-name{font-weight:600;font-size:14px}
+  .blog-article .person-role{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.45}
+  .blog-article .disclaimer{background:#fffbeb;border:1px solid #fcd34d;border-radius:var(--radius-sm);padding:14px 16px;font-size:13px;color:#78350f;margin-bottom:24px;display:flex;gap:10px;align-items:flex-start}
+  .blog-article h2{font-family:var(--font-serif);font-size:clamp(20px,3vw,26px);margin:2.2rem 0 14px;line-height:1.3}
+  .blog-article h3{font-family:var(--font-serif);font-size:1.15rem;margin:1.6rem 0 10px;line-height:1.35}
+  .blog-article p{margin-bottom:1.1rem}
+  .blog-article .lede{font-size:1.12rem;color:var(--muted);margin-bottom:1.3rem}
+  .blog-article .figures{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:1.6rem 0 2rem}
+  .blog-article .figure-card{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px 14px}
+  .blog-article .figure-num{font-family:var(--font-serif);font-size:clamp(22px,3vw,28px);line-height:1.1;color:var(--accent2);margin-bottom:6px}
+  .blog-article .figure-label{font-size:12.5px;color:var(--muted);line-height:1.45}
+  .blog-article .figure-note{font-size:11px;color:var(--faint);margin-top:6px}
+  .blog-article .takeaway{background:rgba(17,58,53,.08);border-left:3px solid var(--accent2);border-radius:0 10px 10px 0;padding:18px 20px;margin:1.6rem 0}
+  .blog-article .takeaway-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent2);margin-bottom:8px}
+  .blog-article .takeaway p{margin:0}
+  .blog-article .warning{background:rgba(185,28,28,.06);border-left:3px solid #b91c1c;border-radius:0 10px 10px 0;padding:18px 20px;margin:1.6rem 0}
+  .blog-article .warning-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#b91c1c;margin-bottom:8px}
+  .blog-article .warning p{margin:0;font-size:15px}
+  .blog-article .rich-compare{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:1.4rem 0;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--line)}
+  .blog-article .rich-col{padding:20px 18px}
+  .blog-article .rich-col.fake{background:rgba(185,28,28,.06)}
+  .blog-article .rich-col.real{background:rgba(17,58,53,.08)}
+  .blog-article .rich-col-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+  .blog-article .rich-col.fake .rich-col-label{color:#b91c1c}
+  .blog-article .rich-col.real .rich-col-label{color:var(--accent2)}
+  .blog-article .rich-col ul{list-style:none;padding:0;margin:0}
+  .blog-article .rich-col ul li{padding:6px 0;font-size:14px;border-bottom:1px solid rgba(0,0,0,.06);line-height:1.5}
+  .blog-article .rich-col ul li:last-child{border-bottom:0}
+  .blog-article blockquote{margin:1.8rem 0;padding:20px 22px;background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:var(--radius-sm)}
+  .blog-article blockquote p{margin:0;font-family:var(--font-serif);font-size:1.08rem;font-style:italic;line-height:1.55}
+  .blog-article blockquote cite{display:block;margin-top:10px;font-size:13px;color:var(--muted);font-style:normal}
+  .blog-article .checklist{list-style:none;padding:0;margin:1.2rem 0}
+  .blog-article .checklist li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;align-items:flex-start}
+  .blog-article .checklist li:last-child{border-bottom:0}
+  .blog-article .check-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(17,58,53,.1);color:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px}
+  .blog-article table.facts{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:14.5px}
+  .blog-article table.facts th,.blog-article table.facts td{border:1px solid var(--line);padding:11px 12px;text-align:left;vertical-align:top}
+  .blog-article table.facts th{background:rgba(255,255,255,.7);font-weight:600}
+  .blog-article .timeline{list-style:none;margin:1.4rem 0;padding:0}
+  .blog-article .timeline li{position:relative;padding:0 0 22px 22px;border-left:2px solid rgba(17,58,53,.18)}
+  .blog-article .timeline li:last-child{padding-bottom:0}
+  .blog-article .timeline li::before{content:"";position:absolute;left:-5px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--accent2)}
+  .blog-article .timeline strong{display:block;font-size:13px;color:var(--accent2);margin-bottom:4px}
+  .blog-article .faq{margin-top:2.5rem}
+  .blog-article .faq-item{border-bottom:1px solid var(--line)}
+  .blog-article .faq-q{padding:16px 0;cursor:pointer;font-weight:600;font-size:15px;list-style:none}
+  .blog-article .faq-q::-webkit-details-marker{display:none}
+  .blog-article .faq-a{padding:0 0 16px;font-size:14.5px;color:var(--muted);line-height:1.65}
+  .blog-article .related{margin-top:2.5rem;padding:22px 24px;background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:var(--radius-sm)}
+  .blog-article .related h3{margin:0 0 14px;font-size:16px;font-family:var(--font-serif)}
+  .blog-article .related-links{display:flex;flex-wrap:wrap;gap:10px}
+  .blog-article .related-link{display:inline-flex;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:500;text-decoration:none;border:1px solid var(--line);color:var(--muted);background:rgba(255,255,255,.9)}
+  .blog-article .related-link:hover{border-color:rgba(139,107,66,.45);color:var(--accent)}
+  .blog-article .video-caption{font-size:13px;color:var(--muted);margin-top:10px;text-align:center}
+  .blog-article .guest-claim{font-size:12.5px;color:var(--faint);margin-top:-6px}
+  @media (max-width:700px){.blog-article .figures{grid-template-columns:1fr 1fr}}
+  @media (max-width:600px){.blog-article .guest-author-row,.blog-article .rich-compare{grid-template-columns:1fr}.blog-article .figures{grid-template-columns:1fr}}
+ </style>
  </head>
  <body>
+ <div id="blog-progress" aria-hidden="true"></div>
  <a class="skip-link" href="#content">Skip to content</a>
  <header class="site-header">
  <div class="container">
@@ -95,9 +157,7 @@
  <a data-nav href="../contact">Contact</a>
  </div>
  <div class="nav-cta"><button id="mobileToggle" class="icon-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
- <span class="hamburger" aria-hidden="true">
- <span></span><span></span><span></span>
- </span>
+ <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
  </button>
  </div>
  </nav>
@@ -119,187 +179,238 @@
  </div>
  </header>
 
- <div id="blog-progress" style="position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent2);z-index:100;transition:width .1s"></div>
-
  <main id="content" class="page">
  <div class="container" style="max-width:780px">
- <nav aria-label="Breadcrumb" style="margin-bottom:18px">
- <ol style="list-style:none;display:flex;gap:6px;padding:0;margin:0;font-size:0.85rem;color:var(--faint)">
- <li><a href="/">Home</a> ›</li>
- <li><a href="../blog-sarvesh-mishra-show">The Sarvesh Mishra Show</a> ›</li>
- <li aria-current="page">Umesh Kumar — Bitcoin &amp; Crypto in India</li>
- </ol>
+
+ <nav class="fine muted" style="margin-bottom:18px" aria-label="Breadcrumb">
+ <a href="/">Home</a> · <a href="../blog-sarvesh-mishra-show">The Sarvesh Mishra Show</a> · <span>Umesh Kumar — Bitcoin &amp; Crypto in India</span>
  </nav>
 
- <article>
- <header style="margin-bottom:28px">
- <p class="kicker"><a href="../blog-sarvesh-mishra-show">The Sarvesh Mishra Show</a> · Episode 26 · Finance</p>
- <h1 style="font-family:var(--font-serif);font-size:clamp(28px,4.5vw,42px);line-height:1.15;margin:0 0 12px">Bitcoin, Crypto Rules in India, and How to Start Safely: Umesh Kumar (Sun Crypto) on The Sarvesh Mishra Show</h1>
- <p class="muted" style="margin:0 0 16px"><strong>Guest:</strong> Umesh Kumar, Founder &amp; CEO of Sun Crypto<br /><strong>Host:</strong> <a href="../about">Sarvesh Mishra</a> · <a href="../media-ip">Sarvesh Mishra Show</a><br /><strong>Category:</strong> Bitcoin, Crypto Taxation, FIU-Registered Exchanges, Trading Psychology</p>
+ <article class="blog-article">
+ <header style="margin-bottom:8px">
+ <div class="episode-badge"><span></span>The Sarvesh Mishra Show · Episode 26 · Finance</div>
+ <h1 style="line-height:1.2;margin-bottom:14px">Bitcoin, Crypto Rules in India, and How to Start Safely: Umesh Kumar (Sun Crypto) on The Sarvesh Mishra Show</h1>
+ <div class="hero-meta">
+ <span>Published <strong>29 Sep 2026</strong></span>
+ <span class="hero-meta-dot"></span>
+ <span>~14 min read</span>
+ <span class="hero-meta-dot"></span>
+ <span>Bitcoin · Tax · FIU · Trading Psychology</span>
+ </div>
+
+ <div class="guest-author-row">
+ <div class="person-card" itemscope itemtype="https://schema.org/Person" id="guest-umesh-kumar">
+ <div class="person-avatar guest" aria-hidden="true">UK</div>
+ <div>
+ <div class="person-label">Guest Expert</div>
+ <div class="person-name" itemprop="name">Umesh Kumar</div>
+ <div class="person-role">Founder &amp; CEO, Sun Crypto</div>
+ </div>
+ </div>
+ <div class="person-card" itemscope itemtype="https://schema.org/Person">
+ <div class="person-avatar host" aria-hidden="true">SM</div>
+ <div>
+ <div class="person-label">Host</div>
+ <div class="person-name" itemprop="name"><a href="../about">Sarvesh Mishra</a></div>
+ <div class="person-role">Journalist · Interviewer · Storyteller</div>
+ </div>
+ </div>
+ </div>
+
+ <div class="disclaimer">
+ <span aria-hidden="true">⚠</span>
+ <span><strong>Informational only — not financial, tax or legal advice.</strong> This is an editorial summary of a podcast conversation. Cryptocurrency is subject to market risk and can result in significant losses. Confirm tax rules with a qualified Chartered Accountant before acting.</span>
+ </div>
  </header>
 
- <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin-bottom:12px">
- <iframe style="position:absolute;inset:0;width:100%;height:100%;border:0" src="https://www.youtube.com/embed/HNiJKu3lLhc" title="Crypto Banega India Payment System? | Bitcoin &amp; Crypto for Beginners | Umesh Kumar @suncryptoin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+ <figure class="card tile" style="padding:0; overflow:hidden; margin-bottom:8px">
+ <div style="position:relative; padding-bottom:56.25%; height:0; background:#111">
+ <iframe style="position:absolute; inset:0; width:100%; height:100%; border:0" src="https://www.youtube.com/embed/HNiJKu3lLhc" title="Crypto Banega India Payment System? | Bitcoin &amp; Crypto for Beginners | Umesh Kumar @suncryptoin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
  </div>
- <p class="muted" style="font-size:13px;margin:0 0 24px">Watch: <a href="https://youtu.be/HNiJKu3lLhc" target="_blank" rel="noopener noreferrer"><em>Crypto Banega India Payment System? | Bitcoin &amp; Crypto for Beginners | Umesh Kumar @suncryptoin</em></a> (~75 min)</p>
+ </figure>
+ <p class="video-caption">Watch: <a href="https://youtu.be/HNiJKu3lLhc" target="_blank" rel="noopener noreferrer"><em>Crypto Banega India Payment System? | Bitcoin &amp; Crypto for Beginners | Umesh Kumar @suncryptoin</em></a> · ~75 min</p>
 
- <p class="muted" style="font-size:14px">This article summarises views expressed by Umesh Kumar on <a href="../blog-sarvesh-mishra-show">The Sarvesh Mishra Show</a>. It is for informational purposes only and is not financial, tax or legal advice. Cryptocurrency is subject to market risk and can result in significant losses. Please do your own research and consult a qualified professional before investing.</p>
+ <p class="lede">Is crypto legal in India? Is it safe? Is Bitcoin an investment — or just speculation? And what happens if an exchange shuts down? Those questions filled the comments after Sarvesh first sat with Umesh Kumar more than a year ago. This follow-up, about an hour and fifteen minutes, answers them in plain language.</p>
 
- <h2>Why This Crypto Conversation Matters</h2>
- <p>Crypto is one of the most talked-about and most misunderstood topics in personal finance. Is it legal in India? Is it safe? Is Bitcoin an investment or just speculation? What happens if an exchange shuts down?</p>
- <p>In this episode of <a href="../blog-sarvesh-mishra-show">The Sarvesh Mishra Show</a>, <a href="../about">Sarvesh Mishra</a> sits down again with Umesh Kumar, Founder &amp; CEO of Sun Crypto. Their <a href="https://youtu.be/QHHaVretwaY" target="_blank" rel="noopener noreferrer">first conversation</a>, over a year ago, drew hundreds of comments and dozens of viewer questions. This follow-up answers many of those questions in plain language, covering risk, benefit, and where to be careful. Read the show explainer at <a href="../blog/what-is-the-sarvesh-mishra-show">What Is The Sarvesh Mishra Show?</a></p>
- <p>This conversation is distinct from the Show episodes with <a href="the-sarvesh-mishra-show-nitin-murarka-options-trading">CA Nitin Murarka on options trading rules</a> and <a href="the-sarvesh-mishra-show-priyank-sharma-intraday-trading">Priyank Sharma on intraday trading traps</a>.</p>
+ <p>Their <a href="https://youtu.be/QHHaVretwaY" target="_blank" rel="noopener noreferrer">first conversation</a> is a separate episode. This one is also distinct from the Show conversations with <a href="the-sarvesh-mishra-show-nitin-murarka-options-trading">CA Nitin Murarka on options trading rules</a> and <a href="the-sarvesh-mishra-show-priyank-sharma-intraday-trading">Priyank Sharma on intraday traps</a>. For the series itself, start at <a href="../blog/what-is-the-sarvesh-mishra-show">What Is The Sarvesh Mishra Show?</a></p>
 
- <h2>Key Takeaways</h2>
+ <div class="figures" aria-label="Key figures from the episode">
+ <div class="figure-card">
+ <div class="figure-num">30%</div>
+ <div class="figure-label">Tax on spot crypto profit in India, as explained in the episode</div>
+ </div>
+ <div class="figure-card">
+ <div class="figure-num">1%</div>
+ <div class="figure-label">TDS deducted by the exchange, like TDS on bank interest</div>
+ </div>
+ <div class="figure-card">
+ <div class="figure-num">₹100</div>
+ <div class="figure-label">Umesh’s starting point — a fraction of a Bitcoin, not a whole coin</div>
+ </div>
+ <div class="figure-card">
+ <div class="figure-num">80–90%</div>
+ <div class="figure-label">New entrants lose money, he says — mostly from lack of knowledge</div>
+ </div>
+ <div class="figure-card">
+ <div class="figure-num">~20%</div>
+ <div class="figure-label">His personal crypto allocation, beside real estate, stocks and gold</div>
+ </div>
+ <div class="figure-card">
+ <div class="figure-num">FIU</div>
+ <div class="figure-label">Use only a Financial Intelligence Unit–registered platform</div>
+ </div>
+ </div>
+ <p class="guest-claim">Figures above are as stated by the guest in the episode. Tax rules change; verify independently.</p>
+
+ <h2>When the Strait of Hormuz was blocked, the demand was for crypto</h2>
+ <p>Sarvesh opens with a news item. When the Strait of Hormuz was blocked, the demand reportedly was not for dollars or gold — it was for crypto. Why would that be?</p>
+ <p>Umesh answers through control. Rupees sit with the RBI. Dollars and euros sit with their central authorities. Those bodies can mint, burn, track and freeze money. Bank accounts can be frozen in a dispute.</p>
+ <p>Bitcoin is different. Once it reaches a wallet address, no government or authority can block it. Asking for dollars would invite sanctions and pressure. Euros would be traceable. Bitcoin sits outside that central control — which is why, in his telling, it makes sense in a situation like that.</p>
+
+ <blockquote>
+ <p>Once Bitcoin reaches your wallet address, no government or authority can block or stop it.</p>
+ <cite>— Umesh Kumar, The Sarvesh Mishra Show Episode 26</cite>
+ </blockquote>
+
+ <h2>What Bitcoin actually is</h2>
+ <p>Umesh does not treat Bitcoin as one thing. He splits it three ways.</p>
+ <p><strong>Technology.</strong> Blockchain came first. Bitcoin is built on it.</p>
+ <p><strong>Origin.</strong> It emerged around 2009, after the Lehman Brothers crash shook the financial system. It was first dismissed as a scam or a Ponzi scheme.</p>
+ <p><strong>Asset class.</strong> Indian tax rules call it a Virtual Digital Asset. Other countries treat it as a security or an asset.</p>
+ <p>He also calls it digital gold — because its supply is limited, unlike gold, where new supply keeps entering the market. There are 16,000+ cryptocurrencies, with Bitcoin at the top. His view is that coins such as Bitcoin, Ethereum and Solana are the “blue chips”: less speculative. Smaller coins can swing 50–60% in a day and are more open to manipulation. For long-term goals, he says, stay at the safer end.</p>
+ <p>Bitcoin’s market cap, he notes, is over $1.5 trillion — and he flags that the exact figure should be verified. Large institutions such as BlackRock hold or offer Bitcoin ETFs.</p>
+
+ <div class="rich-compare">
+ <div class="rich-col fake">
+ <div class="rich-col-label">Fiat money</div>
  <ul>
- <li>Bitcoin is treated as an asset class, which the Indian government calls a Virtual Digital Asset (VDA).</li>
- <li>Umesh says you can start with as little as ₹100, just as you would buy 1 gram of gold rather than a kilo.</li>
- <li>In India, crypto is not illegal, but it is not legal tender either. You can trade and invest, but not use it as a payment mode.</li>
- <li>Gains on spot crypto are taxed at 30% with 1% TDS, and losses are not offset.</li>
- <li>Always use an FIU-registered platform.</li>
- <li>Umesh says 80–90% of new entrants lose money, mainly from lack of knowledge, over-trading, and greed.</li>
- <li>Futures and leverage can multiply gains and losses. Learn before you trade.</li>
+ <li>RBI, the Fed and other central banks can print, burn, track and freeze it</li>
+ <li>Bank accounts can be frozen during disputes</li>
+ <li>Controlled by an issuing authority, not by the holder</li>
+ </ul>
+ </div>
+ <div class="rich-col real">
+ <div class="rich-col-label">Bitcoin</div>
+ <ul>
+ <li>Once it is in your wallet, no authority can stop the transfer</li>
+ <li>Controlled by holders — whether they own 2 Bitcoin or a tiny fraction</li>
+ <li>That holder-control is the core of “decentralisation”</li>
+ </ul>
+ </div>
+ </div>
+
+ <h2>The hawala question</h2>
+ <p>Sarvesh puts the common charge on the table: does crypto enable hawala and harm the country?</p>
+ <p>Umesh does not deny that crypto is used in illegal activity. He argues the trail is the opposite of cash. Hawala began with cash, which leaves no record unless a camera happens to catch it. Crypto transactions sit permanently on a public blockchain. A third party can follow funds from wallet A to B to C to D. The trail cannot be erased. With the right tools and policy, he says, every transaction can be monitored — which is a strength regulators can use, not a reason to pretend the technology has no record.</p>
+
+ <h2>How the world moved — and how India got here</h2>
+ <p>Around the world, the picture is no longer a blank. The United States is moving toward legalisation, with a major legislative act — the Clarity Act — said to be in the approval process. UAE, Hong Kong, Singapore, Thailand and Japan already have regulations. Bhutan’s government, he says, holds Bitcoin itself. In Thailand, crypto ATMs and payments already work.</p>
+ <p>India’s path was slower, and more stop-start.</p>
+
+ <ul class="timeline">
+ <li><strong>2014–15</strong>The RBI signalled that crypto was a scam or a pyramid scheme.</li>
+ <li><strong>2017–18</strong>Banks were barred from dealing with crypto exchanges. Panic followed. The Supreme Court later struck the ban down.</li>
+ <li><strong>After the court</strong>Crypto was brought under PMLA, with transaction monitoring.</li>
+ <li><strong>Tax</strong>The government introduced 30% tax and 1% TDS.</li>
+ <li><strong>Now</strong>Exchange guidelines, including KYC. A full licensing and regulatory framework is the expected next step.</li>
  </ul>
 
- <h2>Why Was Bitcoin Demanded in the Strait of Hormuz Situation?</h2>
- <p>Sarvesh opens with a news item: when the Strait of Hormuz was blocked, the demand reportedly wasn't for dollars or gold but for crypto. Why?</p>
- <p>Umesh explains it through control. Rupees are controlled by the RBI, and dollars and euros by their central authorities. These bodies can mint, burn, track, and freeze money, and bank accounts can be frozen during disputes.</p>
- <p>Bitcoin is different. Once it reaches your wallet address, no government or authority can block or stop it. Demanding dollars would invite sanctions and pressure, and euros would be traceable. Bitcoin sits outside central control, which is why it makes sense in such a situation.</p>
+ <p>Umesh compares this to the internet and UPI. Had India rejected the internet over fraud fears, UPI would not exist today. A 30% tax and TDS regime, Sarvesh notes, is also a signal: the government does not treat crypto as banned. Umesh agrees — while adding that tax is not the same as formal approval as an investment product. India, in his telling, is moving from bans toward regulation: exchange guidelines, taxation, and now investor-protection guidelines.</p>
 
- <h2>What Is Bitcoin? Asset, Technology, or Future Financial Infrastructure?</h2>
- <p>Umesh breaks it down into three angles:</p>
- <ul>
- <li><strong>Technology:</strong> Blockchain came first, and Bitcoin is built on it.</li>
- <li><strong>Origin:</strong> Bitcoin emerged around 2009, after the Lehman Brothers crash shook the financial system. It was first dismissed as a scam or Ponzi scheme.</li>
- <li><strong>Asset class:</strong> The Indian government's tax rules define it as a Virtual Digital Asset. Other countries treat it as a security or an asset.</li>
+ <h2>The tax, in one table</h2>
+ <p>Holding crypto does not attract tax. Tax applies when you sell or convert it. If ₹1 lakh becomes ₹2 lakh, the 30% is on the ₹1 lakh gain — not the full amount. 1% TDS is deducted by the exchange. Losses do not attract tax, but they cannot be set off against other income.</p>
+
+ <table class="facts">
+ <thead>
+ <tr><th>Situation</th><th>What Umesh says happens</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>You only hold</td><td>No tax until you sell or convert</td></tr>
+ <tr><td>Spot profit</td><td>30% on the gain, plus 1% TDS at the exchange</td></tr>
+ <tr><td>Spot loss</td><td>No tax — and no set-off against other income</td></tr>
+ <tr><td>Futures &amp; options</td><td>He says gains are treated as business income and taxed by slab, not the flat 30%. Many active traders prefer that route.</td></tr>
+ </tbody>
+ </table>
+
+ <div class="warning">
+ <div class="warning-label">Confirm with a CA</div>
+ <p>Tax rules can change and depend on individual circumstances. This table is the guest’s explanation from the episode, not a filing guide. Confirm current rules with a qualified Chartered Accountant.</p>
+ </div>
+
+ <h2>If an exchange disappears</h2>
+ <p>The Financial Intelligence Unit monitors financial transactions, including on crypto platforms. Umesh’s first rule is simple: use only an FIU-registered exchange.</p>
+ <p>Exchange failures and hacks have happened globally. Some platforms did not survive. For Sun Crypto, he says customer crypto is held in cold storage — devices disconnected from the internet — holdings are insured up to $150 million, and the platform has been running for 6+ years with 30 lakh+ users. Those are his claims from the episode; they should be independently verified.</p>
+
+ <h3>His checklist before you open an account</h3>
+ <ul class="checklist">
+ <li><span class="check-icon" aria-hidden="true">1</span><span>Is it authorised and compliant, and how long has it operated?</span></li>
+ <li><span class="check-icon" aria-hidden="true">2</span><span>Who are the founders, and how active is the team?</span></li>
+ <li><span class="check-icon" aria-hidden="true">3</span><span>Is the app simple enough that you will actually use it carefully?</span></li>
+ <li><span class="check-icon" aria-hidden="true">4</span><span>Does it have insurance, and has it been hacked before?</span></li>
+ <li><span class="check-icon" aria-hidden="true">5</span><span>Does it offer learning support and risk tools?</span></li>
+ <li><span class="check-icon" aria-hidden="true">6</span><span>Does it charge monthly or maintenance fees?</span></li>
  </ul>
 
- <h3>Bitcoin as "Digital Gold"</h3>
- <p>Umesh calls Bitcoin digital gold because its supply is limited, unlike gold, where new supply keeps entering the market.</p>
+ <div class="takeaway">
+ <div class="takeaway-label">On foreign platforms</div>
+ <p>Umesh warns that many Indians still use offshore exchanges that do not follow Indian rules. He cites a recent report of 18+ foreign platforms being blocked, with users left a notice period to withdraw. Tax obligations, he adds, may still catch up. Stay with a compliant domestic exchange. He also says trading volumes on Indian exchanges are down 70–80%, which he attributes to the tax and compliance burden pushing traders offshore.</p>
+ </div>
 
- <h3>Bitcoin vs. Other Cryptocurrencies</h3>
- <p>There are 16,000+ cryptocurrencies, with Bitcoin at the top. Umesh's view:</p>
+ <h2>You do not need ₹80 lakh to start</h2>
+ <p>“Bitcoin is ₹80 lakh. I can’t afford that.” Umesh says that sentence stops a lot of people. You do not buy a whole Bitcoin, just as you do not buy a kilo of gold. You buy a fraction. On his platform, that can start from about ₹100.</p>
+ <p>Opening an account, he says, takes roughly two minutes with PAN and Aadhaar, and money can be added through UPI. Sun Crypto, he says, charges no account-opening or maintenance fees, earns a very small brokerage on trades, and offers new users up to ₹250 in free Bitcoin — with conditions. Treat that last point as a promotional claim from the guest, not an offer from this site.</p>
+ <p>Building slowly — ₹100 now, more next month — is investing. Chasing daily returns is trading. Crypto runs 24/7, so a working professional can sit at 10 PM or 3 AM in a way the traditional market does not allow. That convenience is also a trap. Related reading on long-term building: <a href="the-sarvesh-mishra-show-sachin-jain-scripbox-sip">Sachin Jain on a ₹1 crore SIP plan</a> and <a href="the-sarvesh-mishra-show-sip-wealth-investing">Sanjay Kathuria on SIP and wealth</a>.</p>
+
+ <h2>Spot is not the same as 10x</h2>
+ <p>This is the part of the episode where the numbers get sharp.</p>
+
+ <div class="rich-compare">
+ <div class="rich-col real">
+ <div class="rich-col-label">Spot</div>
  <ul>
- <li>Top coins like Bitcoin, Ethereum, and Solana are less speculative and are the "blue chips" of crypto.</li>
- <li>Smaller coins can swing 50–60% in a day and are more open to manipulation.</li>
- <li>For long-term goals, avoid speculative coins and keep to the safer end.</li>
+ <li>Pay ₹10,000, get ₹10,000 of Bitcoin</li>
+ <li>Gains and losses follow the price, one for one</li>
+ <li>No borrowed size</li>
  </ul>
- <p>Bitcoin's market cap is over $1.5 trillion (Umesh notes the exact figure should be verified), and large institutions like BlackRock hold or offer Bitcoin ETFs.</p>
-
- <h2>Fiat Money vs. Decentralized Crypto</h2>
- <p>Central banks can print, burn, track, and freeze fiat money. Bitcoin, by contrast, is controlled by its holders, whether they own 2 Bitcoin or a tiny fraction of one. This is the core of the "decentralization" idea.</p>
-
- <h2>The Hawala Question: Is Crypto a Tool for Illegal Money Movement?</h2>
- <p>Sarvesh raises the common concern that crypto enables hawala and harms the country. Umesh's response:</p>
+ </div>
+ <div class="rich-col fake">
+ <div class="rich-col-label">Futures at 10x</div>
  <ul>
- <li>Hawala began with cash, which leaves no trail unless a camera happens to record it.</li>
- <li>Crypto transactions are recorded permanently on a public blockchain ledger. Any third party can trace funds from wallet A to B to C to D.</li>
- <li>So while misuse exists (as with any financial tool), the trail can never be erased, and with proper tools and policy every transaction can be monitored.</li>
+ <li>₹10,000 controls ₹1 lakh of Bitcoin</li>
+ <li>A 1% move is ₹1,000 either way</li>
+ <li>You can also go short — profit if the price falls</li>
  </ul>
- <p>Umesh doesn't deny that crypto is used in illegal activity. He argues that traceability is a strength regulators can use.</p>
+ </div>
+ </div>
 
- <h2>Global Regulation vs. India's Regulatory Landscape</h2>
- <h3>Around the world</h3>
- <p>The United States is moving toward legalization, with a major legislative act (the Clarity Act) said to be in the approval process. UAE, Hong Kong, Singapore, Thailand, and Japan have regulations in place, and Bhutan's government reportedly holds Bitcoin itself. In Thailand, crypto ATMs and payments already work.</p>
- <h3>India's journey</h3>
- <ul>
- <li>Around 2014–15, the RBI signaled that crypto was a scam or pyramid scheme.</li>
- <li>In 2017–18, the RBI banned banks from dealing with crypto exchanges, creating panic. The Supreme Court later struck down the ban.</li>
- <li>Crypto was then brought under PMLA, with transaction monitoring.</li>
- <li>The government introduced 30% tax and 1% TDS.</li>
- <li>Guidelines for exchanges followed, including KYC. A full licensing and regulatory framework is the expected next step.</li>
- </ul>
- <p>Umesh compares this to the internet and UPI. Had India rejected the internet over fraud fears, UPI would not exist today.</p>
+ <p>Stop-loss and take-profit orders exist to protect capital. Leverage still cuts both ways. Losses can be as fast and as large as gains, and you are responsible for your own decisions. The same warning sits under the Show’s markets episodes with <a href="the-sarvesh-mishra-show-deepak-wadhwa-option-trading">Deepak Wadhwa</a> and <a href="the-sarvesh-mishra-show-priyank-sharma-intraday-trading">Priyank Sharma</a>.</p>
 
- <h2>Crypto Taxation in India: 30% Tax and 1% TDS</h2>
- <p>Umesh's explanation of the tax structure, in simple terms:</p>
- <ul>
- <li>Holding crypto doesn't attract tax. Tax applies when you sell or convert it.</li>
- <li>The 30% tax applies to profit only, not the full amount. If ₹1 lakh becomes ₹2 lakh, you pay 30% on the ₹1 lakh gain.</li>
- <li>1% TDS is deducted by the exchange, like TDS on bank interest.</li>
- <li>Losses don't attract tax, but they can't be set off against other income.</li>
- <li>On futures and options (leveraged trading), Umesh says gains are treated as business income and taxed by slab rather than at the flat 30% rate. This is why many active traders prefer that route.</li>
- </ul>
- <p><strong>Important:</strong> Tax rules can change and depend on individual circumstances. Please confirm with a qualified Chartered Accountant before making decisions. Related: <a href="the-sarvesh-mishra-show-nitin-murarka-options-trading">CA Nitin Murarka on options trading rules</a>.</p>
- <p>Sarvesh points out that a 30% tax and TDS regime signals that the government does not treat crypto as banned. Umesh agrees, though he adds that this is not the same as formal approval as an investment product. He describes India as moving steadily from bans toward regulation: exchange guidelines, taxation, and now investor-protection guidelines.</p>
+ <h2>The mindset that empties the account</h2>
+ <p>Asked which mindset is most dangerous, Umesh names over-trading and FOMO. After a small loss, people take ten more trades to recover it and lose even more. When prices fall for days, even long-term holders panic-sell — often near the bottom. After hitting a daily target, they keep trading out of greed and break their own rules.</p>
 
- <h2>Exchange Safety: FIU Registration, Cold Storage, and Insurance</h2>
- <p>What is the FIU? The Financial Intelligence Unit is a government body that monitors financial transactions, including on crypto platforms. Umesh advises users to choose only FIU-registered exchanges.</p>
- <p>What if an exchange disappears? Umesh acknowledges that exchange failures and hacks have happened globally, and some platforms didn't survive. For Sun Crypto, he says:</p>
- <ul>
- <li>Customer crypto is held in cold storage, on devices disconnected from the internet.</li>
- <li>Holdings are insured up to $150 million, according to Umesh.</li>
- <li>The platform has been running for 6+ years with 30 lakh+ users.</li>
- </ul>
- <h3>How to choose an exchange (Umesh's checklist)</h3>
- <ul>
- <li>Is it authorized and compliant, and how long has it operated?</li>
- <li>Who are the founders and how active is the team?</li>
- <li>Is the app simple and easy to use?</li>
- <li>Does it have insurance, and has it been hacked before?</li>
- <li>Does it provide learning support and risk tools?</li>
- <li>Does it charge monthly or maintenance fees?</li>
- </ul>
+ <blockquote>
+ <p>Set your target, book your profit, and stay disciplined.</p>
+ <cite>— Umesh Kumar, on trading psychology</cite>
+ </blockquote>
 
- <h2>Starting With ₹100</h2>
- <p>"Bitcoin is ₹80 lakh, I can't afford that." Umesh says this misconception stops many people. You don't buy a whole Bitcoin, just as you don't buy a kilo of gold. You can buy a fraction, starting from about ₹100.</p>
- <p>According to Umesh, opening an account takes roughly two minutes with PAN and Aadhaar, and you can add money through UPI. He says Sun Crypto charges no account-opening or maintenance fees, earns a very small brokerage on trades, and offers new users up to ₹250 in free Bitcoin with conditions. Related: <a href="the-sarvesh-mishra-show-sachin-jain-scripbox-sip">Sachin Jain on the ₹1 crore SIP plan</a> and <a href="the-sarvesh-mishra-show-sip-wealth-investing">Sanjay Kathuria on SIP and wealth</a>.</p>
+ <p>On allocation, his personal approach is to keep roughly 20% of investments in crypto, alongside real estate, stocks and gold. Size the sleeve by how much loss you can truly afford — not by the last Bitcoin cycle. Regulation and global developments keep changing the picture. For the real-estate side of that mix, see <a href="the-sarvesh-mishra-show-avneesh-real-estate-investment">Avneesh on real estate investment</a>. For the psychology of breaking your own rules, <a href="the-sarvesh-mishra-show-jitu-sharma-manifestation-nlp">Coach Jitu Sharma on mindset and NLP</a>.</p>
 
- <h2>Investing vs. Trading in a 24/7 Market</h2>
- <p><strong>Investing:</strong> a long-term view where you build gradually, for example ₹100 now and more next month.</p>
- <p><strong>Trading:</strong> a short-term approach aiming for daily returns. Because crypto runs 24/7, working professionals can trade at 10 PM or 3 AM, unlike traditional markets with fixed hours.</p>
- <h3>Spot, futures, and leverage</h3>
- <ul>
- <li><strong>Spot:</strong> Pay ₹10,000, get ₹10,000 of Bitcoin. Gains and losses follow the price.</li>
- <li><strong>Futures with leverage:</strong> With ₹10,000 and 10x leverage, you control ₹1 lakh of Bitcoin. A 1% move changes your result by ₹1,000 either way.</li>
- <li><strong>Going short:</strong> In futures you can also profit when prices fall.</li>
- <li><strong>Risk tools:</strong> Stop-loss and take-profit orders help protect capital.</li>
- </ul>
- <p>Umesh is clear that leverage cuts both ways. Losses can be as fast and as large as gains, and you're responsible for your own decisions. Related: <a href="the-sarvesh-mishra-show-deepak-wadhwa-option-trading">Deepak Wadhwa on option trading risk</a> and <a href="the-sarvesh-mishra-show-priyank-sharma-intraday-trading">Priyank Sharma on intraday trading traps</a>.</p>
+ <h2>Stablecoins are not only for traders</h2>
+ <p>Are USDT and USDC just trading tools? Umesh says no. They are increasingly used for cross-border payments and remittances. A bank transfer can take two to three days and cost 2–3% in charges. A stablecoin transfer can arrive in minutes. Licences for such services already exist in places like Canada, the US and Dubai. He mentions that a group of large US banks is building stablecoin infrastructure.</p>
+ <p>Will crypto replace UPI? He says no. UPI is backed by banks and the RBI and is nearly free. Blockchain transactions carry costs. Crypto, in his view, fits investing, trading and cross-border transfers. In India it is not legal tender: you can trade and invest, but you cannot use it as a payment mode.</p>
 
- <h2>Trading Psychology: FOMO, Panic Selling, and Over-Trading</h2>
- <p>Asked which mindset is most dangerous, Umesh names over-trading and FOMO:</p>
- <ul>
- <li>After a small loss, people take 10 more trades to recover it and lose even more.</li>
- <li>When prices fall for days, even long-term holders panic-sell, often near the bottom.</li>
- <li>After hitting a daily target, people keep trading out of greed and break their own rules.</li>
- </ul>
- <p>His advice: set your target, book your profit, and stay disciplined. Related: <a href="the-sarvesh-mishra-show-jitu-sharma-manifestation-nlp">Coach Jitu Sharma on money mindset and NLP</a>.</p>
+ <div class="warning">
+ <div class="warning-label">His closing number</div>
+ <p>80–90% of new market entrants lose money. The main reason, he says, is lack of knowledge — then over-trading and greed. Learn first. Start small. Use demo or paper trading. Choose a safe, compliant platform. Never risk money you cannot afford to lose.</p>
+ </div>
 
- <h2>Portfolio Thinking: How Much Should You Put in Crypto?</h2>
- <p>Umesh's personal approach is to keep roughly 20% of investments in crypto, alongside real estate, stocks, and gold. Because crypto is subject to market risk, he says to size your allocation by how much loss you can truly afford. He also advises against relying only on past Bitcoin cycles, since regulation and global developments keep changing the picture. Related: <a href="the-sarvesh-mishra-show-avneesh-real-estate-investment">Avneesh on real estate investment</a>.</p>
-
- <h2>Risks of Foreign Exchanges</h2>
- <p>Umesh warns that many Indians use offshore platforms that don't follow Indian rules. He cites a recent report of 18+ foreign platforms being blocked in India, leaving users to withdraw funds within a notice period. He also notes that tax obligations may still catch up with users of such platforms. His advice is to stay with compliant, domestic exchanges.</p>
- <p>He adds that trading volumes on Indian exchanges are down 70–80%, which he attributes to the tax and compliance burden pushing traders toward offshore platforms.</p>
-
- <h2>Stablecoins (USDT, USDC) and the Future of Payments</h2>
- <p>Are stablecoins only for trading? Umesh says no:</p>
- <ul>
- <li>They're increasingly used for cross-border payments and remittances.</li>
- <li>Bank transfers can take 2–3 days and cost 2–3% in charges, while stablecoin transfers can arrive in minutes.</li>
- <li>Licenses for such services already exist in places like Canada, the US, and Dubai.</li>
- </ul>
- <p>Umesh mentions that a group of large US banks is building stablecoin infrastructure.</p>
- <p>Will crypto replace UPI? Umesh says no. UPI is backed by banks and the RBI and is nearly free, while blockchain transactions carry costs. Crypto works better for investing, trading, and cross-border transfers. In India, crypto is not legal tender, so it can be traded and invested in but not used for payments.</p>
-
- <h2>Final Advice for Beginners</h2>
- <p>Umesh ends with a frank statement: 80–90% of new market entrants lose money, and the main reason is lack of knowledge, followed by over-trading and greed. His advice:</p>
- <ul>
- <li>Learn before you trade, and start small.</li>
- <li>Use demo or paper trading to practice without real money.</li>
- <li>Choose safe, compliant platforms.</li>
- <li>Never risk money you can't afford to lose.</li>
- </ul>
  <p>Sarvesh closes with a caution of his own: listen to every guest, do your own research, use AI and Google, read feedback, and only then decide.</p>
 
- <hr style="border:none;border-top:1px solid var(--line);margin:2.5em 0" />
-
- <h2>Frequently Asked Questions</h2>
- <div class="faq-section">
+ <h2>Frequently asked questions</h2>
+ <div class="faq">
  <details class="faq-item" open>
  <summary class="faq-q">Is crypto legal in India?</summary>
- <div class="faq-a">Crypto is not banned. It is taxed, and exchanges must follow guidelines. It is not legal tender, so it can't be used as a payment mode.</div>
+ <div class="faq-a">Crypto is not banned. It is taxed, and exchanges must follow guidelines. It is not legal tender, so it cannot be used as a payment mode.</div>
  </details>
  <details class="faq-item">
  <summary class="faq-q">What is the minimum amount to start investing in Bitcoin?</summary>
@@ -315,28 +426,19 @@
  </details>
  <details class="faq-item">
  <summary class="faq-q">Can crypto replace UPI?</summary>
- <div class="faq-a">Umesh believes not. It suits investing, trading, and cross-border payments better.</div>
+ <div class="faq-a">Umesh believes not. It suits investing, trading and cross-border payments better.</div>
  </details>
  </div>
 
- <h2>Conclusion</h2>
- <p>The follow-up conversation between Sarvesh Mishra and Umesh Kumar treats Bitcoin as a regulated asset class in India, not as legal tender and not as a guaranteed investment. The practical thread is to learn first, start small, use an FIU-registered platform, and confirm tax rules with a Chartered Accountant.</p>
+ <p style="margin-top:2rem">The conversation treats Bitcoin as a regulated asset class in India — not as legal tender, and not as a guaranteed investment. The practical thread is learn first, start small, use an FIU-registered platform, and confirm tax with a Chartered Accountant. Guest figures such as insurance cover, user counts and promotional offers should be independently verified.</p>
 
- <p><strong>Disclaimer.</strong> This blog summarizes views expressed by the guest and is for informational purposes only. It is not financial, tax, or legal advice. Cryptocurrency is subject to market risk and can result in significant losses. Figures such as market cap, insurance cover, user counts and promotional offers are as stated by the guest in the episode and should be independently verified. Please do your own research and consult a qualified professional before investing.</p>
+ <p><a href="../about">Sarvesh Mishra</a> is an Indian entrepreneur, journalist, interviewer and the host of <a href="../media-ip">The Sarvesh Mishra Show</a>. He is the Founder of Red Hot Media House Pvt. Ltd. and CureSoulLife Pvt. Ltd., and the author of <a href="../book">Love With Benifit</a>.</p>
 
- <p>Watch <a href="https://youtu.be/HNiJKu3lLhc" target="_blank" rel="noopener noreferrer">Umesh Kumar's full conversation with Sarvesh Mishra</a>. More guests live in the <a href="../guest-index">guest index</a> and the <a href="../writings">writings archive</a>.</p>
-
- <p><a href="../about">Sarvesh Mishra</a> is an Indian entrepreneur, journalist, interviewer, author and storyteller. His career spans nearly two decades, beginning with ground level journalism and expanding into media entrepreneurship, digital content, long form interviews and intellectual property development. He is the Founder of Red Hot Media House Pvt. Ltd. and CureSoulLife Pvt. Ltd., and the host of The Sarvesh Mishra Show. He is also the author of <a href="../book">Love With Benifit</a>.</p>
-
- <div style="display:flex;flex-wrap:wrap;gap:10px;margin:2rem 0">
-  <a class="btn primary" href="https://youtu.be/HNiJKu3lLhc" target="_blank" rel="noopener noreferrer">Watch Full Episode on YouTube</a>
-  <a class="btn" href="https://www.youtube.com/@Sarveshmishrashow/videos" target="_blank" rel="noopener noreferrer">Explore All Episodes</a>
-  <a class="btn" href="../blog-sarvesh-mishra-show">All Episodes: The Sarvesh Mishra Show</a>
-  <a class="btn" href="../about">About Sarvesh Mishra</a>
-  <a class="btn" href="../guest-index">Guest Index</a>
-  <a class="btn" href="../blog/what-is-the-sarvesh-mishra-show">What Is The Sarvesh Mishra Show</a>
-  <a class="btn" href="../podast-enquiry">Apply as Guest</a>
- </div>
+ <p style="margin:28px 0 0">
+ <a class="btn primary" href="https://youtu.be/HNiJKu3lLhc" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+ <a class="btn" href="../blog-sarvesh-mishra-show" style="margin-top:8px;display:inline-block">All episodes</a>
+ <a class="btn" href="../podast-enquiry" style="margin-top:8px;display:inline-block">Apply as guest</a>
+ </p>
 
  <div class="related">
  <h3>Continue exploring</h3>
@@ -345,25 +447,19 @@
  <a class="related-link" href="the-sarvesh-mishra-show-priyank-sharma-intraday-trading">Priyank Sharma — Intraday Trading Traps</a>
  <a class="related-link" href="the-sarvesh-mishra-show-deepak-wadhwa-option-trading">Deepak Wadhwa — Option Trading</a>
  <a class="related-link" href="the-sarvesh-mishra-show-sachin-jain-scripbox-sip">Sachin Jain — ₹1 Crore SIP Plan</a>
- <a class="related-link" href="https://www.youtube.com/@suncryptoin" target="_blank" rel="noopener noreferrer">Meet our guest — Sun Crypto</a>
- <a class="related-link" href="../writings">Writings Archive</a>
- <a class="related-link" href="../blog-sarvesh-mishra-show">All Episodes →</a>
- </div>
- </div>
-
- <div class="related">
- <h3>More from The Sarvesh Mishra Show</h3>
- <div class="related-links">
  <a class="related-link" href="the-sarvesh-mishra-show-sip-wealth-investing">Sanjay Kathuria — SIP &amp; Wealth</a>
  <a class="related-link" href="the-sarvesh-mishra-show-jitu-sharma-manifestation-nlp">Coach Jitu Sharma — Manifestation &amp; NLP</a>
  <a class="related-link" href="the-sarvesh-mishra-show-raghav-kumar-garg-debt-free">Raghav Kumar Garg — Debt Free</a>
- <a class="related-link" href="the-sarvesh-mishra-show-sunetri-singh-ayurveda-wellness">Dr. Sunetri Singh — Ayurveda Wellness Business</a>
- <a class="related-link" href="the-sarvesh-mishra-show-sudhir-kove-signature-logo-wristwatch">Sudhir Kove — Signature, Logo &amp; Wristwatch</a>
+ <a class="related-link" href="the-sarvesh-mishra-show-avneesh-real-estate-investment">Avneesh — Real Estate Investment</a>
+ <a class="related-link" href="https://www.youtube.com/@suncryptoin" target="_blank" rel="noopener noreferrer">Meet our guest — Sun Crypto</a>
+ <a class="related-link" href="../guest-index">Guest Index</a>
  <a class="related-link" href="../blog/what-is-the-sarvesh-mishra-show">What Is The Sarvesh Mishra Show?</a>
+ <a class="related-link" href="../blog-sarvesh-mishra-show">All Episodes →</a>
  </div>
  </div>
  </article>
 
+ <p style="text-align:center;margin:36px 0"><a class="btn" href="../writings">More writings</a></p>
  </div>
  </main>
 
