@@ -106,6 +106,10 @@
     { "source": "/the-sarvesh-mishra-show/umesh-kumar-crypto-india.html", "destination": "/writings/the-sarvesh-mishra-show-umesh-kumar-crypto-india", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/umesh-kumar", "destination": "/writings/the-sarvesh-mishra-show-umesh-kumar-crypto-india", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/umesh-kumar.html", "destination": "/writings/the-sarvesh-mishra-show-umesh-kumar-crypto-india", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ravi-shankar-oral-cancer", "destination": "/writings/the-sarvesh-mishra-show-ravi-shankar-oral-cancer", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ravi-shankar-oral-cancer.html", "destination": "/writings/the-sarvesh-mishra-show-ravi-shankar-oral-cancer", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ravi-shankar", "destination": "/writings/the-sarvesh-mishra-show-ravi-shankar-oral-cancer", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ravi-shankar.html", "destination": "/writings/the-sarvesh-mishra-show-ravi-shankar-oral-cancer", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
