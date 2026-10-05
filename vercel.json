@@ -110,6 +110,10 @@
     { "source": "/the-sarvesh-mishra-show/ravi-shankar-oral-cancer.html", "destination": "/writings/the-sarvesh-mishra-show-ravi-shankar-oral-cancer", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/ravi-shankar", "destination": "/writings/the-sarvesh-mishra-show-ravi-shankar-oral-cancer", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/ravi-shankar.html", "destination": "/writings/the-sarvesh-mishra-show-ravi-shankar-oral-cancer", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/khushal-chopra-farm-house", "destination": "/writings/the-sarvesh-mishra-show-khushal-chopra-farm-house", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/khushal-chopra-farm-house.html", "destination": "/writings/the-sarvesh-mishra-show-khushal-chopra-farm-house", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/khushal-chopra", "destination": "/writings/the-sarvesh-mishra-show-khushal-chopra-farm-house", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/khushal-chopra.html", "destination": "/writings/the-sarvesh-mishra-show-khushal-chopra-farm-house", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
