@@ -118,6 +118,14 @@
     { "source": "/the-sarvesh-mishra-show/umashankar-pandey-water-crisis.html", "destination": "/writings/the-sarvesh-mishra-show-umashankar-pandey-water-crisis", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/umashankar-pandey", "destination": "/writings/the-sarvesh-mishra-show-umashankar-pandey-water-crisis", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/umashankar-pandey.html", "destination": "/writings/the-sarvesh-mishra-show-umashankar-pandey-water-crisis", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/surjeet-thakur-healthcare-careers", "destination": "/writings/the-sarvesh-mishra-show-surjeet-thakur-healthcare-careers", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/surjeet-thakur-healthcare-careers.html", "destination": "/writings/the-sarvesh-mishra-show-surjeet-thakur-healthcare-careers", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/surjeet-thakur", "destination": "/writings/the-sarvesh-mishra-show-surjeet-thakur-healthcare-careers", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/surjeet-thakur.html", "destination": "/writings/the-sarvesh-mishra-show-surjeet-thakur-healthcare-careers", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rakesh-chugh-gurugram-real-estate", "destination": "/writings/the-sarvesh-mishra-show-rakesh-chugh-gurugram-real-estate", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rakesh-chugh-gurugram-real-estate.html", "destination": "/writings/the-sarvesh-mishra-show-rakesh-chugh-gurugram-real-estate", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rakesh-chugh", "destination": "/writings/the-sarvesh-mishra-show-rakesh-chugh-gurugram-real-estate", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rakesh-chugh.html", "destination": "/writings/the-sarvesh-mishra-show-rakesh-chugh-gurugram-real-estate", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
