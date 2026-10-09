@@ -126,6 +126,10 @@
     { "source": "/the-sarvesh-mishra-show/rakesh-chugh-gurugram-real-estate.html", "destination": "/writings/the-sarvesh-mishra-show-rakesh-chugh-gurugram-real-estate", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/rakesh-chugh", "destination": "/writings/the-sarvesh-mishra-show-rakesh-chugh-gurugram-real-estate", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/rakesh-chugh.html", "destination": "/writings/the-sarvesh-mishra-show-rakesh-chugh-gurugram-real-estate", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/premanand-maharaj-ashram-controversy", "destination": "/writings/the-sarvesh-mishra-show-premanand-maharaj-ashram-controversy", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/premanand-maharaj-ashram-controversy.html", "destination": "/writings/the-sarvesh-mishra-show-premanand-maharaj-ashram-controversy", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/premanand-maharaj", "destination": "/writings/the-sarvesh-mishra-show-premanand-maharaj-ashram-controversy", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/premanand-maharaj.html", "destination": "/writings/the-sarvesh-mishra-show-premanand-maharaj-ashram-controversy", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
