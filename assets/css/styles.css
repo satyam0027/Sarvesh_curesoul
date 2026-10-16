@@ -977,6 +977,24 @@ section{
   height: 100%;
   border: 0;
 }
+.episode-yt{
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: #111;
+  margin: 0;
+}
+.episode-yt a{
+  display: block;
+}
+.episode-yt img{
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
 .yt-placeholder{
   display:flex;
   align-items:center;

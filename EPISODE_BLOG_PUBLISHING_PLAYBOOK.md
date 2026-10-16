@@ -22,7 +22,7 @@ Use oEmbed:
 
 Take:
 
-- `title` -> use exact in H1 and card title
+- `title` -> use exact YouTube title in the iframe/kicker/watch line (Show H1 comes from the Word/brief)
 - `thumbnail_url` or `https://i.ytimg.com/vi/<VIDEO_ID>/maxresdefault.jpg`
 - fallback -> `https://i.ytimg.com/vi/<VIDEO_ID>/hqdefault.jpg`
 
@@ -56,8 +56,18 @@ Take:
 
 ## 5) Recommended content structure
 
-1. Intro + exact YouTube title
-2. Embedded video
+1. Intro + exact YouTube title in the watch line
+2. **Video: image only, no embed, no play-button overlay.** Full-width 16:9 image (YouTube `maxresdefault.jpg`, or a custom episode cover). Wrap it in a link to the YouTube watch URL (`target="_blank"`). Use:
+
+```html
+<figure class="episode-yt" style="margin-bottom:8px">
+ <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" rel="noopener noreferrer">
+ <img src="https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg" alt="Watch EXACT_YOUTUBE_TITLE on YouTube" width="1280" height="720" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/VIDEO_ID/hqdefault.jpg'" />
+ </a>
+ </figure>
+```
+
+Do not use a YouTube `<iframe>` on Show episode blogs. Keep `VideoObject.embedUrl` in JSON-LD if useful for schema; the visible page is image + link only.
 3. Quick summary bullets
 4. Detailed transcript-based sections
 5. Actionable takeaways
@@ -84,11 +94,12 @@ Examples:
 
 ## 8) Pre-publish QA
 
-- [ ] Title/H1 matches YouTube title
-- [ ] Card thumbnail loads (maxres + fallback)
+- [ ] Title/H1 from Word/brief; watch line uses exact YouTube title
+- [ ] Video block is a full-width image linking to YouTube (no iframe, no play button)
+- [ ] Card thumbnail loads (maxres + fallback, or custom cover)
 - [ ] Canonical URL correct
 - [ ] JSON-LD valid
-- [ ] Mobile responsive check
+- [ ] Mobile: image fills content width
 - [ ] Hub -> blog -> hub links working
 
 ## 9) Reusable template trick

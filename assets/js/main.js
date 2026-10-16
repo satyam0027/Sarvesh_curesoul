@@ -231,7 +231,7 @@
       return;
     }
 
-    const thumb = `https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg`;
+    const thumb = `https://i.ytimg.com/vi/${encodeURIComponent(id)}/maxresdefault.jpg`;
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "yt-thumb";
@@ -253,6 +253,7 @@
     };
     btn.addEventListener("click", load);
 
+    el.innerHTML = "";
     el.appendChild(btn);
   });
 

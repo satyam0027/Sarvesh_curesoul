@@ -142,6 +142,8 @@
     { "source": "/the-sarvesh-mishra-show/priyank-sharma-bitcoin-next-move.html", "destination": "/writings/the-sarvesh-mishra-show-priyank-sharma-bitcoin-next-move", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/priyank-sharma-bitcoin", "destination": "/writings/the-sarvesh-mishra-show-priyank-sharma-bitcoin-next-move", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/priyank-sharma-bitcoin.html", "destination": "/writings/the-sarvesh-mishra-show-priyank-sharma-bitcoin-next-move", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/nitin-murarka-trading-gambling", "destination": "/writings/the-sarvesh-mishra-show-nitin-murarka-trading-gambling", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/nitin-murarka-trading-gambling.html", "destination": "/writings/the-sarvesh-mishra-show-nitin-murarka-trading-gambling", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
