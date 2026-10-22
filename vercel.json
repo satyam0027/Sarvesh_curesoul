@@ -156,6 +156,12 @@
     { "source": "/ts-madan-podcast-life-lessons-english.html", "destination": "/writings/the-sarvesh-mishra-show-ts-madan-pain-relationships", "permanent": true },
     { "source": "/ts-madan", "destination": "/writings/the-sarvesh-mishra-show-ts-madan-pain-relationships", "permanent": true },
     { "source": "/ts-madan.html", "destination": "/writings/the-sarvesh-mishra-show-ts-madan-pain-relationships", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ashutosh-pande-retail-investors-tax", "destination": "/writings/the-sarvesh-mishra-show-ashutosh-pande-retail-investors-tax", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ashutosh-pande-retail-investors-tax.html", "destination": "/writings/the-sarvesh-mishra-show-ashutosh-pande-retail-investors-tax", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ashutosh-pande", "destination": "/writings/the-sarvesh-mishra-show-ashutosh-pande-retail-investors-tax", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ashutosh-pande.html", "destination": "/writings/the-sarvesh-mishra-show-ashutosh-pande-retail-investors-tax", "permanent": true },
+    { "source": "/ashutosh-pande", "destination": "/writings/the-sarvesh-mishra-show-ashutosh-pande-retail-investors-tax", "permanent": true },
+    { "source": "/ashutosh-pande.html", "destination": "/writings/the-sarvesh-mishra-show-ashutosh-pande-retail-investors-tax", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
