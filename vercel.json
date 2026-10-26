@@ -168,6 +168,18 @@
     { "source": "/the-sarvesh-mishra-show/pramesh-kumar.html", "destination": "/writings/the-sarvesh-mishra-show-pramesh-kumar-patna-real-estate", "permanent": true },
     { "source": "/pramesh-kumar", "destination": "/writings/the-sarvesh-mishra-show-pramesh-kumar-patna-real-estate", "permanent": true },
     { "source": "/pramesh-kumar.html", "destination": "/writings/the-sarvesh-mishra-show-pramesh-kumar-patna-real-estate", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rishabh-saxena-dholera-investment", "destination": "/writings/the-sarvesh-mishra-show-rishabh-saxena-dholera-investment", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rishabh-saxena-dholera-investment.html", "destination": "/writings/the-sarvesh-mishra-show-rishabh-saxena-dholera-investment", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rishabh-saxena", "destination": "/writings/the-sarvesh-mishra-show-rishabh-saxena-dholera-investment", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rishabh-saxena.html", "destination": "/writings/the-sarvesh-mishra-show-rishabh-saxena-dholera-investment", "permanent": true },
+    { "source": "/rishabh-saxena", "destination": "/writings/the-sarvesh-mishra-show-rishabh-saxena-dholera-investment", "permanent": true },
+    { "source": "/rishabh-saxena.html", "destination": "/writings/the-sarvesh-mishra-show-rishabh-saxena-dholera-investment", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/amit-katare-small-investment-crores", "destination": "/writings/the-sarvesh-mishra-show-amit-katare-small-investment-crores", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/amit-katare-small-investment-crores.html", "destination": "/writings/the-sarvesh-mishra-show-amit-katare-small-investment-crores", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/amit-katare", "destination": "/writings/the-sarvesh-mishra-show-amit-katare-small-investment-crores", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/amit-katare.html", "destination": "/writings/the-sarvesh-mishra-show-amit-katare-small-investment-crores", "permanent": true },
+    { "source": "/amit-katare", "destination": "/writings/the-sarvesh-mishra-show-amit-katare-small-investment-crores", "permanent": true },
+    { "source": "/amit-katare.html", "destination": "/writings/the-sarvesh-mishra-show-amit-katare-small-investment-crores", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
