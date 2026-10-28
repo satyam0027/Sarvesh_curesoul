@@ -180,6 +180,12 @@
     { "source": "/the-sarvesh-mishra-show/amit-katare.html", "destination": "/writings/the-sarvesh-mishra-show-amit-katare-small-investment-crores", "permanent": true },
     { "source": "/amit-katare", "destination": "/writings/the-sarvesh-mishra-show-amit-katare-small-investment-crores", "permanent": true },
     { "source": "/amit-katare.html", "destination": "/writings/the-sarvesh-mishra-show-amit-katare-small-investment-crores", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ankit-batra-numerology-stock-market", "destination": "/writings/the-sarvesh-mishra-show-ankit-batra-numerology-stock-market", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ankit-batra-numerology-stock-market.html", "destination": "/writings/the-sarvesh-mishra-show-ankit-batra-numerology-stock-market", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ankit-batra", "destination": "/writings/the-sarvesh-mishra-show-ankit-batra-numerology-stock-market", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ankit-batra.html", "destination": "/writings/the-sarvesh-mishra-show-ankit-batra-numerology-stock-market", "permanent": true },
+    { "source": "/ankit-batra", "destination": "/writings/the-sarvesh-mishra-show-ankit-batra-numerology-stock-market", "permanent": true },
+    { "source": "/ankit-batra.html", "destination": "/writings/the-sarvesh-mishra-show-ankit-batra-numerology-stock-market", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
