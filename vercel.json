@@ -198,6 +198,8 @@
     { "source": "/the-sarvesh-mishra-show/udit-chawla.html", "destination": "/writings/the-sarvesh-mishra-show-udit-chawla-sea-buckthorn", "permanent": true },
     { "source": "/udit-chawla", "destination": "/writings/the-sarvesh-mishra-show-udit-chawla-sea-buckthorn", "permanent": true },
     { "source": "/udit-chawla.html", "destination": "/writings/the-sarvesh-mishra-show-udit-chawla-sea-buckthorn", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/hira-lal-patel-village-boy-crorepati", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-village-boy-crorepati", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/hira-lal-patel-village-boy-crorepati.html", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-village-boy-crorepati", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
