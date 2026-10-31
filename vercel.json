@@ -200,6 +200,12 @@
     { "source": "/udit-chawla.html", "destination": "/writings/the-sarvesh-mishra-show-udit-chawla-sea-buckthorn", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/hira-lal-patel-village-boy-crorepati", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-village-boy-crorepati", "permanent": true },
     { "source": "/the-sarvesh-mishra-show/hira-lal-patel-village-boy-crorepati.html", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-village-boy-crorepati", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/akhand-swami-ji-maharaj-neurosurgeon-to-sant", "destination": "/writings/the-sarvesh-mishra-show-akhand-swami-ji-maharaj-neurosurgeon-to-sant", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/akhand-swami-ji-maharaj-neurosurgeon-to-sant.html", "destination": "/writings/the-sarvesh-mishra-show-akhand-swami-ji-maharaj-neurosurgeon-to-sant", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/akhand-swami-ji-maharaj", "destination": "/writings/the-sarvesh-mishra-show-akhand-swami-ji-maharaj-neurosurgeon-to-sant", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/akhand-swami-ji-maharaj.html", "destination": "/writings/the-sarvesh-mishra-show-akhand-swami-ji-maharaj-neurosurgeon-to-sant", "permanent": true },
+    { "source": "/akhand-swami-ji-maharaj", "destination": "/writings/the-sarvesh-mishra-show-akhand-swami-ji-maharaj-neurosurgeon-to-sant", "permanent": true },
+    { "source": "/akhand-swami-ji-maharaj.html", "destination": "/writings/the-sarvesh-mishra-show-akhand-swami-ji-maharaj-neurosurgeon-to-sant", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
