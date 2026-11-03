@@ -218,6 +218,12 @@
     { "source": "/the-sarvesh-mishra-show/jitendra-adhia.html", "destination": "/writings/the-sarvesh-mishra-show-jitendra-adhia-ageless-bharat-mission", "permanent": true },
     { "source": "/jitendra-adhia", "destination": "/writings/the-sarvesh-mishra-show-jitendra-adhia-ageless-bharat-mission", "permanent": true },
     { "source": "/jitendra-adhia.html", "destination": "/writings/the-sarvesh-mishra-show-jitendra-adhia-ageless-bharat-mission", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/kartik-dhiman-small-business-under-50000", "destination": "/writings/the-sarvesh-mishra-show-kartik-dhiman-small-business-under-50000", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/kartik-dhiman-small-business-under-50000.html", "destination": "/writings/the-sarvesh-mishra-show-kartik-dhiman-small-business-under-50000", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/kartik-dhiman", "destination": "/writings/the-sarvesh-mishra-show-kartik-dhiman-small-business-under-50000", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/kartik-dhiman.html", "destination": "/writings/the-sarvesh-mishra-show-kartik-dhiman-small-business-under-50000", "permanent": true },
+    { "source": "/kartik-dhiman", "destination": "/writings/the-sarvesh-mishra-show-kartik-dhiman-small-business-under-50000", "permanent": true },
+    { "source": "/kartik-dhiman.html", "destination": "/writings/the-sarvesh-mishra-show-kartik-dhiman-small-business-under-50000", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
