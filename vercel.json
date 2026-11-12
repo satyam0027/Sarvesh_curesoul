@@ -246,6 +246,18 @@
     { "source": "/the-sarvesh-mishra-show/ashwin-trivedi.html", "destination": "/writings/the-sarvesh-mishra-show-ashwin-trivedi-hanuman-chalisa-manifestation", "permanent": true },
     { "source": "/ashwin-trivedi", "destination": "/writings/the-sarvesh-mishra-show-ashwin-trivedi-hanuman-chalisa-manifestation", "permanent": true },
     { "source": "/ashwin-trivedi.html", "destination": "/writings/the-sarvesh-mishra-show-ashwin-trivedi-hanuman-chalisa-manifestation", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/nk-sharma-akal-mrityu-destiny", "destination": "/writings/the-sarvesh-mishra-show-nk-sharma-akal-mrityu-destiny", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/nk-sharma-akal-mrityu-destiny.html", "destination": "/writings/the-sarvesh-mishra-show-nk-sharma-akal-mrityu-destiny", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/nk-sharma", "destination": "/writings/the-sarvesh-mishra-show-nk-sharma-akal-mrityu-destiny", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/nk-sharma.html", "destination": "/writings/the-sarvesh-mishra-show-nk-sharma-akal-mrityu-destiny", "permanent": true },
+    { "source": "/nk-sharma", "destination": "/writings/the-sarvesh-mishra-show-nk-sharma-akal-mrityu-destiny", "permanent": true },
+    { "source": "/nk-sharma.html", "destination": "/writings/the-sarvesh-mishra-show-nk-sharma-akal-mrityu-destiny", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sushil-dubey-sugar-control", "destination": "/writings/the-sarvesh-mishra-show-sushil-dubey-sugar-control", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sushil-dubey-sugar-control.html", "destination": "/writings/the-sarvesh-mishra-show-sushil-dubey-sugar-control", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sushil-dubey", "destination": "/writings/the-sarvesh-mishra-show-sushil-dubey-sugar-control", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sushil-dubey.html", "destination": "/writings/the-sarvesh-mishra-show-sushil-dubey-sugar-control", "permanent": true },
+    { "source": "/sushil-dubey", "destination": "/writings/the-sarvesh-mishra-show-sushil-dubey-sugar-control", "permanent": true },
+    { "source": "/sushil-dubey.html", "destination": "/writings/the-sarvesh-mishra-show-sushil-dubey-sugar-control", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
