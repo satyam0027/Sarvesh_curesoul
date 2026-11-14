@@ -282,6 +282,14 @@
     { "source": "/lakshman-shende.html", "destination": "/writings/the-sarvesh-mishra-show-laxman-shende-third-mumbai", "permanent": true },
     { "source": "/third-mumbai", "destination": "/writings/the-sarvesh-mishra-show-laxman-shende-third-mumbai", "permanent": true },
     { "source": "/third-mumbai.html", "destination": "/writings/the-sarvesh-mishra-show-laxman-shende-third-mumbai", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rohit-raghav-whatsapp-marketing", "destination": "/writings/the-sarvesh-mishra-show-rohit-raghav-whatsapp-marketing", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rohit-raghav-whatsapp-marketing.html", "destination": "/writings/the-sarvesh-mishra-show-rohit-raghav-whatsapp-marketing", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rohit-raghav", "destination": "/writings/the-sarvesh-mishra-show-rohit-raghav-whatsapp-marketing", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/rohit-raghav.html", "destination": "/writings/the-sarvesh-mishra-show-rohit-raghav-whatsapp-marketing", "permanent": true },
+    { "source": "/rohit-raghav", "destination": "/writings/the-sarvesh-mishra-show-rohit-raghav-whatsapp-marketing", "permanent": true },
+    { "source": "/rohit-raghav.html", "destination": "/writings/the-sarvesh-mishra-show-rohit-raghav-whatsapp-marketing", "permanent": true },
+    { "source": "/whatsapp-marketing", "destination": "/writings/the-sarvesh-mishra-show-rohit-raghav-whatsapp-marketing", "permanent": true },
+    { "source": "/whatsapp-marketing.html", "destination": "/writings/the-sarvesh-mishra-show-rohit-raghav-whatsapp-marketing", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
