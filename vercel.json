@@ -290,6 +290,22 @@
     { "source": "/rohit-raghav.html", "destination": "/writings/the-sarvesh-mishra-show-rohit-raghav-whatsapp-marketing", "permanent": true },
     { "source": "/whatsapp-marketing", "destination": "/writings/the-sarvesh-mishra-show-rohit-raghav-whatsapp-marketing", "permanent": true },
     { "source": "/whatsapp-marketing.html", "destination": "/writings/the-sarvesh-mishra-show-rohit-raghav-whatsapp-marketing", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sandeep-gupta-money-habits", "destination": "/writings/the-sarvesh-mishra-show-sandeep-gupta-money-habits", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sandeep-gupta-money-habits.html", "destination": "/writings/the-sarvesh-mishra-show-sandeep-gupta-money-habits", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sandeep-gupta", "destination": "/writings/the-sarvesh-mishra-show-sandeep-gupta-money-habits", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sandeep-gupta.html", "destination": "/writings/the-sarvesh-mishra-show-sandeep-gupta-money-habits", "permanent": true },
+    { "source": "/sandeep-gupta", "destination": "/writings/the-sarvesh-mishra-show-sandeep-gupta-money-habits", "permanent": true },
+    { "source": "/sandeep-gupta.html", "destination": "/writings/the-sarvesh-mishra-show-sandeep-gupta-money-habits", "permanent": true },
+    { "source": "/money-habits", "destination": "/writings/the-sarvesh-mishra-show-sandeep-gupta-money-habits", "permanent": true },
+    { "source": "/money-habits.html", "destination": "/writings/the-sarvesh-mishra-show-sandeep-gupta-money-habits", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/asminder-singh-bahl-indian-air-force", "destination": "/writings/the-sarvesh-mishra-show-asminder-singh-bahl-indian-air-force", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/asminder-singh-bahl-indian-air-force.html", "destination": "/writings/the-sarvesh-mishra-show-asminder-singh-bahl-indian-air-force", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/asminder-singh-bahl", "destination": "/writings/the-sarvesh-mishra-show-asminder-singh-bahl-indian-air-force", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/asminder-singh-bahl.html", "destination": "/writings/the-sarvesh-mishra-show-asminder-singh-bahl-indian-air-force", "permanent": true },
+    { "source": "/asminder-singh-bahl", "destination": "/writings/the-sarvesh-mishra-show-asminder-singh-bahl-indian-air-force", "permanent": true },
+    { "source": "/asminder-singh-bahl.html", "destination": "/writings/the-sarvesh-mishra-show-asminder-singh-bahl-indian-air-force", "permanent": true },
+    { "source": "/air-commodore-bahl", "destination": "/writings/the-sarvesh-mishra-show-asminder-singh-bahl-indian-air-force", "permanent": true },
+    { "source": "/air-commodore-bahl.html", "destination": "/writings/the-sarvesh-mishra-show-asminder-singh-bahl-indian-air-force", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
