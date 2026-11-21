@@ -306,6 +306,14 @@
     { "source": "/asminder-singh-bahl.html", "destination": "/writings/the-sarvesh-mishra-show-asminder-singh-bahl-indian-air-force", "permanent": true },
     { "source": "/air-commodore-bahl", "destination": "/writings/the-sarvesh-mishra-show-asminder-singh-bahl-indian-air-force", "permanent": true },
     { "source": "/air-commodore-bahl.html", "destination": "/writings/the-sarvesh-mishra-show-asminder-singh-bahl-indian-air-force", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/hira-lal-patel-farm-factory", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-farm-factory", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/hira-lal-patel-farm-factory.html", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-farm-factory", "permanent": true },
+    { "source": "/hira-lal-patel-farm-factory", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-farm-factory", "permanent": true },
+    { "source": "/hira-lal-patel-farm-factory.html", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-farm-factory", "permanent": true },
+    { "source": "/blog/ias-hiralal-farming-factory-get-rich", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-farm-factory", "permanent": true },
+    { "source": "/blog/ias-hiralal-farming-factory-get-rich.html", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-farm-factory", "permanent": true },
+    { "source": "/ias-hiralal-farm-factory", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-farm-factory", "permanent": true },
+    { "source": "/ias-hiralal-farm-factory.html", "destination": "/writings/the-sarvesh-mishra-show-hira-lal-patel-farm-factory", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
