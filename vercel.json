@@ -322,6 +322,14 @@
     { "source": "/amar-chaudhary-life-clarity-happiness-english.html", "destination": "/writings/the-sarvesh-mishra-show-amar-chaudhary-happiness-clarity", "permanent": true },
     { "source": "/amar-chaudhary", "destination": "/writings/the-sarvesh-mishra-show-amar-chaudhary-happiness-clarity", "permanent": true },
     { "source": "/amar-chaudhary.html", "destination": "/writings/the-sarvesh-mishra-show-amar-chaudhary-happiness-clarity", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ankur-mehta-sound-healing", "destination": "/writings/the-sarvesh-mishra-show-ankur-mehta-sound-healing", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/ankur-mehta-sound-healing.html", "destination": "/writings/the-sarvesh-mishra-show-ankur-mehta-sound-healing", "permanent": true },
+    { "source": "/ankur-mehta-sound-healing", "destination": "/writings/the-sarvesh-mishra-show-ankur-mehta-sound-healing", "permanent": true },
+    { "source": "/ankur-mehta-sound-healing.html", "destination": "/writings/the-sarvesh-mishra-show-ankur-mehta-sound-healing", "permanent": true },
+    { "source": "/writings/ankur-mehta-sound-healing-nada-brahma-en", "destination": "/writings/the-sarvesh-mishra-show-ankur-mehta-sound-healing", "permanent": true },
+    { "source": "/writings/ankur-mehta-sound-healing-nada-brahma-en.html", "destination": "/writings/the-sarvesh-mishra-show-ankur-mehta-sound-healing", "permanent": true },
+    { "source": "/ankur-mehta", "destination": "/writings/the-sarvesh-mishra-show-ankur-mehta-sound-healing", "permanent": true },
+    { "source": "/ankur-mehta.html", "destination": "/writings/the-sarvesh-mishra-show-ankur-mehta-sound-healing", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
