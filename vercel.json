@@ -338,6 +338,14 @@
     { "source": "/hridhay-mehraa.html", "destination": "/writings/the-sarvesh-mishra-show-hridhay-mehraa-real-estate", "permanent": true },
     { "source": "/hriday-mehraa", "destination": "/writings/the-sarvesh-mishra-show-hridhay-mehraa-real-estate", "permanent": true },
     { "source": "/hriday-mehraa.html", "destination": "/writings/the-sarvesh-mishra-show-hridhay-mehraa-real-estate", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sweekar-bhardwaj-diabetes-thyroid-pcod", "destination": "/writings/the-sarvesh-mishra-show-sweekar-bhardwaj-diabetes-thyroid-pcod", "permanent": true },
+    { "source": "/the-sarvesh-mishra-show/sweekar-bhardwaj-diabetes-thyroid-pcod.html", "destination": "/writings/the-sarvesh-mishra-show-sweekar-bhardwaj-diabetes-thyroid-pcod", "permanent": true },
+    { "source": "/sweekar-bhardwaj-diabetes-thyroid-pcod", "destination": "/writings/the-sarvesh-mishra-show-sweekar-bhardwaj-diabetes-thyroid-pcod", "permanent": true },
+    { "source": "/sweekar-bhardwaj-diabetes-thyroid-pcod.html", "destination": "/writings/the-sarvesh-mishra-show-sweekar-bhardwaj-diabetes-thyroid-pcod", "permanent": true },
+    { "source": "/sweekar-bhardwaj", "destination": "/writings/the-sarvesh-mishra-show-sweekar-bhardwaj-diabetes-thyroid-pcod", "permanent": true },
+    { "source": "/sweekar-bhardwaj.html", "destination": "/writings/the-sarvesh-mishra-show-sweekar-bhardwaj-diabetes-thyroid-pcod", "permanent": true },
+    { "source": "/savikar-bhardwaj", "destination": "/writings/the-sarvesh-mishra-show-sweekar-bhardwaj-diabetes-thyroid-pcod", "permanent": true },
+    { "source": "/savikar-bhardwaj.html", "destination": "/writings/the-sarvesh-mishra-show-sweekar-bhardwaj-diabetes-thyroid-pcod", "permanent": true },
     { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
   ]
 }
